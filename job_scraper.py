@@ -14,8 +14,26 @@ warnings.filterwarnings('ignore',category=MarkupResemblesLocatorWarning)
 SESSION=requests.Session()
 SESSION.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36','Accept-Language':'en-US,en;q=0.9'})
 results=[]; old_links=set(); errors=[]
-ROLE_KEYWORDS=['project engineer','field engineer','construction engineer','construction coordinator','project coordinator','assistant project manager','assistant construction manager','assistant superintendent','field coordinator','estimator','estimating engineer','assistant estimator','junior estimator','preconstruction','project controls','cost engineer','cost analyst','scheduler','scheduling engineer','planning engineer','bim engineer','bim coordinator','vdc engineer','vdc coordinator','virtual design','mep coordinator','mep engineer','civil engineer','structural engineer','site engineer','office engineer','design coordinator','quality engineer','qa/qc','quality control','construction inspector','field inspector','safety engineer','ehs engineer','environmental health and safety','quantity surveyor','graduate engineer','entry level engineer']
-TITLE_EXCLUDES=['senior',' sr.',' sr ','principal','director','vice president',' vp ','head of','chief','executive','general superintendent','senior superintendent','project executive','lead estimator','chief estimator','manager ii','manager iii','engineer iii','engineer iv','estimator iii','superintendent ii','superintendent iii']
+# Strict construction-role classifier. Avoids generic matches such as software "field engineering"
+# and prevents service/marketing pages from becoming fake job postings.
+DIRECT_ROLES=[
+    'project engineer','field engineer','construction engineer','construction coordinator',
+    'project coordinator','assistant project manager','assistant construction manager',
+    'assistant superintendent','field coordinator','assistant estimator','junior estimator',
+    'estimating engineer','cost engineer','bim engineer','bim coordinator','vdc engineer',
+    'vdc coordinator','mep coordinator','mep engineer','site engineer','office engineer',
+    'construction inspector','safety engineer','quantity surveyor','graduate civil engineer',
+    'entry level civil engineer','entry-level civil engineer'
+]
+CONTEXT_ROLES=['estimator','scheduler','project scheduler','planning engineer','project controls','cost analyst',
+               'civil engineer','structural engineer','quality engineer','qa/qc','quality control',
+               'field inspector','ehs engineer','design coordinator','preconstruction']
+CONSTRUCTION_CONTEXT=['construction','general contractor','contractor','building','jobsite','job site','civil',
+                      'infrastructure','concrete','commercial construction','preconstruction','subcontractor',
+                      'project controls','bim','vdc','mep','superintendent','estimating','field operations']
+TITLE_EXCLUDES=['senior',' sr.',' sr ','principal','director','vice president',' vp ','head of','chief','executive',
+                'general superintendent','senior superintendent','project executive','lead ','manager','architect',
+                'engineer iii','engineer iv','estimator iii','superintendent ii','superintendent iii']
 EXP_PATTERNS=[re.compile(r'(?:minimum|min\.?|at least|requires?|required|must have|need(?:s|ed)?)[^.!;]{0,70}?(\d+)\s*\+?\s*(?:years?|yrs?)',re.I),re.compile(r'(\d+)\s*\+\s*(?:years?|yrs?)[^.!;]{0,45}?(?:required|minimum|experience)',re.I),re.compile(r'(\d+)\s*(?:-|–|to)\s*(\d+)\s*(?:years?|yrs?)[^.!;]{0,55}?(?:required|minimum|experience)',re.I)]
 
 def clean(s):
@@ -23,9 +41,20 @@ def clean(s):
     if '<' not in s and '>' not in s: return html.unescape(s).strip()
     return BeautifulSoup(html.unescape(s),'html.parser').get_text(' ',strip=True)
 def log(c,m): errors.append(f'[WARN] {c}: {str(m)[:220]}')
-def role_match(title):
+def role_match(title,desc=''):
     t=' '+clean(title).lower()+' '
-    return any(k in t for k in ROLE_KEYWORDS) and not any(k in t for k in TITLE_EXCLUDES)
+    d=clean(desc).lower()
+    # Assistant Project/Construction Manager are valid early-career roles; other managers are not.
+    protected=('assistant project manager' in t or 'assistant construction manager' in t)
+    if not protected and any(k in t for k in TITLE_EXCLUDES): return False
+    if any(k in t for k in DIRECT_ROLES):
+        # "field engineer" can be non-construction at tech companies; require construction context in description
+        # unless the title itself contains an unmistakably construction-specific role.
+        if 'field engineer' in t and not any(x in d for x in CONSTRUCTION_CONTEXT): return False
+        return True
+    if any(k in t for k in CONTEXT_ROLES):
+        return any(x in d for x in CONSTRUCTION_CONTEXT)
+    return False
 def experience_ok(title,desc=''):
     t=(clean(title)+' '+clean(desc)).lower()
     for p in EXP_PATTERNS:
@@ -44,7 +73,7 @@ def is_us(loc):
     return any(n in s for n in names) or any(re.search(r'[, ]'+a+r'(?:[, ]|$)',s) for a in states) or bool(re.search(r'\b(new york|new jersey|new mexico|new hampshire|north carolina|south carolina|north dakota|south dakota|rhode island|west virginia)\b',s))
 def add(company,title,location,link,posted='N/A',desc=''):
     if not link or link in old_links: return
-    if role_match(title) and experience_ok(title,desc) and is_us(location):
+    if role_match(title,desc) and experience_ok(title,desc) and is_us(location):
         results.append({'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':posted}); old_links.add(link)
 
 def greenhouse(url,company):
@@ -80,7 +109,7 @@ def workday(url,company):
         if not posts: break
         for j in posts:
             title=j.get('title',''); loc=j.get('locationsText',''); path=j.get('externalPath',''); link=f'https://{sub}.{wd}.myworkdayjobs.com/en-US/{site}{path}'; desc=''
-            if role_match(title) and path:
+            if path and (any(k in (' '+clean(title).lower()+' ') for k in DIRECT_ROLES+CONTEXT_ROLES)):
                 try:
                     d=SESSION.get(f'https://{sub}.{wd}.myworkdayjobs.com/wday/cxs/{sub}/{site}{path}',timeout=12)
                     if d.ok: desc=d.json().get('jobPostingInfo',{}).get('jobDescription','')
@@ -101,31 +130,18 @@ def ats_from_links(base,text):
     return None,None
 
 def generic(url,company):
-    """Best-effort static careers page crawler. It first discovers ATS links, then extracts job-like links."""
+    """Discover a supported ATS from a public careers page.
+    Never treats arbitrary website links as jobs; this prevents service pages such as
+    /preconstruction or /quality-control from appearing in results.
+    """
     r=SESSION.get(url,timeout=20,allow_redirects=True)
-    if r.status_code in (401,403,406,429): raise RuntimeError(f'public careers page blocked ({r.status_code}); direct ATS mapping needed')
-    r.raise_for_status(); base=r.url
-    plat,ats=ats_from_links(base,r.text)
-    if plat: return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday}[plat](ats,company)
-    soup=BeautifulSoup(r.text,'html.parser'); candidates=[]
-    for a in soup.find_all('a',href=True):
-        title=clean(a.get_text(' ',strip=True)); href=urljoin(base,a['href'])
-        blob=(title+' '+a.get('aria-label','')+' '+a.get('title','')).strip()
-        path=urlparse(href).path.lower()
-        if role_match(blob) or (any(x in path for x in ['/job/','/jobs/','/career/','/careers/','/position/','/positions/']) and len(title)>5):
-            candidates.append((title,href))
-    seen=set(); count=0
-    for title,href in candidates[:250]:
-        if href in seen or not role_match(title): continue
-        seen.add(href); count+=1; desc=''; loc=''
-        try:
-            d=SESSION.get(href,timeout=12); ds=BeautifulSoup(d.text,'html.parser'); desc=ds.get_text(' ',strip=True)
-            # location hints from common structured data / labels
-            lm=re.search(r'(?i)(?:location|job location)\s*[:\-]?\s*([A-Za-z .]+,\s*[A-Z]{2})',desc)
-            if lm: loc=lm.group(1)
-        except Exception: pass
-        add(company,title,loc,href,'N/A',desc)
-    return count>0
+    if r.status_code in (401,403,406,429):
+        raise RuntimeError(f'public careers page blocked ({r.status_code}); direct ATS mapping needed')
+    r.raise_for_status()
+    plat,ats=ats_from_links(r.url,r.text)
+    if plat:
+        return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday}[plat](ats,company)
+    raise RuntimeError('no supported ATS discovered; direct ATS mapping needed')
 
 def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
