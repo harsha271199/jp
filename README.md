@@ -1,13 +1,17 @@
-# Construction Job Scraper V17
+# Construction Entry-Level Job Scraper — FINAL
 
-Stabilization release based on V16.
+Automated US construction/civil job scraper focused on full-time entry-level through 2 years of required experience.
 
-Key changes:
-- Excludes internships/co-ops from the 0-2 YOE full-time feed.
-- Tightens semiconductor/technology/data-center matching: construction context must be present in the job title, reducing generic engineering false positives (especially Western Digital).
-- Fixes iCIMS job-detail discovery for Gilbane/Walbridge-style URLs.
-- Loosens Jobvite detail discovery for McCarthy.
-- Adds verified Walbridge iCIMS source and current W.E. O'Neil / Boldt career sources.
-- Preserves V16 Clayco real Crelate links, stale-post filtering, US-only filtering, source health, dedupe, and existing adapters.
+## Outputs
+- `current_jobs.csv` — all matching jobs found in the latest run.
+- `new_jobs.csv` — only jobs not already in `seen_links.csv`.
+- `seen_links.csv` — deduplication history; keep this file.
+- `source_health.csv` — latest per-company source status and match counts.
+- `DD-Month-Construction-Jobs.md` — cumulative human-readable history.
 
-Keep `seen_links.csv` and the existing jobs markdown file when upgrading.
+## Important filters
+- US jobs only.
+- Explicit required minimum experience above 2 years is rejected.
+- Internships/co-ops are excluded.
+- Technology/semiconductor sources use stricter construction/facilities/capital-project title rules to prevent generic engineering false positives.
+- Ordinary marketing/service pages are never treated as jobs.

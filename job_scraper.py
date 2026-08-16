@@ -1,4 +1,4 @@
-"""Construction job scraper V17: US entry-level / 0-2 YOE.
+"""Construction job scraper FINAL (V18): US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore',category=MarkupResemblesLocatorWarning)
 
 SESSION=requests.Session()
 SESSION.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36','Accept-Language':'en-US,en;q=0.9'})
-results=[]; old_links=set(); errors=[]; source_health=[]; current_match_links=set()
+results=[]; old_links=set(); errors=[]; source_health=[]; current_match_links=set(); current_jobs_by_link={}
 # Strict construction-role classifier. Avoids generic matches such as software "field engineering"
 # and prevents service/marketing pages from becoming fake job postings.
 DIRECT_ROLES=[
@@ -44,9 +44,16 @@ def company_context_ok(company,title,desc=''):
     # Technology/semiconductor/data-center companies have many generic engineering roles.
     # Require the TITLE itself to be construction/project-delivery specific; description-only
     # keyword hits are too noisy (this previously caused Western Digital to return 200+ jobs).
-    explicit=['construction','preconstruction','project engineer','project coordinator','assistant project manager',
-              'assistant superintendent','estimator','project controls','bim','vdc','mep','civil engineer',
-              'structural engineer','safety engineer','construction manager','construction project','capital project']
+    # Semiconductor/storage vendors need an especially strict title gate. Generic
+    # 'Project Engineer' / 'Engineer' titles produced hundreds of false positives at Western Digital.
+    if company in {'Western Digital','Micron Technology','Lam Research','GlobalFoundries','ASML','KLA Corporation','Intel','NVIDIA'}:
+        explicit=['construction','preconstruction','facilities','facility','capital project','site infrastructure',
+                  'building infrastructure','mep','project controls','commissioning','civil construction',
+                  'construction project','construction manager','construction engineer','safety engineer']
+    else:
+        explicit=['construction','preconstruction','project engineer','project coordinator','assistant project manager',
+                  'assistant superintendent','estimator','project controls','bim','vdc','mep','civil engineer',
+                  'structural engineer','safety engineer','construction manager','construction project','capital project']
     return any(x in t for x in explicit)
 
 def clean(s):
@@ -94,8 +101,10 @@ def add(company,title,location,link,posted='N/A',desc=''):
     if not (role_match(title,desc) and experience_ok(title,desc) and is_us(location) and company_context_ok(company,title,desc)):
         return False
     current_match_links.add(link)
+    record={'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':posted}
+    current_jobs_by_link[link]=record
     if link not in old_links:
-        results.append({'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':posted})
+        results.append(record)
         old_links.add(link)
     return True
 
@@ -853,8 +862,16 @@ def html_job_board(url,company,kind='generic'):
     if links: return True
     raise RuntimeError(f'{kind} job board returned no job-detail links')
 
-def icims_html(url,company): return html_job_board(url,company,'icims')
-def jobvite_html(url,company): return html_job_board(url,company,'jobvite')
+def icims_html(url,company):
+    # iCIMS outer pages often contain only an iframe. Request the actual portal view directly.
+    sep='&' if '?' in url else '?'
+    if 'in_iframe=' not in url: url=url+sep+'in_iframe=1'
+    return html_job_board(url,company,'icims')
+def jobvite_html(url,company):
+    # Jobvite returns job cards reliably in its no-layout embedded view.
+    if 'jobs.jobvite.com' in url and 'nl=' not in url:
+        url += ('&' if '?' in url else '?')+'nl=1'
+    return html_job_board(url,company,'jobvite')
 def jobs2web_html(url,company): return html_job_board(url,company,'jobs2web')
 def silkroad_html(url,company): return html_job_board(url,company,'silkroad')
 
@@ -916,6 +933,28 @@ def browser_only(url,company):
     """
     raise RuntimeError('BROWSER_ONLY: verified career source blocks GitHub Actions HTTP access')
 
+def mortenson_coveo(url,company):
+    """HAR-verified public Coveo search used by Mortenson careers."""
+    endpoint='https://mamortensoncompanyproduction3gn9levx.org.coveo.com/rest/search/v2'
+    org='mamortensoncompanyproduction3gn9levx'
+    headers={'Origin':'https://www.mortenson.com','Referer':'https://www.mortenson.com/','Content-Type':'application/json'}
+    discovered=0
+    for first in range(0,200,50):
+        payload={'locale':'en','debug':False,'tab':'default','referrer':'https://www.mortenson.com/careers',
+                 'timezone':'America/Phoenix','fieldsToInclude':['category','team','country','state','city','clickableuri','date'],
+                 'pipeline':'Mortenson Careers Search Pipeline','q':'','enableQuerySyntax':False,
+                 'searchHub':'mortenson_careers_search','sortCriteria':'relevancy','numberOfResults':50,'firstResult':first}
+        r=SESSION.post(endpoint,params={'organizationId':org},headers=headers,json=payload,timeout=30); r.raise_for_status()
+        data=r.json(); rows=data.get('results') or []
+        if not rows: break
+        for j in rows:
+            raw=j.get('raw') or {}; title=j.get('title') or raw.get('title') or ''; link=j.get('clickUri') or j.get('uri') or raw.get('clickableuri') or ''
+            loc=', '.join(x for x in [raw.get('city'),raw.get('state'),raw.get('country')] if x)
+            excerpt=j.get('excerpt') or ''
+            if add(company,title,loc,link,raw.get('date','N/A'),excerpt): discovered+=1
+        if first+len(rows) >= int(data.get('totalCount') or data.get('totalCountFiltered') or 0): break
+    return True
+
 def generic(url,company):
     """Safe discovery: ATS first, then structured JobPosting data only.
     Never converts ordinary service/marketing pages into jobs.
@@ -933,14 +972,14 @@ def generic(url,company):
 
 def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
-    before_new=len(results); before_current=len(current_match_links)
+    before_new=sum(1 for j in results if j.get('company')==company); before_current=sum(1 for j in current_jobs_by_link.values() if j.get('company')==company)
     if platform=='browser_only':
         source_health.append({'company':company,'platform':platform,'status':'BROWSER_ONLY','matches':0,'new_matches':0,'detail':'verified source requires browser/session or blocks GitHub Actions HTTP'})
         return
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'asml_sitecore':asml_sitecore,'avature_html':avature_html,'icims_html':icims_html,'jobvite_html':jobvite_html,'jobs2web_html':jobs2web_html,'silkroad_html':silkroad_html,'crelate_api':crelate_api,'jibe_public_api':jibe_public_api,'arco_api':arco_api,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'asml_sitecore':asml_sitecore,'avature_html':avature_html,'icims_html':icims_html,'jobvite_html':jobvite_html,'jobs2web_html':jobs2web_html,'silkroad_html':silkroad_html,'crelate_api':crelate_api,'jibe_public_api':jibe_public_api,'arco_api':arco_api,'mortenson_coveo':mortenson_coveo,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
-        source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(current_match_links)-before_current),'new_matches':max(0,len(results)-before_new),'detail':''})
+        source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,sum(1 for j in current_jobs_by_link.values() if j.get('company')==company)-before_current),'new_matches':max(0,sum(1 for j in results if j.get('company')==company)-before_new),'detail':''})
     except Exception as e:
         msg=str(e)[:220]
         if msg.startswith('BROWSER_ONLY:'):
@@ -974,6 +1013,8 @@ def write_health_report():
     print(f'GitHub HTTP source success rate:    {rate:.1f}%')
     print('===================================')
     c.to_csv('source_health.csv',index=False)
+    pd.DataFrame(sorted(current_jobs_by_link.values(),key=lambda x:(x['company'].lower(),x['title'].lower()))).to_csv('current_jobs.csv',index=False)
+    pd.DataFrame(results,columns=['company','title','location','link','posted']).to_csv('new_jobs.csv',index=False)
     failed_df=c[c.status=='FAILED'][['company','detail']]
     if len(failed_df):
         print('\nFAILED COMPANIES (first 40):')

@@ -1,7 +1,6 @@
-# V13 test
-
-1. Replace `job_scraper.py` and `companies.csv` with V13.
-2. Keep your existing `.github/workflows/scrape.yml`.
-3. Do NOT delete `seen_links.csv` or the existing Construction Jobs markdown file.
-4. Run the workflow manually once.
-5. Check the `SOURCE HEALTH` block and `source_health.csv`.
+# Setup
+1. Copy these files into the repository root.
+2. Keep your existing `seen_links.csv` and existing `*-Construction-Jobs.md` history file(s).
+3. Do not copy browser cookies, JWTs, CSRF tokens, or HAR files into GitHub.
+4. Run the GitHub Actions workflow manually once.
+5. Review `source_health.csv` and `current_jobs.csv`. `new_jobs.csv` contains only newly discovered jobs.
