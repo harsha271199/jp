@@ -1,4 +1,4 @@
-"""Construction job scraper V16: US entry-level / 0-2 YOE.
+"""Construction job scraper V17: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -31,7 +31,7 @@ CONTEXT_ROLES=['estimator','scheduler','project scheduler','planning engineer','
 CONSTRUCTION_CONTEXT=['construction','general contractor','contractor','building','jobsite','job site','civil',
                       'infrastructure','concrete','commercial construction','preconstruction','subcontractor',
                       'project controls','bim','vdc','mep','superintendent','estimating','field operations']
-NON_CONSTRUCTION_TITLE_EXCLUDES=['maintenance','facility maintenance','facilities maintenance','maintenance planner','maintenance scheduler','technician','mechanic','operations engineer','operations technician','data center technician','critical facilities technician','service engineer','sales engineer','customer engineer','solutions engineer','software engineer','field service engineer','field application engineer','field applications engineer']
+NON_CONSTRUCTION_TITLE_EXCLUDES=['intern','internship','co-op','coop','maintenance','facility maintenance','facilities maintenance','maintenance planner','maintenance scheduler','technician','mechanic','operations engineer','operations technician','data center technician','critical facilities technician','service engineer','sales engineer','customer engineer','solutions engineer','software engineer','field service engineer','field application engineer','field applications engineer']
 TITLE_EXCLUDES=['senior',' sr.',' sr ','principal','director','vice president',' vp ','head of','chief','executive',
                 'general superintendent','senior superintendent','project executive','lead ','manager','architect',
                 'engineer iii','engineer iv','estimator iii','superintendent ii','superintendent iii']
@@ -41,9 +41,13 @@ STRICT_CONTEXT_COMPANIES={'Western Digital','Intel','NVIDIA','Digital Realty','T
 def company_context_ok(company,title,desc=''):
     if company not in STRICT_CONTEXT_COMPANIES: return True
     t=clean(title).lower(); d=clean(desc).lower()
-    explicit=['construction','preconstruction','project engineer','project coordinator','assistant project manager','assistant superintendent','estimator','project controls','bim','vdc','mep','civil engineer','structural engineer','safety engineer']
-    if any(x in t for x in explicit): return True
-    return any(x in d for x in CONSTRUCTION_CONTEXT)
+    # Technology/semiconductor/data-center companies have many generic engineering roles.
+    # Require the TITLE itself to be construction/project-delivery specific; description-only
+    # keyword hits are too noisy (this previously caused Western Digital to return 200+ jobs).
+    explicit=['construction','preconstruction','project engineer','project coordinator','assistant project manager',
+              'assistant superintendent','estimator','project controls','bim','vdc','mep','civil engineer',
+              'structural engineer','safety engineer','construction manager','construction project','capital project']
+    return any(x in t for x in explicit)
 
 def clean(s):
     s=str(s or '')
