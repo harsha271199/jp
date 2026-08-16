@@ -69,6 +69,8 @@ def experience_ok(title,desc=''):
 def is_us(loc):
     if not loc: return True
     s=' '+clean(loc).lower()+' '
+    foreign=[' france ',' germany ',' india ',' canada ',' mexico ',' united kingdom ',' uk ',' ireland ',' spain ',' italy ',' netherlands ',' singapore ',' australia ',' japan ',' china ',' taiwan ',' korea ',' poland ',' sweden ',' switzerland ',' belgium ',' brazil ',' uae ',' united arab emirates ']
+    if any(x in s for x in foreign): return False
     if any(x in s for x in ['united states',' usa ',' u.s. ','remote - us','remote, us','remote us']): return True
     states='al ak az ar ca co ct de fl ga hi id il in ia ks ky la me md ma mi mn ms mo mt ne nv nh nj nm ny nc nd oh ok or pa ri sc sd tn tx ut vt va wa wv wi wy dc'.split()
     names='alabama alaska arizona arkansas california colorado connecticut delaware florida georgia hawaii idaho illinois indiana iowa kansas kentucky louisiana maine maryland massachusetts michigan minnesota mississippi missouri montana nebraska nevada ohio oklahoma oregon pennsylvania tennessee texas utah vermont virginia washington wisconsin wyoming'.split()
@@ -797,6 +799,73 @@ def dpr_har(url,company):
     if found or links or len(r.text)>100000: return True
     raise RuntimeError('DPR current positions returned no job records')
 
+
+def html_job_board(url,company,kind='generic'):
+    """Parse only explicit job-detail links from known public recruiting portals."""
+    r=SESSION.get(url,headers={'User-Agent':'Mozilla/5.0'},timeout=30); r.raise_for_status(); soup=BeautifulSoup(r.text,'html.parser'); found=0; links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']); label=clean(a.get_text(' ',strip=True)); path=urlparse(u).path.lower()
+        ok=False
+        if kind=='icims': ok=bool(re.search(r'/jobs/\d+/.+/job',path))
+        elif kind=='jobvite': ok='/job/' in path and 'jobvite.com' in urlparse(u).netloc
+        elif kind=='jobs2web': ok='/job/' in path and bool(re.search(r'/\d+/?$',path))
+        elif kind=='silkroad': ok='/careers/jobs/' in path and bool(re.search(r'/jobs/\d+',path))
+        if ok and label: links.append((u,label))
+    for u,label in list(dict.fromkeys(links))[:800]:
+        try:
+            d=SESSION.get(u,headers={'User-Agent':'Mozilla/5.0'},timeout=15); ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True));
+            h=ds.find('h1') or ds.find('h2'); title=clean(h.get_text(' ',strip=True) if h else label)
+            lm=re.search(r'(?:Location|locations?|Job Location)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})',text,re.I)
+            if add(company,title,lm.group(1) if lm else '',d.url,'N/A',text): found+=1
+        except Exception: pass
+    if links: return True
+    raise RuntimeError(f'{kind} job board returned no job-detail links')
+
+def icims_html(url,company): return html_job_board(url,company,'icims')
+def jobvite_html(url,company): return html_job_board(url,company,'jobvite')
+def jobs2web_html(url,company): return html_job_board(url,company,'jobs2web')
+def silkroad_html(url,company): return html_job_board(url,company,'silkroad')
+
+def crelate_api(url,company):
+    org='4272a562-9752-4656-90ce-ab5f015ba502'; api='https://app.crelate.com/api/candidateportal/GetAllJobs'
+    env=json.dumps({'Locations':None,'OrganizationId':org,'SearchText':None,'Tags':None},separators=(',',':'))
+    r=SESSION.get(api,params={'requestEnvelope':env},timeout=30); r.raise_for_status(); data=r.json(); jobs=data.get('Jobs') or []; discovered=0
+    for j in jobs:
+        title=j.get('Title') or j.get('JobTitle') or ''; loc=j.get('Location') or j.get('LocationName') or ''
+        desc=j.get('Description') or ''; code=j.get('JobCode') or j.get('Id') or ''
+        link=j.get('Url') or j.get('JobUrl') or (f'https://jobs.crelate.com/portal/clayco/job/{code}' if code else '')
+        discovered+=1; add(company,title,loc,link,j.get('LastPostedOnDate') or 'N/A',desc)
+    if discovered: return True
+    raise RuntimeError('Crelate API returned no job records')
+
+def jibe_public_api(url,company):
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'; page=1; discovered=0
+    while page<=100:
+        r=SESSION.get(base+'/api/jobs',params={'page':page,'sortBy':'relevance','descending':'false','internal':'false'},timeout=30); r.raise_for_status(); data=r.json(); jobs=data.get('jobs') or []
+        if not jobs: break
+        for x in jobs:
+            j=x.get('data',x); title=j.get('title',''); desc=j.get('description',''); loc=j.get('location_name') or j.get('location') or j.get('city_state') or ''
+            slug=j.get('slug') or j.get('req_id') or ''; link=j.get('apply_url') or j.get('url') or (base+'/jobs/'+str(slug) if slug else '')
+            discovered+=1; add(company,title,loc,link,j.get('posted_date') or j.get('date_posted') or 'N/A',desc)
+        total=data.get('totalCount') or data.get('total_count') or 0; page+=1
+        if total and (page-1)*len(jobs)>=total: break
+    if discovered: return True
+    raise RuntimeError('Jibe public API returned no job records')
+
+def arco_api(url,company):
+    base='https://careers.thearcoway.com'; page=1; discovered=0
+    while page<=100:
+        r=SESSION.get(base+'/api/jobs',params={'sortBy':'relevance','page':page,'internal':'false'},timeout=30); r.raise_for_status(); data=r.json(); jobs=data.get('jobs') or []
+        if not jobs: break
+        for x in jobs:
+            j=x.get('data',x); slug=j.get('slug') or j.get('req_id'); title=j.get('title',''); desc=j.get('description',''); loc=j.get('location_name') or j.get('location') or ''
+            link=j.get('url') or (base+'/jobs/'+str(slug) if slug else '')
+            discovered+=1; add(company,title,loc,link,j.get('posted_date') or 'N/A',desc)
+        page+=1
+        if page>20 and not data.get('totalCount'): break
+    if discovered: return True
+    raise RuntimeError('ARCO API returned no job records')
+
 def browser_only(url,company):
     """Known-valid public career source that blocks GitHub-hosted requests.
     Kept separate from FAILED so hourly logs are actionable and we do not try
@@ -826,7 +895,7 @@ def scrape(row):
         source_health.append({'company':company,'platform':platform,'status':'BROWSER_ONLY','matches':0,'new_matches':0,'detail':'verified source requires browser/session or blocks GitHub Actions HTTP'})
         return
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'avature_html':avature_html,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'avature_html':avature_html,'icims_html':icims_html,'jobvite_html':jobvite_html,'jobs2web_html':jobs2web_html,'silkroad_html':silkroad_html,'crelate_api':crelate_api,'jibe_public_api':jibe_public_api,'arco_api':arco_api,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
         source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(current_match_links)-before_current),'new_matches':max(0,len(results)-before_new),'detail':''})
     except Exception as e:

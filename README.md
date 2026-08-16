@@ -1,60 +1,15 @@
-# Construction Entry-Level Jobs — August 16, 2026
-> US construction/civil roles; rejects explicit required minimum experience above 2 years.
+# Construction Job Scraper V14
 
-## Batch 2026-08-16 04:33 — 52 new jobs
+HAR-verified source build. See `HAR_VERIFIED_SOURCES.md`.
 
-| Company | Location | Role | Apply | Posted |
-|---|---|---|---|---|
-| **Digital Realty** | Garland, TX, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8248/?utm_medium=jobshare) | 2026-08-14 |
-| **Digital Realty** | Carrollton, TX, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8542/?utm_medium=jobshare) | 2026-08-13 |
-| **Digital Realty** | Hillsboro, OR, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8174/?utm_medium=jobshare) | 2026-06-22 |
-| **Digital Realty** | Garland, TX, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8300/?utm_medium=jobshare) | 2026-07-27 |
-| **Digital Realty** | Houston, TX, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8305/?utm_medium=jobshare) | 2026-07-09 |
-| **Digital Realty** | Ashburn, VA, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8400/?utm_medium=jobshare) | 2026-07-23 |
-| **Digital Realty** | Chandler, AZ, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8407/?utm_medium=jobshare) | 2026-07-23 |
-| **Digital Realty** | Hillsboro, OR, United States | Site Engineer I | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8435/?utm_medium=jobshare) | 2026-07-30 |
-| **Digital Realty** | Lewisville, TX, United States | Site Engineer II | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/7719/?utm_medium=jobshare) | 2026-04-16 |
-| **Digital Realty** | La Courneuve, France | Site Engineer II | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8194/?utm_medium=jobshare) | 2026-07-21 |
-| **Digital Realty** | Dallas, TX, United States | Site Engineer II | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8327/?utm_medium=jobshare) | 2026-07-23 |
-| **Digital Realty** | Garland, TX, United States | Site Engineer II | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8346/?utm_medium=jobshare) | 2026-07-20 |
-| **Digital Realty** | Sterling, VA, United States | Site Engineer II | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8354/?utm_medium=jobshare) | 2026-07-20 |
-| **Digital Realty** | TX, United States | Site Engineer II | [Apply](https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/8434/?utm_medium=jobshare) | 2026-07-29 |
-| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Estimating Engineer, Industrial/Manufacturing | [Apply](https://jobs.jedunn.com/job/Kansas-City-Estimating-Engineer%2C-IndustrialManufacturing-MO-64106/1384403700/) | N/A |
-| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Coordinator | [Apply](https://jobs.jedunn.com/job/Raleigh-Project-Coordinator-NC-27607/1409764200/) | N/A |
-| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer - Design Team, Industrial/Manufacturing | [Apply](https://jobs.jedunn.com/job/Atlanta-Project-Engineer-Design-Team%2C-IndustrialManufacturing-GA-30339/1384387300/) | N/A |
-| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 1- Heavy Equipment Solutions  (AFG) | [Apply](https://jobs.jedunn.com/job/Kansas-City-Project-Engineer-1-Heavy-Equipment-Solutions-%28AFG%29-MO-64106/1400859300/) | N/A |
-| **Sundt Construction Inc., Tempe, Ariz.** | Burlington, TX, United States | Assistant Project Manager | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10863/?utm_medium=jobshare) | 2026-08-11 |
-| **Sundt Construction Inc., Tempe, Ariz.** | AZ, United States | Assistant Project Manager | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10690/?utm_medium=jobshare) | 2026-07-28 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Casa Grande, AZ, United States | Concrete Project Engineer II | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10123/?utm_medium=jobshare) | 2026-05-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Haskell, TX, United States | Cost Engineer - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10903/?utm_medium=jobshare) | 2026-08-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Phoenix, AZ, United States | Cost Engineer - Electrical | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10884/?utm_medium=jobshare) | 2026-08-12 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Bagdad, AZ, United States | Electrical Project Engineer II | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10866/?utm_medium=jobshare) | 2026-08-11 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Patagonia, AZ, United States | Electrical Project Engineer II | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10622/?utm_medium=jobshare) | 2026-07-22 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Lockhart, TX, United States | Field Coordinator | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10712/?utm_medium=jobshare) | 2026-07-30 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Haskell, TX, United States | Field Engineer - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10902/?utm_medium=jobshare) | 2026-08-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Temple, TX, United States | Field Engineer - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10550/?utm_medium=jobshare) | 2026-07-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Glendale, AZ, United States | Heavy Civil Project Engineer | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10613/?utm_medium=jobshare) | 2026-07-21 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Mesa, AZ, United States | Heavy Civil Project Engineer | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10614/?utm_medium=jobshare) | 2026-07-21 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Phoenix, AZ, United States | Project Controls Analyst | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10556/?utm_medium=jobshare) | 2026-07-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Vail, AZ, United States | Project Controls Analyst I | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10621/?utm_medium=jobshare) | 2026-07-21 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Charlotte, NC, United States | Project Controls Analyst I | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10691/?utm_medium=jobshare) | 2026-07-28 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Phoenix, AZ, United States | Project Controls Engineer | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10383/?utm_medium=jobshare) | 2026-06-18 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Lockhart, TX, United States | Project Controls Specialist - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10626/?utm_medium=jobshare) | 2026-07-22 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Patagonia, AZ, United States | Project Engineer  - Electrical | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/9907/?utm_medium=jobshare) | 2026-04-08 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Temple, TX, United States | Project Engineer (Utilities) - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10552/?utm_medium=jobshare) | 2026-07-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Phoenix, AZ, United States | Project Engineer - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10478/?utm_medium=jobshare) | 2026-07-02 |
-| **Sundt Construction Inc., Tempe, Ariz.** | El Paso, TX, United States | Project Engineer - Building Group | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10029/?utm_medium=jobshare) | 2026-04-28 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Bagdad, AZ, United States | Project Engineer - Concrete | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10322/?utm_medium=jobshare) | 2026-06-09 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Iva, SC, United States | Project Engineer - Concrete - Traveling | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10155/?utm_medium=jobshare) | 2026-05-15 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Haskell, TX, United States | Project Engineer - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10901/?utm_medium=jobshare) | 2026-08-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Temple, TX, United States | Project Engineer - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10551/?utm_medium=jobshare) | 2026-07-13 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Sparks, NV, United States | Project Engineer - Electrical | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10888/?utm_medium=jobshare) | 2026-08-12 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Vancouver, WA, United States | Project Engineer - Heavy Civil/Highway | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10223/?utm_medium=jobshare) | 2026-05-27 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Dallas, TX, United States | Project Engineer - Water/Wastewater | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10701/?utm_medium=jobshare) | 2026-07-29 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Patagonia, AZ, United States | Project Engineer I - Mining Division | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10620/?utm_medium=jobshare) | 2026-07-21 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Atlanta, GA, United States | Project Engineer II - Heavy Industrial - Traveling | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/9363/?utm_medium=jobshare) | 2026-01-21 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Tucson, AZ, United States | Project Engineer II - Mining Division | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10579/?utm_medium=jobshare) | 2026-07-16 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Temple, TX, United States | Project Scheduler - Data Center Construction | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10652/?utm_medium=jobshare) | 2026-07-23 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Temple, TX, United States | Structural Project Engineer - Data Centers | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10873/?utm_medium=jobshare) | 2026-08-12 |
-| **Sundt Construction Inc., Tempe, Ariz.** | Austin, TX, United States | Virtual Construction Engineer - Data Centers | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10367/?utm_medium=jobshare) | 2026-06-17 |
+# Construction Job Scraper V13
 
+Targets US construction/civil roles suitable for entry-level / roughly 0-2 YOE.
+
+V13 keeps the working V12 sources and adds:
+- corrected Oracle Candidate Experience mappings for Texas Instruments, Digital Realty, Mortenson, and Sundt;
+- explicit `BROWSER_ONLY` status for verified sources that block GitHub Actions HTTP requests (no bypass attempts);
+- source-health metrics based on **current** matching jobs, independent of `seen_links.csv`;
+- separate current-job and new-job counts.
+
+Keep `seen_links.csv` during normal runs.
