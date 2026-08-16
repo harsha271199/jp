@@ -1,10 +1,7 @@
-# V12 test instructions
+# V13 test
 
-1. Replace `job_scraper.py`, `companies.csv`, `requirements.txt`, `README.md`, and `SETUP.md` in the test repository.
-2. Keep the existing `.github/workflows/scrape.yml`.
-3. Keep `seen_links.csv` -- do not delete it.
-4. Keep the existing `*-Construction-Jobs.md` history.
-5. Run the workflow manually once.
-6. Capture the complete `SOURCE HEALTH` block and warnings.
-
-A source is counted WORKING only when its configured adapter completes successfully. New-job count is incremental because `seen_links.csv` is retained.
+1. Replace `job_scraper.py` and `companies.csv` with V13.
+2. Keep your existing `.github/workflows/scrape.yml`.
+3. Do NOT delete `seen_links.csv` or the existing Construction Jobs markdown file.
+4. Run the workflow manually once.
+5. Check the `SOURCE HEALTH` block and `source_health.csv`.

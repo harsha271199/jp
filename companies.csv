@@ -8,19 +8,19 @@ Amazon / AWS,workday,https://amazon.wd5.myworkdayjobs.com/en-US/External
 Meta,generic,https://www.metacareers.com/jobs/
 NVIDIA,workday,https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite
 OpenAI,ashby,https://jobs.ashbyhq.com/openai
-TSMC,generic,https://careers.tsmc.com/
+TSMC,avature_html,https://careers.tsmc.com/en_US/careers/SearchJobs/?147=5709
 Intel,workday,https://intel.wd1.myworkdayjobs.com/en-US/External
 Micron Technology,eightfold,https://careers.micron.com/careers
 Applied Materials,eightfold,https://careers.appliedmaterials.com/careers
 Lam Research,eightfold,https://careers.lamresearch.com/careers
 ASML,generic,https://www.asml.com/en/careers/find-your-job
-Samsung Electronics,generic,https://www.samsungcareers.com/
+Samsung Electronics,samsung_api,https://semiconductor.samsung.com/about-us/careers/jobs/
 Broadcom,workday,https://broadcom.wd1.myworkdayjobs.com/en-US/External_Career
 AMD,generic,https://careers.amd.com/careers-home/
 Equinix,generic,https://careers.equinix.com/jobs/search?country_codes%5B%5D=US&page=1&query=
-Digital Realty,generic,https://careers.digitalrealty.com/
+Digital Realty,oracle_hcm_har,https://hdep.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs
 Qualcomm,workday,https://qualcomm.wd5.myworkdayjobs.com/en-US/External
-Texas Instruments,generic,https://careers.ti.com/
+Texas Instruments,oracle_hcm_har,https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs
 GlobalFoundries,eightfold,https://careers.gf.com/careers
 Marvell Technology,generic,https://www.marvell.com/company/careers.html
 KLA Corporation,generic,https://www.kla.com/careers
@@ -85,8 +85,8 @@ ByteDance,greenhouse,https://boards.greenhouse.io/bytedance
 Uber,generic,https://www.uber.com/us/en/careers/list/
 Airbnb,greenhouse,https://boards.greenhouse.io/airbnb
 Netflix,workday,https://netflix.wd5.myworkdayjobs.com/en-US/Netflix_External_Site
-QTS Data Centers,workday,https://qtsdatacenters.wd5.myworkdayjobs.com/en-US/QTS
-Vantage Data Centers,generic,https://careers.vantage-dc.com/
+QTS Data Centers,phenom_html,https://careers.qtsdatacenters.com/us/en/search-results
+Vantage Data Centers,workday,https://vantagedc.wd1.myworkdayjobs.com/en-US/Vantage
 CyrusOne,generic,https://www.cyrusone.com/company/careers
 STACK Infrastructure,generic,https://www.stackinfra.com/about/careers/
 Switch,generic,https://www.switch.com/careers/
@@ -132,38 +132,38 @@ Wells Fargo,generic,https://www.wellsfargojobs.com/en/jobs/
 Citi,workday,https://citi.wd5.myworkdayjobs.com/en-US/2
 BlackRock,generic,https://careers.blackrock.com/job-search-results/
 Blackstone,generic,https://www.blackstone.com/careers/careers-at-blackstone/
-CBRE,generic,https://careers.cbre.com/en_US/careers/SearchJobs
+CBRE,avature_html,https://careers.cbre.com/en_US/careers/SearchJobs/
 JLL,workday,https://jll.wd1.myworkdayjobs.com/en-US/jllcareers
 Brookfield,generic,https://www.brookfield.com/careers
 Prologis,generic,https://www.prologis.com/careers
 Related Companies,generic,https://careers.related.com/
-"Turner Construction Co., New York City, N.Y.†",csod,https://turnerconstruction.csod.com/ux/ats/careersite/2/home?c=turnerconstruction
-"Bechtel, Reston, Va.",phenom,https://jobs.bechtel.com/us/en
+"Turner Construction Co., New York City, N.Y.†",csod_api,https://turnerconstruction.csod.com/ux/ats/careersite/2/home?c=turnerconstruction
+"Bechtel, Reston, Va.",phenom_html,https://jobs.bechtel.com/us/en/search-results
 "STO Building Group, New York, N.Y.†",generic,https://stobuildinggroup.com/careers/
 "Kiewit Corp., Omaha, Neb.",kiewit,https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/
 "The Whiting-Turner Contracting Co., Baltimore, Md.",verified_listing,https://www.whiting-turner.com/careers/
 "MasTec Inc., Coral Gables, Fla.†",generic,https://www.mastec.com/careers
-"DPR Construction, Santa Clara, Calif.",generic,https://www.dpr.com/company/careers/current-positions?sort=latest
+"DPR Construction, Santa Clara, Calif.",dpr_har,https://www.dpr.com/company/careers/current-positions
 "HITT Contracting, Falls Church, Va.",generic,https://careers.hitt.com/
-"Fluor, Irving, Texas†",nlx,https://fluor.jobs/jobs/
-"Mortenson, Minneapolis, Minn.†",oracle_hcm,https://fa-esgu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs
-"Hensel Phelps, Greeley, Colo.",successfactors,https://careers.henselphelps.com/
+"Fluor, Irving, Texas†",browser_only,https://fluor.jobs/jobs/
+"Mortenson, Minneapolis, Minn.†",generic,https://www.mortenson.com/careers/search
+"Hensel Phelps, Greeley, Colo.",successfactors_api,https://careers.henselphelps.com/
 "Holder Construction Group, Atlanta, Ga.",greenhouse,https://job-boards.greenhouse.io/holderconstruction
 "McDermott International, Houston, Texas",generic,https://careers.mcdermott.com/
 "PCL Construction Enterprises Inc., Denver, Colo.†",generic,https://careers.pcl.com/
 "Clark Group, McLean, Va.",generic,https://www.clarkconstruction.com/build-your-career/search-apply
-"The Walsh Group, Chicago, Ill.",nlx,https://walshgroup.jobs/
-"Skanska USA, New York, N.Y.†",jibe,https://careers.usa.skanska.com/jobs
-"AECOM, Dallas, Texas",nlx,https://aecom.jobs/
+"The Walsh Group, Chicago, Ill.",browser_only,https://walshgroup.jobs/
+"Skanska USA, New York, N.Y.†",jibe_api,https://careers.usa.skanska.com/careers-home/jobs
+"AECOM, Dallas, Texas",browser_only,https://aecom.jobs/
 "Gilbane Building Co., Providence, R.I.†",generic,https://careers.gilbaneco.com/
 "Clayco, Chicago, Ill.",generic,https://claycorp.com/careers/
-"JE Dunn Construction Co., Kansas City, Mo.",successfactors,https://jobs.jedunn.com/
+"JE Dunn Construction Co., Kansas City, Mo.",successfactors_api,https://jobs.jedunn.com/
 "McCarthy Holdings Inc., St. Louis, Mo.",verified_listing,https://recruiting.mccarthy.com/
 "Suffolk Construction Co. Inc., Boston, Mass.†",verified_listing,https://suffolk.com/careers/job-opportunities/
-"Brasfield & Gorrie, Birmingham, Ala.",jibe,https://careers.brasfieldgorrie.com/jobs
+"Brasfield & Gorrie, Birmingham, Ala.",jibe_api,https://careers.brasfieldgorrie.com/jobs
 "FlatironDragados, Atlanta, Ga.†",generic,https://careers.flatironcorp.com/
 "Walbridge, Detroit, Mich.",generic,https://www.walbridge.com/careers/
-"Balfour Beatty US, Dallas, Texas†",dayforce,https://jobs.dayforcehcm.com/en-US/balfourbeatty/CANDIDATEPORTALBUILDINGCIVILS
+"Balfour Beatty US, Dallas, Texas†",browser_only,https://jobs.dayforcehcm.com/en-US/balfourbeatty/CANDIDATEPORTALBUILDINGCIVILS
 "Tutor Perini Corp., Sylmar, Calif.†",generic,https://careers.tutorperini.com/
 "The Yates Cos. Inc., Philadelphia, Miss.",generic,https://www.wgyates.com/careers/
 "Gray, Lexington, Ky.†",generic,https://www.gray.com/careers
@@ -171,14 +171,14 @@ Related Companies,generic,https://careers.related.com/
 "Swinerton Inc., Concord, Calif.",generic,https://www.swinerton.com/careers
 "Ryan Cos. US Inc., Minneapolis, Minn.",generic,https://www.ryancompanies.com/careers
 "ARCO Construction Cos., St. Louis, Mo.",verified_listing,https://arcoconstruction.com/careers/
-"Burns & McDonnell, Kansas City, Mo.†",nlx,https://burnsmcd.jobs/
+"Burns & McDonnell, Kansas City, Mo.†",browser_only,https://burnsmcd.jobs/
 "Consigli Building Group Inc., Milford, Mass.†",generic,https://www.consigli.com/careers/
 "Granite Construction Co., Watsonville, Calif.",generic,https://jobs.graniteconstruction.com/
 "Barton Malow Holdings LLC, Southfield, Mich.†",generic,https://www.bartonmalow.com/careers/
 "Michels, Brownsville, Wis.",generic,https://www.michels.us/careers/
 "Alberici-Flintco, St. Louis, Mo.†",generic,https://www.alberici.com/careers/
 "Austin Industries, Dallas, Texas",generic,https://www.austin-ind.com/careers
-"Sundt Construction Inc., Tempe, Ariz.",oracle_hcm,https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs
+"Sundt Construction Inc., Tempe, Ariz.",oracle_hcm_har,https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs
 "Moss, Fort Lauderdale, Fla.",generic,https://mosscm.com/careers/
 "Big-D Construction, Salt Lake City, Utah†",generic,https://www.big-d.com/careers/
 "Clune Construction, Chicago, Ill.",generic,https://www.clunegc.com/careers/
@@ -238,4 +238,4 @@ Related Companies,generic,https://careers.related.com/
 "Lane Industries Inc., Charlotte, N.C.",generic,https://www.laneconstruct.com/careers/
 "The Boldt Group, Appleton, Wis.",generic,https://www.boldt.com/careers/
 Lucid,generic,https://lucidmotors.com/careers/search
-Exyte,generic,https://www.exyte.net/Careers
+Exyte,phenom_html,https://careers.exyte.net/global/en/search-results

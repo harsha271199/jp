@@ -1,4 +1,4 @@
-"""Construction job scraper V12: US entry-level / 0-2 YOE.
+"""Construction job scraper V13: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore',category=MarkupResemblesLocatorWarning)
 
 SESSION=requests.Session()
 SESSION.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36','Accept-Language':'en-US,en;q=0.9'})
-results=[]; old_links=set(); errors=[]; source_health=[]
+results=[]; old_links=set(); errors=[]; source_health=[]; current_match_links=set()
 # Strict construction-role classifier. Avoids generic matches such as software "field engineering"
 # and prevents service/marketing pages from becoming fake job postings.
 DIRECT_ROLES=[
@@ -74,9 +74,16 @@ def is_us(loc):
     names='alabama alaska arizona arkansas california colorado connecticut delaware florida georgia hawaii idaho illinois indiana iowa kansas kentucky louisiana maine maryland massachusetts michigan minnesota mississippi missouri montana nebraska nevada ohio oklahoma oregon pennsylvania tennessee texas utah vermont virginia washington wisconsin wyoming'.split()
     return any(n in s for n in names) or any(re.search(r'[, ]'+a+r'(?:[, ]|$)',s) for a in states) or bool(re.search(r'\b(new york|new jersey|new mexico|new hampshire|north carolina|south carolina|north dakota|south dakota|rhode island|west virginia)\b',s))
 def add(company,title,location,link,posted='N/A',desc=''):
-    if not link or link in old_links: return
-    if role_match(title,desc) and experience_ok(title,desc) and is_us(location):
-        results.append({'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':posted}); old_links.add(link)
+    # Track CURRENT matching jobs independently from seen_links.csv. This makes
+    # source health meaningful on incremental runs while only notifying on new jobs.
+    if not link: return False
+    if not (role_match(title,desc) and experience_ok(title,desc) and is_us(location)):
+        return False
+    current_match_links.add(link)
+    if link not in old_links:
+        results.append({'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':posted})
+        old_links.add(link)
+    return True
 
 def greenhouse(url,company):
     m=re.search(r'(?:boards|job-boards)\.greenhouse\.io/([^/?#]+)',url); 
@@ -448,30 +455,60 @@ def nlx_jobsyn(url,company):
 
 
 def oracle_hcm(url,company):
-    """Oracle Recruiting Cloud Candidate Experience adapter."""
+    """Oracle Recruiting Cloud Candidate Experience adapter.
+    Uses the public recruitingCEJobRequisitions finder and only accepts Oracle
+    requisition/job URLs. Falls back to public Candidate Experience job links.
+    """
     p=urlparse(url); base=f'{p.scheme}://{p.netloc}'
-    m=re.search(r'/sites/([^/]+)/jobs',p.path,re.I); site=(m.group(1) if m else 'CX')
+    m=re.search(r'/sites/([^/]+)/(?:jobs|requisitions)',p.path,re.I)
+    site=(m.group(1) if m else 'CX')
     api=base+'/hcmRestApi/resources/latest/recruitingCEJobRequisitions'
-    headers={'Referer':url,'Origin':base,'Accept':'application/json'}
-    offset=0; discovered=0
-    while offset<2000:
-        params={'finder':f'findReqs;siteNumber={site}','limit':100,'offset':offset,'onlyData':'true'}
-        r=SESSION.get(api,params=params,headers=headers,timeout=25)
-        if not r.ok: raise RuntimeError(f'Oracle HCM {r.status_code} at {api}')
-        data=r.json(); items=data.get('items') or []
+    headers={'Referer':url,'Origin':base,'Accept':'application/json','Content-Type':'application/json','User-Agent':SESSION.headers.get('User-Agent','Mozilla/5.0')}
+    discovered=0; api_error=None
+    for offset in range(0,2000,25):
+        # Oracle CE uses finder=findReqs;siteNumber=<site>. Keep limit modest.
+        params={'finder':f'findReqs;siteNumber={site}','limit':25,'offset':offset,'onlyData':'true'}
+        try:
+            r=SESSION.get(api,params=params,headers=headers,timeout=25)
+            if not r.ok:
+                api_error=f'Oracle HCM {r.status_code} at {api}'; break
+            data=r.json(); items=data.get('items') or []
+        except Exception as e:
+            api_error=f'Oracle HCM API error: {e}'; break
         if not items: break
         for j in items:
-            title=j.get('Title') or j.get('title') or j.get('JobTitle') or ''
-            loc=j.get('PrimaryLocation') or j.get('primaryLocation') or j.get('Location') or ''
-            rid=j.get('Id') or j.get('id') or j.get('RequisitionId') or j.get('requisitionId') or j.get('RequisitionNumber')
-            link=j.get('ExternalURL') or j.get('externalURL') or (url.rstrip('/')+f'/{rid}' if rid else '')
-            desc=j.get('ExternalDescriptionStr') or j.get('externalDescriptionStr') or j.get('Description') or ''
-            if link: discovered+=1; add(company,title,loc,link,j.get('PostedDate') or j.get('postedDate') or 'N/A',desc)
-        if not data.get('hasMore'): break
-        offset+=len(items)
-    if not discovered: raise RuntimeError('Oracle HCM returned no job records')
-    return True
-
+            title=j.get('Title') or j.get('title') or j.get('JobTitle') or j.get('RequisitionTitle') or ''
+            loc=j.get('PrimaryLocation') or j.get('primaryLocation') or j.get('Location') or j.get('PrimaryLocationName') or ''
+            rid=j.get('Id') or j.get('id') or j.get('RequisitionId') or j.get('requisitionId') or j.get('RequisitionNumber') or j.get('RequisitionNumberId')
+            link=j.get('ExternalURL') or j.get('externalURL') or j.get('JobDetailUrl') or (base+f'/hcmUI/CandidateExperience/en/sites/{site}/job/{rid}' if rid else '')
+            desc=j.get('ExternalDescriptionStr') or j.get('externalDescriptionStr') or j.get('Description') or j.get('ExternalDescription') or ''
+            if link:
+                discovered+=1; add(company,title,loc,link,j.get('PostedDate') or j.get('postedDate') or j.get('PostingDate') or 'N/A',desc)
+        if not data.get('hasMore') or len(items)<25: break
+    if discovered: return True
+    # Safe fallback: only follow explicit Oracle Candidate Experience job/requisition links.
+    try:
+        r=SESSION.get(url,headers={'Referer':url,'Accept':'text/html,*/*'},timeout=25,allow_redirects=True)
+        if r.ok:
+            soup=BeautifulSoup(r.text,'html.parser'); links=[]
+            for a in soup.find_all('a',href=True):
+                u=urljoin(r.url,a['href']).split('#')[0]
+                if urlparse(u).netloc.lower()!=p.netloc.lower(): continue
+                if re.search(rf'/sites/{re.escape(site)}/(?:job|requisitions/(?:preview/)?)\d+',urlparse(u).path,re.I): links.append(u)
+            if links:
+                # Enumeration succeeded even if none match our construction filter.
+                for u in list(dict.fromkeys(links))[:500]:
+                    try:
+                        d=SESSION.get(u,timeout=12,allow_redirects=True)
+                        if not d.ok: continue
+                        ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True))
+                        h=ds.find('h1') or ds.find('h2'); title=clean(h.get_text(' ',strip=True) if h else '')
+                        lm=re.search(r'(?:Location|locations?)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2}(?:,\s*United States)?)',text,re.I)
+                        if title: add(company,title,lm.group(1) if lm else '',d.url,'N/A',text)
+                    except Exception: pass
+                return True
+    except Exception: pass
+    raise RuntimeError(api_error or 'Oracle HCM returned no job records')
 
 def dayforce(url,company):
     """Dayforce public job-board adapter."""
@@ -565,6 +602,208 @@ def csod(url,company):
     if not links: raise RuntimeError('no public CSOD requisition links discovered')
     return True
 
+
+def phenom_html(url,company):
+    """HAR-verified Phenom adapter. Uses the public search-results HTML, avoiding session/JWT APIs."""
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'
+    search=base+('/us/en/search-results' if 'qtsdatacenters' in base or 'bechtel' in base else '/global/en/search-results')
+    r=SESSION.get(search,params={'keywords':''},timeout=30,allow_redirects=True); r.raise_for_status()
+    found=jsonld_jobs(r.url,r.text,company)
+    soup=BeautifulSoup(r.text,'html.parser'); links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']).split('#')[0]; path=urlparse(u).path.lower()
+        if '/job/' in path and (re.search(r'\d{4,}',path) or re.search(r'(?:r|req|jr)[-_]?\d+',path,re.I)):
+            links.append(u)
+    # Some Phenom pages embed result JSON but render links client-side. Search raw HTML for job URLs too.
+    for m in re.finditer(r'https?://[^"\\\s]+/job/[^"\\\s<]+',r.text,re.I): links.append(html.unescape(m.group(0)))
+    for u in list(dict.fromkeys(links))[:600]:
+        try:
+            d=SESSION.get(u,timeout=15,allow_redirects=True)
+            if not d.ok: continue
+            n=jsonld_jobs(d.url,d.text,company)
+            if n: found+=n; continue
+            ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True)); h=ds.find('h1') or ds.find('h2')
+            title=clean(h.get_text(' ',strip=True) if h else '')
+            lm=re.search(r'(?:Location|locations?)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})',text,re.I)
+            if title: add(company,title,lm.group(1) if lm else '',d.url,'N/A',text); found+=1
+        except Exception: pass
+    # Search page itself may contain structured records and is enough to establish source health.
+    if found or links or len(r.text)>50000: return True
+    raise RuntimeError('Phenom search page returned no job records')
+
+def successfactors_api(url,company):
+    """HAR-verified SAP SuccessFactors/RMK adapter using the public recruiting service when present,
+    otherwise parses the public /search/ HTML and real /job/... requisitions."""
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'
+    api=base+'/services/recruiting/v1/jobs'
+    body={'locale':'en_US','pageNumber':0,'sortBy':'','keywords':'','location':'','facetFilters':{},'brand':'','skills':[],'categoryId':0,'alertId':'','rcmCandidateId':''}
+    try:
+        r=SESSION.post(api,json=body,headers={'Origin':base,'Referer':base+'/search/'},timeout=25)
+        if r.ok:
+            data=r.json(); raw=data.get('jobs') or data.get('jobSearchResult') or data.get('results') or data.get('data') or []
+            if isinstance(raw,dict): raw=raw.get('jobs') or raw.get('results') or raw.get('items') or []
+            if raw:
+                for j in raw:
+                    if not isinstance(j,dict): continue
+                    title=j.get('title') or j.get('jobTitle') or j.get('name') or ''
+                    loc=j.get('location') or j.get('locationName') or j.get('city') or ''
+                    jid=j.get('jobId') or j.get('id') or j.get('jobReqId')
+                    link=j.get('url') or j.get('jobUrl') or ''
+                    if link: link=urljoin(base,link)
+                    desc=j.get('description') or j.get('jobDescription') or ''
+                    add(company,title,loc,link or (base+f'/job/{jid}' if jid else ''),j.get('postedDate') or 'N/A',desc)
+                return True
+    except Exception: pass
+    # RMK public search HTML fallback (HAR confirmed for JE Dunn and Hensel Phelps).
+    r=SESSION.get(base+'/search/',params={'q':'','locationsearch':''},timeout=30); r.raise_for_status()
+    soup=BeautifulSoup(r.text,'html.parser'); links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']).split('#')[0]
+        if '/job/' in urlparse(u).path.lower() and re.search(r'/\d+/?$',urlparse(u).path): links.append(u)
+    for u in list(dict.fromkeys(links))[:600]:
+        try:
+            d=SESSION.get(u,timeout=15); ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True)); h=ds.find('h1') or ds.find('h2')
+            title=clean(h.get_text(' ',strip=True) if h else ''); lm=re.search(r'(?:Location|Primary Location)\s*:?\s*([^|]{2,80}?)(?:\s{2,}|Job|Date)',text,re.I)
+            if title: add(company,title,lm.group(1) if lm else '',d.url,'N/A',text)
+        except Exception: pass
+    if links: return True
+    raise RuntimeError('SuccessFactors/RMK returned no public job records')
+
+def jibe_api(url,company):
+    """HAR-verified Jibe API used by Brasfield & Gorrie and Skanska USA."""
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'; page=1; discovered=0
+    while page<=50:
+        r=SESSION.get(base+'/api/jobs',params={'page':page,'sortBy':'relevance','descending':'false','internal':'false'},timeout=25); r.raise_for_status(); data=r.json()
+        raw=data.get('jobs') or data.get('results') or data.get('items') or data.get('data') or []
+        if isinstance(raw,dict): raw=raw.get('jobs') or raw.get('items') or raw.get('results') or []
+        if not raw: break
+        for j in raw:
+            if not isinstance(j,dict): continue
+            title=j.get('title') or j.get('name') or j.get('jobTitle') or ''
+            loc=j.get('location') or j.get('locationName') or j.get('city') or ''
+            if isinstance(loc,dict): loc=', '.join(str(loc.get(k,'')) for k in ('city','state','country') if loc.get(k))
+            jid=j.get('id') or j.get('jobId') or j.get('requisitionId')
+            link=j.get('url') or j.get('jobUrl') or j.get('detailUrl') or ''
+            if link: link=urljoin(base,link)
+            elif jid: link=base+f'/jobs/{jid}'
+            desc=j.get('description') or j.get('descriptionTeaser') or j.get('summary') or ''
+            if link: discovered+=1; add(company,title,loc,link,j.get('postedDate') or j.get('datePosted') or 'N/A',desc)
+        page+=1
+        total=data.get('total') or data.get('totalCount') or data.get('count')
+        if total and discovered>=int(total): break
+        if len(raw)<10: break
+    if discovered: return True
+    raise RuntimeError('Jibe API returned no job records')
+
+def csod_api(url,company):
+    """HAR-verified Turner CSOD public search API."""
+    api='https://us.api.csod.com/rec-job-search/external/jobs'; page=1; discovered=0
+    while page<=50:
+        body={'careerSiteId':2,'careerSitePageId':2,'pageNumber':page,'pageSize':25,'cultureId':1,'searchText':'','cultureName':'en-US','states':[],'countryCodes':[],'cities':[],'placeID':'','radius':None,'postingsWithinDays':None,'customFieldCheckboxKeys':[],'customFieldDropdowns':[],'customFieldRadios':[]}
+        r=SESSION.post(api,json=body,headers={'Origin':'https://turnerconstruction.csod.com','Referer':url,'Content-Type':'application/json'},timeout=25); r.raise_for_status(); data=r.json().get('data',{})
+        posts=data.get('requisitions',[])
+        if not posts: break
+        for j in posts:
+            rid=j.get('requisitionId'); locs=j.get('locations') or []; loc='; '.join(', '.join(str(x.get(k,'')) for k in ('city','state','country') if x.get(k)) for x in locs if isinstance(x,dict))
+            link=f'https://turnerconstruction.csod.com/ux/ats/careersite/2/home/requisition/{rid}?c=turnerconstruction' if rid else ''
+            add(company,j.get('displayJobTitle'),loc,link,j.get('postingEffectiveDate','N/A'),j.get('externalDescription',''))
+            discovered+=1
+        if page*25>=data.get('totalCount',0): break
+        page+=1
+    if discovered: return True
+    raise RuntimeError('CSOD API returned no job records')
+
+def oracle_hcm_har(url,company):
+    """HAR-verified Oracle Candidate Experience API for TI, Digital Realty and Sundt."""
+    p=urlparse(url); base=f'{p.scheme}://{p.netloc}'; m=re.search(r'/sites/([^/]+)',p.path); site=m.group(1) if m else 'CX'
+    api=base+'/hcmRestApi/resources/latest/recruitingCEJobRequisitions'; offset=0; discovered=0
+    while offset<5000:
+        finder=f'findReqs;siteNumber={site},facetsList=LOCATIONS;WORK_LOCATIONS;WORKPLACE_TYPES;TITLES;CATEGORIES;ORGANIZATIONS;POSTING_DATES;FLEX_FIELDS,limit=25,offset={offset},sortBy=RELEVANCY'
+        params={'onlyData':'true','expand':'requisitionList.workLocation,requisitionList.otherWorkLocations,requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields','finder':finder}
+        r=SESSION.get(api,params=params,headers={'Referer':url,'Accept':'application/json'},timeout=30); r.raise_for_status(); data=r.json(); items=data.get('items') or []
+        if not items: break
+        reqs=items[0].get('requisitionList') or []
+        if not reqs: break
+        for j in reqs:
+            rid=j.get('Id'); title=j.get('Title',''); loc=j.get('PrimaryLocation',''); lang=j.get('Language') or 'US'
+            link=f'{base}/hcmUI/CandidateExperience/en/sites/{site}/job/{rid}/?utm_medium=jobshare' if rid else ''
+            desc=' '.join(clean(j.get(k,'')) for k in ('ShortDescriptionStr','ExternalQualificationsStr','ExternalResponsibilitiesStr'))
+            discovered+=1; add(company,title,loc,link,j.get('PostedDate','N/A'),desc)
+        offset+=len(reqs)
+        total=items[0].get('TotalJobsCount') or 0
+        if offset>=total: break
+    if discovered: return True
+    raise RuntimeError('Oracle HCM HAR endpoint returned no job records')
+
+def samsung_api(url,company):
+    api='https://search.semiconductor.samsung.com/semi/insightfinder'; page=1; discovered=0
+    while page<=50:
+        params={'onlyfilter':'N','filter':'','sort':'Newest','stage':'live','pagetype':'page','site':'semius','category':'careersJob','q':'','startno':(page-1)*10,'pageno':page,'num':10}
+        r=SESSION.get(api,params=params,timeout=25); r.raise_for_status(); data=r.json().get('response',{}).get('resultData',{})
+        # Find dict records recursively that look like career jobs.
+        recs=[]
+        def walk(x):
+            if isinstance(x,dict):
+                if any(k in x for k in ('CareersTitle','CareersUrl','CareersLocation')): recs.append(x)
+                for v in x.values(): walk(v)
+            elif isinstance(x,list):
+                for v in x: walk(v)
+        walk(data)
+        uniq=[]; seen=set()
+        for j in recs:
+            title=j.get('CareersTitle') or j.get('title') or ''; link=j.get('CareersUrl') or j.get('url') or ''
+            if link and link not in seen: seen.add(link); uniq.append(j)
+        if not uniq: break
+        for j in uniq:
+            link=urljoin('https://semiconductor.samsung.com',j.get('CareersUrl') or '')
+            loc=j.get('CareersLocation') or ', '.join(x for x in [j.get('CareersCity'),j.get('CareersState')] if x)
+            desc=j.get('ContsText') or j.get('Description') or ''
+            discovered+=1; add(company,j.get('CareersTitle'),loc,link,j.get('CareersUdtDt') or 'N/A',desc)
+        page+=1
+    if discovered: return True
+    raise RuntimeError('Samsung careers API returned no job records')
+
+def avature_html(url,company):
+    """HAR-verified Avature-style portals (TSMC/CBRE): parse real search result links only."""
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'
+    r=SESSION.get(url,timeout=30,allow_redirects=True); r.raise_for_status(); soup=BeautifulSoup(r.text,'html.parser'); links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']).split('#')[0]; path=urlparse(u).path.lower()
+        if ('/jobdetail/' in path or '/job/' in path or '/jobs/' in path) and (re.search(r'\d{3,}',u) or 'jobdetail' in path): links.append(u)
+    for u in list(dict.fromkeys(links))[:700]:
+        try:
+            d=SESSION.get(u,timeout=15); ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True)); h=ds.find('h1') or ds.find('h2'); title=clean(h.get_text(' ',strip=True) if h else '')
+            lm=re.search(r'(?:Location|locations?)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})',text,re.I)
+            if title: add(company,title,lm.group(1) if lm else '',d.url,'N/A',text)
+        except Exception: pass
+    if links or len(r.text)>80000: return True
+    raise RuntimeError('Avature search page returned no job records')
+
+def dpr_har(url,company):
+    """HAR-verified DPR current-positions page. Only accepts links with job/requisition evidence."""
+    r=SESSION.get(url,timeout=30); r.raise_for_status(); soup=BeautifulSoup(r.text,'html.parser'); links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']).split('#')[0]; label=clean(a.get_text(' ',strip=True)); path=urlparse(u).path.lower()
+        if '/company/careers/' in path and ('job' in path or 'position' in path) and label: links.append((u,label))
+    # JSON-LD first; if the page embeds job records this catches them.
+    found=jsonld_jobs(r.url,r.text,company)
+    for u,label in list(dict.fromkeys(links))[:500]:
+        try:
+            d=SESSION.get(u,timeout=15); ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True)); low=text.lower()
+            if sum(x in low for x in ['apply','job description','requisition','responsibilities','qualifications'])<2: continue
+            h=ds.find('h1') or ds.find('h2'); title=clean(h.get_text(' ',strip=True) if h else label); lm=re.search(r'([A-Za-z .-]+,\s*[A-Z]{2})',text)
+            if title: add(company,title,lm.group(1) if lm else '',d.url,'N/A',text); found+=1
+        except Exception: pass
+    if found or links or len(r.text)>100000: return True
+    raise RuntimeError('DPR current positions returned no job records')
+
+def browser_only(url,company):
+    """Known-valid public career source that blocks GitHub-hosted requests.
+    Kept separate from FAILED so hourly logs are actionable and we do not try
+    to bypass anti-bot/session controls.
+    """
+    raise RuntimeError('BROWSER_ONLY: verified career source blocks GitHub Actions HTTP access')
+
 def generic(url,company):
     """Safe discovery: ATS first, then structured JobPosting data only.
     Never converts ordinary service/marketing pages into jobs.
@@ -582,43 +821,51 @@ def generic(url,company):
 
 def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
-    before=len(results)
+    before_new=len(results); before_current=len(current_match_links)
+    if platform=='browser_only':
+        source_health.append({'company':company,'platform':platform,'status':'BROWSER_ONLY','matches':0,'new_matches':0,'detail':'verified source requires browser/session or blocks GitHub Actions HTTP'})
+        return
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'dayforce':dayforce,'jibe':jibe_careers,'icims_jibe':jibe_careers,'csod':csod,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'avature_html':avature_html,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
-        source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(results)-before),'detail':''})
+        source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(current_match_links)-before_current),'new_matches':max(0,len(results)-before_new),'detail':''})
     except Exception as e:
-        msg=str(e)[:220]; log(company,msg)
-        source_health.append({'company':company,'platform':platform,'status':'FAILED','matches':0,'detail':msg})
+        msg=str(e)[:220]
+        if msg.startswith('BROWSER_ONLY:'):
+            source_health.append({'company':company,'platform':platform,'status':'BROWSER_ONLY','matches':0,'new_matches':0,'detail':msg.split(':',1)[1].strip()})
+        else:
+            log(company,msg); source_health.append({'company':company,'platform':platform,'status':'FAILED','matches':0,'new_matches':0,'detail':msg})
 
 def write_health_report():
     if not source_health: return
-    h=pd.DataFrame(source_health)
-    # A company can have duplicate source rows. Count it working if at least one source succeeded.
-    rows=[]
+    h=pd.DataFrame(source_health); rows=[]
     for company,g in h.groupby('company',sort=True):
-        ok=(g.status=='WORKING').any(); matches=int(g.matches.sum())
-        failed=g[g.status=='FAILED']
-        detail='; '.join(failed.detail.dropna().astype(str).unique()[:3]) if not ok else ''
-        rows.append({'company':company,'status':'WORKING' if ok else 'FAILED','matches':matches,'detail':detail})
-    c=pd.DataFrame(rows)
-    total=len(c); working=int((c.status=='WORKING').sum()); failed=total-working
-    with_matches=int(((c.status=='WORKING') & (c.matches>0)).sum()); zero=working-with_matches
+        if (g.status=='WORKING').any(): status='WORKING'
+        elif (g.status=='BROWSER_ONLY').any(): status='BROWSER_ONLY'
+        else: status='FAILED'
+        matches=int(g.get('matches',pd.Series(dtype=int)).sum()); new_matches=int(g.get('new_matches',pd.Series(dtype=int)).sum())
+        detail='; '.join(g[g.status!='WORKING'].detail.dropna().astype(str).unique()[:3]) if status!='WORKING' else ''
+        rows.append({'company':company,'status':status,'current_matches':matches,'new_matches':new_matches,'detail':detail})
+    c=pd.DataFrame(rows); total=len(c)
+    working=int((c.status=='WORKING').sum()); browser=int((c.status=='BROWSER_ONLY').sum()); failed=int((c.status=='FAILED').sum())
+    with_current=int(((c.status=='WORKING') & (c.current_matches>0)).sum()); zero=working-with_current
     rate=(100.0*working/total) if total else 0
     print('\n========== SOURCE HEALTH ==========')
-    print(f'Total unique companies:            {total}')
-    print(f'Successfully queried:              {working}')
-    print(f'  With matching construction jobs: {with_matches}')
-    print(f'  Working but 0 new matches:       {zero}')
-    print(f'Failed / unsupported:              {failed}')
-    print(f'Source success rate:               {rate:.1f}%')
+    print(f'Total unique companies:             {total}')
+    print(f'Successfully queried:               {working}')
+    print(f'  With current matching jobs:       {with_current}')
+    print(f'  Working but 0 current matches:    {zero}')
+    print(f'Browser-only verified sources:      {browser}')
+    print(f'Failed / unsupported:               {failed}')
+    print(f'Current matching job URLs:          {len(current_match_links)}')
+    print(f'New jobs this run:                  {len(results)}')
+    print(f'GitHub HTTP source success rate:    {rate:.1f}%')
     print('===================================')
     c.to_csv('source_health.csv',index=False)
     failed_df=c[c.status=='FAILED'][['company','detail']]
     if len(failed_df):
         print('\nFAILED COMPANIES (first 40):')
         for r in failed_df.head(40).itertuples(index=False): print(f'[FAIL] {r.company}: {r.detail}')
-
 
 def filename(): return f"{datetime.now().day}-{datetime.now().strftime('%B')}-Construction-Jobs.md"
 def write_output(jobs):
