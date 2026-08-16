@@ -376,6 +376,118 @@ def verified_listing(url,company):
         return True
     raise RuntimeError('no verified job-detail records discovered')
 
+
+def eightfold(url,company):
+    """Eightfold public careers adapter. Tries the two public search shapes observed on live Eightfold sites."""
+    p=urlparse(url); base=f'{p.scheme}://{p.netloc}'; domain=p.netloc.lower().removeprefix('careers.').removeprefix('www.')
+    headers={'Referer':url,'Origin':base,'Accept':'application/json, text/plain, */*'}
+    payloads=[]
+    # Common Eightfold apply API.
+    try:
+        r=SESSION.get(base+'/api/apply/v2/jobs',params={'domain':domain,'start':0,'num':100,'sort_by':'hot'},headers=headers,timeout=25)
+        if r.ok:
+            data=r.json(); payloads.extend(data.get('positions') or data.get('jobs') or data.get('data') or [])
+    except Exception: pass
+    # Newer PCS search API used by some tenants.
+    if not payloads:
+        try:
+            r=SESSION.get(base+'/api/pcsx/search',params={'domain':domain,'start':0,'num':100,'sort_by':'hot'},headers=headers,timeout=25)
+            if r.ok:
+                data=r.json(); payloads.extend(data.get('positions') or data.get('jobs') or data.get('data') or [])
+        except Exception: pass
+    if not payloads: raise RuntimeError('Eightfold public search returned no job records')
+    for j in payloads:
+        if not isinstance(j,dict): continue
+        title=j.get('name') or j.get('title') or j.get('position_name') or ''
+        loc=j.get('location') or j.get('locations') or j.get('location_name') or ''
+        if isinstance(loc,list): loc='; '.join(clean(x.get('name') if isinstance(x,dict) else x) for x in loc)
+        if isinstance(loc,dict): loc=loc.get('name') or ', '.join(str(loc.get(k,'')) for k in ('city','state','country') if loc.get(k))
+        pid=j.get('id') or j.get('pid') or j.get('position_id')
+        link=j.get('url') or j.get('job_url') or (f'{base}/careers?pid={pid}' if pid else '')
+        desc=j.get('description') or j.get('job_description') or j.get('description_text') or ''
+        add(company,title,loc,link,j.get('posted_date') or j.get('datePosted') or 'N/A',desc)
+    return True
+
+
+def nlx_jobsyn(url,company):
+    """NLX/jobsyn Solr adapter used by AECOM, Fluor, Burns & McDonnell and Walsh."""
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'
+    headers={'Referer':url,'Origin':base,'Accept':'application/json, text/plain, */*'}
+    discovered=0
+    for page in range(1,41):
+        r=SESSION.get('https://prod-search-api.jobsyn.org/api/v1/solr/search',params={'page':page,'num_items':100},headers=headers,timeout=25)
+        if r.status_code in (401,403): raise RuntimeError(f'NLX/jobsyn blocked ({r.status_code})')
+        r.raise_for_status(); data=r.json()
+        posts=data.get('jobs') or data.get('results') or data.get('response',{}).get('docs') or data.get('data') or []
+        if isinstance(posts,dict): posts=posts.get('jobs') or posts.get('results') or []
+        if not posts: break
+        for j in posts:
+            if not isinstance(j,dict): continue
+            # jobsyn is multi-tenant; only keep records belonging to this career-site host/company.
+            link=j.get('url') or j.get('job_url') or j.get('apply_url') or j.get('seo_url') or ''
+            cname=clean(j.get('company') or j.get('company_name') or j.get('employer') or '')
+            if link and urlparse(link).netloc and urlparse(link).netloc.lower()!=urlparse(url).netloc.lower():
+                if cname and clean(company).split(',')[0].lower() not in cname.lower(): continue
+            title=j.get('title') or j.get('job_title') or j.get('name') or ''
+            loc=j.get('location') or j.get('formatted_location') or j.get('city_state') or ''
+            desc=j.get('description') or j.get('job_description') or j.get('snippet') or ''
+            if link: discovered+=1; add(company,title,loc,link,j.get('date_posted') or j.get('posted') or 'N/A',desc)
+        if len(posts)<100: break
+    if not discovered: raise RuntimeError('NLX/jobsyn returned no verified records for company')
+    return True
+
+
+def oracle_hcm(url,company):
+    """Oracle Recruiting Cloud Candidate Experience adapter."""
+    p=urlparse(url); base=f'{p.scheme}://{p.netloc}'
+    m=re.search(r'/sites/([^/]+)/jobs',p.path,re.I); site=(m.group(1) if m else 'CX')
+    api=base+'/hcmRestApi/resources/latest/recruitingCEJobRequisitions'
+    headers={'Referer':url,'Origin':base,'Accept':'application/json'}
+    offset=0; discovered=0
+    while offset<2000:
+        params={'finder':f'findReqs;siteNumber={site}','limit':100,'offset':offset,'onlyData':'true'}
+        r=SESSION.get(api,params=params,headers=headers,timeout=25)
+        if not r.ok: raise RuntimeError(f'Oracle HCM {r.status_code} at {api}')
+        data=r.json(); items=data.get('items') or []
+        if not items: break
+        for j in items:
+            title=j.get('Title') or j.get('title') or j.get('JobTitle') or ''
+            loc=j.get('PrimaryLocation') or j.get('primaryLocation') or j.get('Location') or ''
+            rid=j.get('Id') or j.get('id') or j.get('RequisitionId') or j.get('requisitionId') or j.get('RequisitionNumber')
+            link=j.get('ExternalURL') or j.get('externalURL') or (url.rstrip('/')+f'/{rid}' if rid else '')
+            desc=j.get('ExternalDescriptionStr') or j.get('externalDescriptionStr') or j.get('Description') or ''
+            if link: discovered+=1; add(company,title,loc,link,j.get('PostedDate') or j.get('postedDate') or 'N/A',desc)
+        if not data.get('hasMore'): break
+        offset+=len(items)
+    if not discovered: raise RuntimeError('Oracle HCM returned no job records')
+    return True
+
+
+def dayforce(url,company):
+    """Dayforce public job-board adapter."""
+    p=urlparse(url); base=f'{p.scheme}://{p.netloc}'
+    ns='balfourbeatty' if 'balfour' in company.lower() else ''
+    board='CANDIDATEPORTALBUILDINGCIVILS' if 'balfour' in company.lower() else ''
+    if not ns or not board: raise RuntimeError('Dayforce namespace/jobBoardCode not configured')
+    api=f'{base}/api/geo/{ns}/jobposting/search'; start=0; discovered=0
+    headers={'Referer':url,'Origin':base,'Accept':'application/json','Content-Type':'application/json'}
+    while start<2000:
+        body={'clientNamespace':ns,'jobBoardCode':board,'cultureCode':'en-US','distanceUnit':0,'paginationStart':start}
+        r=SESSION.post(api,json=body,headers=headers,timeout=25); r.raise_for_status(); data=r.json()
+        posts=data.get('Items') or data.get('items') or data.get('JobPostings') or data.get('jobPostings') or []
+        if not posts: break
+        for j in posts:
+            title=j.get('Title') or j.get('title') or ''
+            loc=j.get('Location') or j.get('location') or j.get('LocationDescription') or ''
+            jid=j.get('JobPostingId') or j.get('jobPostingId') or j.get('Id') or j.get('id')
+            link=j.get('Url') or j.get('url') or (f'{base}/{ns}/CandidatePortal/en-US/{board}/Posting/View/{jid}' if jid else '')
+            desc=j.get('Description') or j.get('description') or ''
+            if link: discovered+=1; add(company,title,loc,link,j.get('PostedDate') or 'N/A',desc)
+        start+=len(posts)
+        if len(posts)<20: break
+    if not discovered: raise RuntimeError('Dayforce returned no job records')
+    return True
+
 def generic(url,company):
     """Safe discovery: ATS first, then structured JobPosting data only.
     Never converts ordinary service/marketing pages into jobs.
@@ -395,7 +507,7 @@ def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
     before=len(results)
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'verified_listing':verified_listing,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'dayforce':dayforce,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
         source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(results)-before),'detail':''})
     except Exception as e:

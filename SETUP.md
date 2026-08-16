@@ -1,8 +1,10 @@
-# V10 test
+# V11 test instructions
 
-1. Replace `job_scraper.py` and `companies.csv` in the existing repo.
-2. Keep the current workflow YAML.
-3. Keep `seen_links.csv` and the existing Markdown history. Do not delete them.
-4. Run the workflow manually once.
-5. Compare SOURCE HEALTH against the prior baseline (62/240 working).
-6. Inspect any new jobs before sharing the project.
+1. Replace `job_scraper.py`, `companies.csv`, `requirements.txt`, `README.md`, and `SETUP.md` in the test repository.
+2. Keep the existing `.github/workflows/scrape.yml`.
+3. Keep `seen_links.csv` -- do not delete it.
+4. Keep the existing `*-Construction-Jobs.md` history.
+5. Run the workflow manually once.
+6. Capture the complete `SOURCE HEALTH` block and warnings.
+
+A source is counted WORKING only when its configured adapter completes successfully. New-job count is incremental because `seen_links.csv` is retained.
