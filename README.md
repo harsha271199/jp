@@ -1,12 +1,9 @@
-# Construction Job Scraper V9
+# Construction Entry-Level Jobs — August 16, 2026
+> US construction/civil roles; rejects explicit required minimum experience above 2 years.
 
-Stable V7/V8 base plus verified adapters for high-value construction employers.
+## Batch 2026-08-16 01:13 — 1 new jobs
 
-## V9 changes
-- Dedicated Kiewit Entry-Level adapter (official Kiewit Entry Level board).
-- Dedicated DPR current-positions adapter.
-- Hensel Phelps mapped to its official SAP SuccessFactors careers site.
-- Keeps strict US construction + 0-2 YOE filtering and source_health.csv.
-- Keeps working ATS adapters unchanged.
+| Company | Location | Role | Apply | Posted |
+|---|---|---|---|---|
+| **DPR Construction, Santa Clara, Calif.** | N/A | Preconstruction | [Apply](https://www.dpr.com/construction/expertise/preconstruction) | N/A |
 
-Do not delete `seen_links.csv` during normal use. Delete it only for an intentional clean-baseline test.
