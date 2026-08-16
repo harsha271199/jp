@@ -1,7 +1,7 @@
 """Construction job scraper: US entry-level / 0-2 YOE.
-Supports Greenhouse, Lever, Ashby, Workday and generic/static career pages.
+Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
-import os,re,html,time,warnings
+import os,re,html,time,warnings,json
 from pathlib import Path
 from datetime import datetime
 from urllib.parse import urljoin,urlparse
@@ -100,7 +100,7 @@ def workday(url,company):
     if not hm: return False
     sub,wd=hm.groups(); parts=[x for x in p.path.split('/') if x and x.lower() not in ('en-us','en_us','en')]
     if not parts: return False
-    site=parts[0]; api=f'https://{sub}.{wd}.myworkdayjobs.com/wday/cxs/{sub}/{site}/jobs'; headers={'Content-Type':'application/json','Accept':'application/json'}
+    site=parts[0]; api=f'https://{sub}.{wd}.myworkdayjobs.com/wday/cxs/{sub}/{site}/jobs'; headers={'Content-Type':'application/json','Accept':'application/json','Origin':f'https://{host}','Referer':url,'Accept-Language':'en-US,en;q=0.9'}
     offset=0
     while offset<1000:
         r=SESSION.post(api,json={'appliedFacets':{},'limit':20,'offset':offset,'searchText':''},headers=headers,timeout=20)
@@ -119,6 +119,72 @@ def workday(url,company):
         if offset>=data.get('total',0): break
     return True
 
+def smartrecruiters(url,company):
+    m=re.search(r'(?:jobs\.smartrecruiters\.com|careers\.smartrecruiters\.com)/([^/?#]+)',url,re.I)
+    if not m: return False
+    org=m.group(1); off=0
+    while off<1000:
+        r=SESSION.get(f'https://api.smartrecruiters.com/v1/companies/{org}/postings',params={'limit':100,'offset':off},timeout=20); r.raise_for_status(); data=r.json()
+        posts=data.get('content',[])
+        if not posts: break
+        for j in posts:
+            loc=j.get('location') or {}; location=', '.join(str(loc.get(x,'')) for x in ('city','region','country') if loc.get(x))
+            jid=j.get('id'); link=f'https://jobs.smartrecruiters.com/{org}/{jid}' if jid else j.get('ref')
+            desc=''
+            if jid:
+                try:
+                    d=SESSION.get(f'https://api.smartrecruiters.com/v1/companies/{org}/postings/{jid}',timeout=12)
+                    if d.ok:
+                        dj=d.json(); desc=' '.join(clean(x.get('text','')) for x in (dj.get('jobAd',{}).get('sections',{}) or {}).values() if isinstance(x,dict))
+                except Exception: pass
+            add(company,j.get('name'),location,link,j.get('releasedDate','N/A'),desc)
+        off+=len(posts)
+        if off>=data.get('totalFound',0): break
+    return True
+
+def jsonld_jobs(base,text,company):
+    soup=BeautifulSoup(text,'html.parser'); count=0
+    for tag in soup.find_all('script',type=lambda x:x and 'ld+json' in x.lower()):
+        try: data=json.loads(tag.string or tag.get_text() or '{}')
+        except Exception: continue
+        stack=data if isinstance(data,list) else [data]
+        for obj in stack:
+            if isinstance(obj,dict) and '@graph' in obj and isinstance(obj['@graph'],list): stack.extend(obj['@graph'])
+            if not isinstance(obj,dict) or str(obj.get('@type','')).lower()!='jobposting': continue
+            title=obj.get('title',''); desc=obj.get('description',''); link=obj.get('url') or base
+            loc=''
+            jl=obj.get('jobLocation') or []
+            if isinstance(jl,dict): jl=[jl]
+            bits=[]
+            for item in jl:
+                a=(item or {}).get('address',{}) if isinstance(item,dict) else {}
+                if isinstance(a,dict): bits.append(', '.join(str(a.get(k,'')) for k in ('addressLocality','addressRegion','addressCountry') if a.get(k)))
+            loc='; '.join(x for x in bits if x)
+            add(company,title,loc,link,obj.get('datePosted','N/A'),desc); count+=1
+    return count
+
+def safe_job_links(base,text):
+    soup=BeautifulSoup(text,'html.parser'); out=[]
+    host=urlparse(base).netloc.lower()
+    pats=[r'/job/[^?#]+',r'/jobs/[^/?#]*\d[^?#]*',r'/careers/(?:job|position)/[^?#]+',r'/positions/[^?#]*\d[^?#]*']
+    for a in soup.find_all('a',href=True):
+        u=urljoin(base,a['href']); pu=urlparse(u)
+        if pu.netloc.lower()!=host: continue
+        if any(re.search(p,pu.path,re.I) for p in pats): out.append(u.split('#')[0])
+    return list(dict.fromkeys(out))[:300]
+
+def crawl_search_page(url,company):
+    r=SESSION.get(url,timeout=25,allow_redirects=True); r.raise_for_status()
+    found=jsonld_jobs(r.url,r.text,company)
+    links=safe_job_links(r.url,r.text)
+    # Only fetch URLs that structurally look like job-detail pages. This prevents service pages from becoming jobs.
+    for u in links[:160]:
+        try:
+            d=SESSION.get(u,timeout=12,allow_redirects=True)
+            if d.ok: found+=jsonld_jobs(d.url,d.text,company)
+        except Exception: pass
+    return found
+
 def ats_from_links(base,text):
     soup=BeautifulSoup(text,'html.parser')
     links=[urljoin(base,a.get('href')) for a in soup.find_all('a',href=True)]
@@ -127,26 +193,28 @@ def ats_from_links(base,text):
         if re.search(r'jobs\.lever\.co/[^/?#]+',u): return 'lever',u
         if re.search(r'jobs\.ashbyhq\.com/[^/?#]+',u): return 'ashby',u
         if re.search(r'\.wd\d+\.myworkdayjobs\.com/',u): return 'workday',u
+        if re.search(r'(?:jobs|careers)\.smartrecruiters\.com/[^/?#]+',u): return 'smartrecruiters',u
     return None,None
 
 def generic(url,company):
-    """Discover a supported ATS from a public careers page.
-    Never treats arbitrary website links as jobs; this prevents service pages such as
-    /preconstruction or /quality-control from appearing in results.
+    """Safe discovery: ATS first, then structured JobPosting data only.
+    Never converts ordinary service/marketing pages into jobs.
     """
-    r=SESSION.get(url,timeout=20,allow_redirects=True)
+    r=SESSION.get(url,timeout=25,allow_redirects=True)
     if r.status_code in (401,403,406,429):
-        raise RuntimeError(f'public careers page blocked ({r.status_code}); direct ATS mapping needed')
+        raise RuntimeError(f'public careers page blocked ({r.status_code}); direct source adapter needed')
     r.raise_for_status()
     plat,ats=ats_from_links(r.url,r.text)
     if plat:
-        return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday}[plat](ats,company)
-    raise RuntimeError('no supported ATS discovered; direct ATS mapping needed')
+        return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters}[plat](ats,company)
+    n=crawl_search_page(r.url,company)
+    if n: return True
+    raise RuntimeError('no supported ATS or structured JobPosting data discovered')
 
 def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
     except Exception as e: log(company,e)
 

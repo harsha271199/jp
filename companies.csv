@@ -8,24 +8,22 @@ Amazon / AWS,workday,https://amazon.wd5.myworkdayjobs.com/en-US/External
 Meta,generic,https://www.metacareers.com/jobs/
 NVIDIA,workday,https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite
 OpenAI,ashby,https://jobs.ashbyhq.com/openai
-TSMC,generic,https://www.tsmc.com/static/english/careers/index.htm
+TSMC,generic,https://careers.tsmc.com/
 Intel,workday,https://intel.wd1.myworkdayjobs.com/en-US/External
 Micron Technology,generic,https://careers.micron.com/
-Applied Materials,generic,https://jobs.appliedmaterials.com/search-jobs
+Applied Materials,generic,https://jobs.appliedmaterials.com/location/united-states-jobs/95/6252001/2
 Lam Research,generic,https://opportunities.lamresearch.com/
 ASML,generic,https://www.asml.com/en/careers/find-your-job
 Samsung Electronics,generic,https://www.samsungcareers.com/
 Broadcom,workday,https://broadcom.wd1.myworkdayjobs.com/en-US/External_Career
-AMD,workday,https://amd.wd1.myworkdayjobs.com/en-US/AMD
-Equinix,generic,https://careers.equinix.com/jobs
+AMD,generic,https://careers.amd.com/careers-home/
+Equinix,generic,https://careers.equinix.com/jobs/search?country_codes%5B%5D=US&page=1&query=
 Digital Realty,generic,https://careers.digitalrealty.com/
 Qualcomm,workday,https://qualcomm.wd5.myworkdayjobs.com/en-US/External
 Texas Instruments,generic,https://careers.ti.com/
 GlobalFoundries,generic,https://gf.com/careers/
 Marvell Technology,generic,https://www.marvell.com/company/careers.html
 KLA Corporation,generic,https://www.kla.com/careers
-Lam Research,generic,https://opportunities.lamresearch.com/
-Applied Materials,generic,https://jobs.appliedmaterials.com/search-jobs
 ASM International,generic,https://www.asm.com/careers/
 Tokyo Electron,generic,https://www.tel.com/careers/
 Western Digital,generic,https://jobs.smartrecruiters.com/WesternDigital
@@ -87,8 +85,6 @@ ByteDance,greenhouse,https://boards.greenhouse.io/bytedance
 Uber,generic,https://www.uber.com/us/en/careers/list/
 Airbnb,greenhouse,https://boards.greenhouse.io/airbnb
 Netflix,workday,https://netflix.wd5.myworkdayjobs.com/en-US/Netflix_External_Site
-Equinix,generic,https://careers.equinix.com/jobs
-Digital Realty,generic,https://careers.digitalrealty.com/
 QTS Data Centers,generic,https://careers.qtsdatacenters.com/us/en/search-results
 Vantage Data Centers,generic,https://careers.vantage-dc.com/
 CyrusOne,generic,https://www.cyrusone.com/company/careers
@@ -241,8 +237,5 @@ Related Companies,generic,https://careers.related.com/
 "Hoar Construction, Birmingham, Ala.",generic,https://hoar.com/careers/
 "Lane Industries Inc., Charlotte, N.C.",generic,https://www.laneconstruct.com/careers/
 "The Boldt Group, Appleton, Wis.",generic,https://www.boldt.com/careers/
-Rivian,generic,https://careers.rivian.com/
 Lucid,generic,https://lucidmotors.com/careers/search
 Exyte,generic,https://www.exyte.net/Careers
-CoreSite / American Tower,generic,https://careers.americantower.com/
-CyrusOne,generic,https://www.cyrusone.com/company/careers
