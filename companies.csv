@@ -13,7 +13,7 @@ Intel,workday,https://intel.wd1.myworkdayjobs.com/en-US/External
 Micron Technology,eightfold,https://careers.micron.com/careers
 Applied Materials,eightfold,https://careers.appliedmaterials.com/careers
 Lam Research,eightfold,https://careers.lamresearch.com/careers
-ASML,generic,https://www.asml.com/en/careers/find-your-job
+ASML,asml_sitecore,https://www.asml.com/en/careers/find-your-job
 Samsung Electronics,samsung_api,https://semiconductor.samsung.com/about-us/careers/jobs/
 Broadcom,workday,https://broadcom.wd1.myworkdayjobs.com/en-US/External_Career
 AMD,generic,https://careers.amd.com/careers-home/
@@ -153,14 +153,14 @@ Related Companies,generic,https://careers.related.com/
 "PCL Construction Enterprises Inc., Denver, Colo.†",jobs2web_html,https://careers.pcl.com/search/?optionsFacetsDD_country=US&title=Engineer
 "Clark Group, McLean, Va.",generic,https://www.clarkconstruction.com/build-your-career/search-apply
 "The Walsh Group, Chicago, Ill.",browser_only,https://walshgroup.jobs/
-"Skanska USA, New York, N.Y.†",jibe_api,https://careers.usa.skanska.com/careers-home/jobs
+"Skanska USA, New York, N.Y.†",jibe_public_api,https://careers.usa.skanska.com/careers-home/jobs
 "AECOM, Dallas, Texas",browser_only,https://aecom.jobs/
 "Gilbane Building Co., Providence, R.I.†",icims_html,https://careers-gilbaneco.icims.com/jobs/search?ss=1&searchKeyword=Engineer
 "Clayco, Chicago, Ill.",crelate_api,https://claycorp.com/careers/professionals
 "JE Dunn Construction Co., Kansas City, Mo.",successfactors_api,https://jobs.jedunn.com/
 "McCarthy Holdings Inc., St. Louis, Mo.",jobvite_html,https://jobs.jobvite.com/mccarthy-building-co/search?q=Engineer
 "Suffolk Construction Co. Inc., Boston, Mass.†",verified_listing,https://suffolk.com/careers/job-opportunities/
-"Brasfield & Gorrie, Birmingham, Ala.",jibe_api,https://careers.brasfieldgorrie.com/jobs
+"Brasfield & Gorrie, Birmingham, Ala.",jibe_public_api,https://careers.brasfieldgorrie.com/jobs
 "FlatironDragados, Atlanta, Ga.†",generic,https://careers.flatironcorp.com/
 "Walbridge, Detroit, Mich.",generic,https://www.walbridge.com/careers/
 "Balfour Beatty US, Dallas, Texas†",browser_only,https://jobs.dayforcehcm.com/en-US/balfourbeatty/CANDIDATEPORTALBUILDINGCIVILS
@@ -231,7 +231,7 @@ Related Companies,generic,https://careers.related.com/
 "Phillips Infrastructure Corp., Knoxville, Tenn.†",generic,https://phillipsih.com/careers/
 "Pogue Construction, McKinney, Texas",generic,https://www.pogueconstruction.com/careers/
 "Allan Myers, Worcester, Pa.",generic,https://www.allanmyers.com/careers/
-"W.E. O’Neil Construction Co., Chicago, Ill.†",generic,https://www.weoneil.com/careers/
+"W.E. O’Neil Construction Co., Chicago, Ill.†",generic,https://weoneil.pinpointhq.com/?scroll_to=js-careers-jobs-block
 "PJ Dick - Trumbull - Lindy Group, Pittsburgh, Pa.",generic,https://pjdick.com/careers/
 "Ferreira Construction Co. Inc., Branchburg, N.J.†",generic,https://ferreiraconstruction.com/careers/
 "Hoar Construction, Birmingham, Ala.",generic,https://hoar.com/careers/

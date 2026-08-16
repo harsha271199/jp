@@ -1,4 +1,4 @@
-"""Construction job scraper V13: US entry-level / 0-2 YOE.
+"""Construction job scraper V16: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -36,6 +36,14 @@ TITLE_EXCLUDES=['senior',' sr.',' sr ','principal','director','vice president','
                 'general superintendent','senior superintendent','project executive','lead ','manager','architect',
                 'engineer iii','engineer iv','estimator iii','superintendent ii','superintendent iii']
 EXP_PATTERNS=[re.compile(r'(?:minimum|min\.?|at least|requires?|required|must have|need(?:s|ed)?)[^.!;]{0,70}?(\d+)\s*\+?\s*(?:years?|yrs?)',re.I),re.compile(r'(\d+)\s*\+\s*(?:years?|yrs?)[^.!;]{0,45}?(?:required|minimum|experience)',re.I),re.compile(r'(\d+)\s*(?:-|–|to)\s*(\d+)\s*(?:years?|yrs?)[^.!;]{0,55}?(?:required|minimum|experience)',re.I)]
+STRICT_CONTEXT_COMPANIES={'Western Digital','Intel','NVIDIA','Digital Realty','Texas Instruments','Samsung Electronics','GlobalFoundries','ASML','Micron Technology','Lam Research','KLA Corporation','Equinix','QTS Data Centers','Vantage Data Centers','CBRE','JLL'}
+
+def company_context_ok(company,title,desc=''):
+    if company not in STRICT_CONTEXT_COMPANIES: return True
+    t=clean(title).lower(); d=clean(desc).lower()
+    explicit=['construction','preconstruction','project engineer','project coordinator','assistant project manager','assistant superintendent','estimator','project controls','bim','vdc','mep','civil engineer','structural engineer','safety engineer']
+    if any(x in t for x in explicit): return True
+    return any(x in d for x in CONSTRUCTION_CONTEXT)
 
 def clean(s):
     s=str(s or '')
@@ -79,7 +87,7 @@ def add(company,title,location,link,posted='N/A',desc=''):
     # Track CURRENT matching jobs independently from seen_links.csv. This makes
     # source health meaningful on incremental runs while only notifying on new jobs.
     if not link: return False
-    if not (role_match(title,desc) and experience_ok(title,desc) and is_us(location)):
+    if not (role_match(title,desc) and experience_ok(title,desc) and is_us(location) and company_context_ok(company,title,desc)):
         return False
     current_match_links.add(link)
     if link not in old_links:
@@ -738,32 +746,52 @@ def oracle_hcm_har(url,company):
     raise RuntimeError('Oracle HCM HAR endpoint returned no job records')
 
 def samsung_api(url,company):
-    api='https://search.semiconductor.samsung.com/semi/insightfinder'; page=1; discovered=0
-    while page<=50:
+    api='https://search.semiconductor.samsung.com/semi/insightfinder'; discovered=0
+    for page in range(1,60):
         params={'onlyfilter':'N','filter':'','sort':'Newest','stage':'live','pagetype':'page','site':'semius','category':'careersJob','q':'','startno':(page-1)*10,'pageno':page,'num':10}
-        r=SESSION.get(api,params=params,timeout=25); r.raise_for_status(); data=r.json().get('response',{}).get('resultData',{})
-        # Find dict records recursively that look like career jobs.
-        recs=[]
-        def walk(x):
-            if isinstance(x,dict):
-                if any(k in x for k in ('CareersTitle','CareersUrl','CareersLocation')): recs.append(x)
-                for v in x.values(): walk(v)
-            elif isinstance(x,list):
-                for v in x: walk(v)
-        walk(data)
-        uniq=[]; seen=set()
-        for j in recs:
-            title=j.get('CareersTitle') or j.get('title') or ''; link=j.get('CareersUrl') or j.get('url') or ''
-            if link and link not in seen: seen.add(link); uniq.append(j)
-        if not uniq: break
-        for j in uniq:
-            link=urljoin('https://semiconductor.samsung.com',j.get('CareersUrl') or '')
-            loc=j.get('CareersLocation') or ', '.join(x for x in [j.get('CareersCity'),j.get('CareersState')] if x)
-            desc=j.get('ContsText') or j.get('Description') or ''
-            discovered+=1; add(company,j.get('CareersTitle'),loc,link,j.get('CareersUdtDt') or 'N/A',desc)
-        page+=1
+        r=SESSION.get(api,params=params,headers={'Referer':'https://semiconductor.samsung.com/about-us/careers/jobs/'},timeout=30); r.raise_for_status()
+        rd=(r.json().get('response') or {}).get('resultData') or {}; groups=rd.get('resultList') or []; jobs=[]
+        for g in groups: jobs.extend(g.get('insightLandingContentList') or [])
+        if not jobs: break
+        for j in jobs:
+            title=j.get('careersTitle') or j.get('title') or ''; link=j.get('careersUrl') or j.get('pageUrl') or j.get('dispUrl') or ''
+            loc=j.get('careersLocation') or ', '.join(x for x in [j.get('careersCity'),j.get('careersState')] if x)
+            desc=j.get('description') or ''; posted=j.get('careersUdtDt') or j.get('sortDate') or 'N/A'
+            discovered+=1; add(company,title,loc,link,posted,desc)
+        try:
+            total=int((rd.get('common') or {}).get('careersCount') or groups[0].get('resultCount') or 0)
+            if page*10>=total: break
+        except Exception: pass
     if discovered: return True
     raise RuntimeError('Samsung careers API returned no job records')
+
+def asml_sitecore(url,company):
+    api='https://discover-euc1.sitecorecloud.io/discover/v2/126200477'; discovered=0; offset=0
+    while offset<2000:
+        body={'context':{'page':{'uri':'https://www.asml.com/en/careers/find-your-job?query=Engineer&sort_by=relevance'},'locale':{'country':'us','language':'en'},'user':{'uuid':'126200477-oa-09-4p-1p-8xi2j5xpy70n6x8f9o5w-1786844729752'}},'widget':{'items':[{'entity':'content','rfk_id':'asml_job_search','search':{'limit':25,'offset':offset,'content':{},'filter':{'type':'and','filters':[{'name':'job_type','values':['Fix'],'type':'anyOf'}]},'query':{'keyphrase':'Engineer','operator':'and'},'sort':{'value':[{'name':'sorting_relevance'}]}}}]}}
+        r=SESSION.post(api,json=body,headers={'Origin':'https://www.asml.com','Referer':'https://www.asml.com/'},timeout=30); r.raise_for_status(); widgets=r.json().get('widgets') or []
+        if not widgets: break
+        w=widgets[0]; items=w.get('content') or w.get('items') or []
+        # Sitecore currently returns job records in `content`; tolerate future nested shapes.
+        if not items:
+            def collect(o):
+                out=[]
+                if isinstance(o,dict):
+                    if o.get('type')=='job_detail_page' and (o.get('url') or o.get('job_id')): out.append(o)
+                    for v in o.values(): out.extend(collect(v))
+                elif isinstance(o,list):
+                    for v in o: out.extend(collect(v))
+                return out
+            items=collect(w)
+        if not items: break
+        for j in items:
+            title=j.get('name') or j.get('job_title') or ''; loc=j.get('job_location') or ', '.join(x for x in [j.get('job_city'),j.get('job_state'),j.get('job_country')] if x)
+            desc=j.get('description') or j.get('job_description') or ''; link=j.get('url') or ''; posted=j.get('job_date_posted') or 'N/A'
+            discovered+=1; add(company,title,loc,link,posted,desc)
+        total=w.get('total_item') or 0; offset+=25
+        if total and offset>=total: break
+    if discovered: return True
+    raise RuntimeError('ASML Sitecore returned no job records')
 
 def avature_html(url,company):
     """HAR-verified Avature-style portals (TSMC/CBRE): parse real search result links only."""
@@ -827,16 +855,27 @@ def jobs2web_html(url,company): return html_job_board(url,company,'jobs2web')
 def silkroad_html(url,company): return html_job_board(url,company,'silkroad')
 
 def crelate_api(url,company):
+    # Clayco HAR-verified Crelate portal. The API can expose very old/stale records,
+    # so only accept postings refreshed within the last 180 days and build the real portal URL.
+    from datetime import timezone, timedelta
     org='4272a562-9752-4656-90ce-ab5f015ba502'; api='https://app.crelate.com/api/candidateportal/GetAllJobs'
     env=json.dumps({'Locations':None,'OrganizationId':org,'SearchText':None,'Tags':None},separators=(',',':'))
     r=SESSION.get(api,params={'requestEnvelope':env},timeout=30); r.raise_for_status(); data=r.json(); jobs=data.get('Jobs') or []; discovered=0
+    cutoff=datetime.now(timezone.utc)-timedelta(days=180)
     for j in jobs:
-        title=j.get('Title') or j.get('JobTitle') or ''; loc=j.get('Location') or j.get('LocationName') or ''
-        desc=j.get('Description') or ''; code=j.get('JobCode') or j.get('Id') or ''
-        link=j.get('Url') or j.get('JobUrl') or (f'https://jobs.crelate.com/portal/clayco/job/{code}' if code else '')
-        discovered+=1; add(company,title,loc,link,j.get('LastPostedOnDate') or 'N/A',desc)
+        posted=j.get('LastPostedOnDate') or ''
+        try:
+            dt=datetime.fromisoformat(posted.replace('Z','+00:00'))
+            if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+            if dt < cutoff: continue
+        except Exception:
+            continue
+        title=j.get('Title') or j.get('JobTitle') or ''; city=j.get('City') or ''; state=j.get('State') or ''; country=j.get('Country') or ''
+        loc=', '.join(x for x in [city,state,country] if x); desc=j.get('Description') or ''; code=(j.get('Url') or j.get('JobCode') or '').strip('/')
+        link=f'https://jobs.crelate.com/portal/clayco/job/{code}' if code else ''
+        discovered+=1; add(company,title,loc,link,posted,desc)
     if discovered: return True
-    raise RuntimeError('Crelate API returned no job records')
+    raise RuntimeError('Crelate API returned no current job records')
 
 def jibe_public_api(url,company):
     base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'; page=1; discovered=0
@@ -895,7 +934,7 @@ def scrape(row):
         source_health.append({'company':company,'platform':platform,'status':'BROWSER_ONLY','matches':0,'new_matches':0,'detail':'verified source requires browser/session or blocks GitHub Actions HTTP'})
         return
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'avature_html':avature_html,'icims_html':icims_html,'jobvite_html':jobvite_html,'jobs2web_html':jobs2web_html,'silkroad_html':silkroad_html,'crelate_api':crelate_api,'jibe_public_api':jibe_public_api,'arco_api':arco_api,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'phenom_html':phenom_html,'successfactors_api':successfactors_api,'kiewit':kiewit,'dpr':dpr,'dpr_har':dpr_har,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'oracle_hcm_har':oracle_hcm_har,'dayforce':dayforce,'jibe':jibe_careers,'jibe_api':jibe_api,'icims_jibe':jibe_careers,'csod':csod,'csod_api':csod_api,'samsung_api':samsung_api,'asml_sitecore':asml_sitecore,'avature_html':avature_html,'icims_html':icims_html,'jobvite_html':jobvite_html,'jobs2web_html':jobs2web_html,'silkroad_html':silkroad_html,'crelate_api':crelate_api,'jibe_public_api':jibe_public_api,'arco_api':arco_api,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
         source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(current_match_links)-before_current),'new_matches':max(0,len(results)-before_new),'detail':''})
     except Exception as e:
