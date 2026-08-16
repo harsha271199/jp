@@ -1,7 +1,9 @@
-# Construction Job Scraper V10
+# Construction Entry-Level Jobs — August 16, 2026
+> US construction/civil roles; rejects explicit required minimum experience above 2 years.
 
-Stable V7/V9 filtering plus a conservative `verified_listing` adapter for official construction career portals.
+## Batch 2026-08-16 02:22 — 1 new jobs
 
-Key safety rule: ordinary marketing/service pages are never emitted as jobs. A result must come from a supported ATS, JobPosting JSON-LD, or a verified job-detail URL with job-application evidence.
+| Company | Location | Role | Apply | Posted |
+|---|---|---|---|---|
+| **FedEx** | Hyderabad, Telan, IN | Software Quality Engineer II | [Apply](https://careers.fedex.com/software-quality-engineer-ii/job/P25-329319-1) | 2026-08-16T01:30:01.114997+00:00 |
 
-V10 also disables the unsafe DPR HTML-card adapter that previously produced a false `Preconstruction` service-page result.
