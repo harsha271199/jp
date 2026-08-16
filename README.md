@@ -1,17 +1,9 @@
-# Construction Job Scraper V12
+# Construction Entry-Level Jobs — August 16, 2026
+> US construction/civil roles; rejects explicit required minimum experience above 2 years.
 
-Consolidated construction job scraper targeting US entry-level / 0-2 YOE roles.
+## Batch 2026-08-16 02:38 — 1 new jobs
 
-V12 keeps the previously working ATS adapters and adds conservative adapters for verified source families discovered during browser research:
+| Company | Location | Role | Apply | Posted |
+|---|---|---|---|---|
+| **QTS Data Centers** | Irving, TX | Project Engineer, Procurement Construction Services | [Apply](https://qtsdatacenters.wd5.myworkdayjobs.com/en-US/QTS/job/Irving-TX/Project-Engineer--Procurement-Construction-Services_R2026-1536) | Posted Yesterday |
 
-- Eightfold (Micron, Applied Materials, Lam Research, GlobalFoundries)
-- NLX/jobsyn (AECOM, Fluor, Burns & McDonnell, Walsh)
-- Oracle HCM Candidate Experience (Mortenson, Sundt)
-- Dayforce (Balfour Beatty US)
-
-Existing Greenhouse, Lever, Ashby, Workday, SmartRecruiters, SuccessFactors and company-specific adapters remain.
-
-The scraper does not treat ordinary marketing/service pages as job postings.
-
-## Test
-Keep your existing `seen_links.csv` and existing jobs Markdown file. Run the GitHub Actions workflow normally, then compare the SOURCE HEALTH block to your previous baseline.
