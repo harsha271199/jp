@@ -26,7 +26,7 @@ Marvell Technology,generic,https://www.marvell.com/company/careers.html
 KLA Corporation,generic,https://www.kla.com/careers
 ASM International,generic,https://www.asm.com/careers/
 Tokyo Electron,generic,https://www.tel.com/careers/
-Western Digital,generic,https://jobs.smartrecruiters.com/WesternDigital
+Western Digital,smartrecruiters,https://jobs.smartrecruiters.com/WesternDigital
 Seagate Technology,generic,https://seagatecareers.com/
 Corning,generic,https://corningjobs.corning.com/
 Honeywell,generic,https://careers.honeywell.com/us/en/search-results
@@ -138,22 +138,22 @@ Brookfield,generic,https://www.brookfield.com/careers
 Prologis,generic,https://www.prologis.com/careers
 Related Companies,generic,https://careers.related.com/
 "Turner Construction Co., New York City, N.Y.†",generic,https://www.turnerconstruction.com/careers
-"Bechtel, Reston, Va.",generic,https://jobs.bechtel.com/
+"Bechtel, Reston, Va.",successfactors,https://jobs.bechtel.com/
 "STO Building Group, New York, N.Y.†",generic,https://stobuildinggroup.com/careers/
-"Kiewit Corp., Omaha, Neb.",generic,https://kiewitcareers.kiewit.com/go/View-All-Jobs/876300/
+"Kiewit Corp., Omaha, Neb.",kiewit,https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/
 "The Whiting-Turner Contracting Co., Baltimore, Md.",generic,https://www.whiting-turner.com/careers/
 "MasTec Inc., Coral Gables, Fla.†",generic,https://www.mastec.com/careers
-"DPR Construction, Santa Clara, Calif.",generic,https://www.dpr.com/company/careers/current-positions
+"DPR Construction, Santa Clara, Calif.",dpr,https://www.dpr.com/company/careers/current-positions?sort=latest
 "HITT Contracting, Falls Church, Va.",generic,https://careers.hitt.com/
-"Fluor, Irving, Texas†",generic,https://careers.fluor.com/careers
+"Fluor, Irving, Texas†",phenom,https://careers.fluor.com/careers
 "Mortenson, Minneapolis, Minn.†",generic,https://www.mortenson.com/careers
-"Hensel Phelps, Greeley, Colo.",generic,https://www.henselphelps.com/careers/
+"Hensel Phelps, Greeley, Colo.",successfactors,https://careers.henselphelps.com/
 "Holder Construction Group, Atlanta, Ga.",greenhouse,https://job-boards.greenhouse.io/holderconstruction
 "McDermott International, Houston, Texas",generic,https://careers.mcdermott.com/
 "PCL Construction Enterprises Inc., Denver, Colo.†",generic,https://careers.pcl.com/
 "Clark Group, McLean, Va.",generic,https://www.clarkconstruction.com/build-your-career/search-apply
 "The Walsh Group, Chicago, Ill.",generic,https://www.walshgroup.com/careers.html
-"Skanska USA, New York, N.Y.†",generic,https://www.usa.skanska.com/who-we-are/careers/
+"Skanska USA, New York, N.Y.†",generic,https://careers.usa.skanska.com/careers-home/jobs
 "AECOM, Dallas, Texas",generic,https://aecom.jobs/
 "Gilbane Building Co., Providence, R.I.†",generic,https://careers.gilbaneco.com/
 "Clayco, Chicago, Ill.",generic,https://claycorp.com/careers/
@@ -171,7 +171,7 @@ Related Companies,generic,https://careers.related.com/
 "Swinerton Inc., Concord, Calif.",generic,https://www.swinerton.com/careers
 "Ryan Cos. US Inc., Minneapolis, Minn.",generic,https://www.ryancompanies.com/careers
 "ARCO Construction Cos., St. Louis, Mo.",generic,https://www.arco.com/careers/
-"Burns & McDonnell, Kansas City, Mo.†",generic,https://burnsmcd.jobs/
+"Burns & McDonnell, Kansas City, Mo.†",generic,https://www.burnsmcd.com/careers
 "Consigli Building Group Inc., Milford, Mass.†",generic,https://www.consigli.com/careers/
 "Granite Construction Co., Watsonville, Calif.",generic,https://jobs.graniteconstruction.com/
 "Barton Malow Holdings LLC, Southfield, Mich.†",generic,https://www.bartonmalow.com/careers/
@@ -185,7 +185,7 @@ Related Companies,generic,https://careers.related.com/
 "Fortis Construction, Portland, Ore.",generic,https://www.fortisconstruction.com/careers
 "Crossland Construction Co. Inc., Columbus, Kan.",generic,https://www.crossland.com/careers/
 "Turner Industries Group LLC, Baton Rouge, La.†",generic,https://www.turner-industries.com/careers
-"Black & Veatch, Overland Park, Kan.†",generic,https://careers.bv.com/
+"Black & Veatch, Overland Park, Kan.†",successfactors,https://careers.bv.com/
 "Haskell, Jacksonville, Fla.†",generic,https://www.haskell.com/careers/
 "Construction Partners Inc., Dothan, Ala.†",generic,https://constructionpartners.net/careers/
 "Kokosing Group of Cos., Westerville, Ohio†",generic,https://www.kokosing.biz/careers/

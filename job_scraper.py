@@ -1,4 +1,4 @@
-"""Construction job scraper V6: US entry-level / 0-2 YOE.
+"""Construction job scraper V8: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -196,7 +196,130 @@ def ats_from_links(base,text):
         if re.search(r'jobs\.ashbyhq\.com/[^/?#]+',u): return 'ashby',u
         if re.search(r'\.wd\d+\.myworkdayjobs\.com/',u): return 'workday',u
         if re.search(r'(?:jobs|careers)\.smartrecruiters\.com/[^/?#]+',u): return 'smartrecruiters',u
+        if 'successfactors.com' in urlparse(u).netloc.lower(): return 'successfactors',u
     return None,None
+
+def successfactors(url,company):
+    """Scrape public SuccessFactors-style career sites conservatively.
+    Only follows URLs whose path itself looks like a job detail page.
+    """
+    r=SESSION.get(url,timeout=25,allow_redirects=True); r.raise_for_status()
+    found=jsonld_jobs(r.url,r.text,company)
+    soup=BeautifulSoup(r.text,'html.parser')
+    links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']); path=urlparse(u).path.lower()
+        # Common SuccessFactors public job-detail URL shapes.
+        if re.search(r'/job/[^/]+/.+?/\d+/?$',path) or re.search(r'/job/[^/]+/\d+/?$',path):
+            links.append(u.split('#')[0])
+    for u in list(dict.fromkeys(links))[:250]:
+        try:
+            d=SESSION.get(u,timeout=12,allow_redirects=True)
+            if not d.ok: continue
+            n=jsonld_jobs(d.url,d.text,company)
+            if n: found+=n; continue
+            # SuccessFactors pages often have no JSON-LD. Parse only a real /job/.../<numeric-id> page.
+            ds=BeautifulSoup(d.text,'html.parser')
+            h=ds.find(['h1','h2'])
+            title=clean(h.get_text(' ',strip=True) if h else '')
+            text=clean(ds.get_text(' ',strip=True))
+            loc=''
+            lm=re.search(r'(?:Location|Primary Location)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2}(?:,\s*US)?)',text,re.I)
+            if lm: loc=lm.group(1)
+            if title: add(company,title,loc,d.url,'N/A',text)
+        except Exception: pass
+    if found or links: return True
+    raise RuntimeError('no SuccessFactors job-detail links discovered')
+
+def phenom(url,company):
+    """Conservative adapter for Phenom-style career sites.
+    Follows only URLs containing /job/ plus a requisition-like identifier.
+    """
+    r=SESSION.get(url,timeout=25,allow_redirects=True); r.raise_for_status()
+    found=jsonld_jobs(r.url,r.text,company)
+    soup=BeautifulSoup(r.text,'html.parser'); links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']); path=urlparse(u).path.lower()
+        if '/job/' in path and (re.search(r'\d{4,}',path) or re.search(r'/(?:r|req|jr)[-_]?\d+',path,re.I)):
+            links.append(u.split('#')[0])
+    for u in list(dict.fromkeys(links))[:250]:
+        try:
+            d=SESSION.get(u,timeout=12,allow_redirects=True)
+            if d.ok: found+=jsonld_jobs(d.url,d.text,company)
+        except Exception: pass
+    if found or links: return True
+    raise RuntimeError('no Phenom job-detail links discovered')
+
+
+
+def kiewit(url,company):
+    """Kiewit adapter: scrape the official Entry Level SuccessFactors listing directly.
+    This intentionally targets Kiewit's Entry Level board to reduce senior-role noise.
+    """
+    pages=[
+        'https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/',
+        'https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/25/',
+        'https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/50/',
+    ]
+    seen=set(); discovered=0
+    for page in pages:
+        r=SESSION.get(page,timeout=25,allow_redirects=True); r.raise_for_status()
+        soup=BeautifulSoup(r.text,'html.parser')
+        for a in soup.find_all('a',href=True):
+            title=clean(a.get_text(' ',strip=True)); href=urljoin(r.url,a['href'])
+            if not title or href in seen: continue
+            path=urlparse(href).path
+            # SAP SuccessFactors job detail pages normally end in a numeric requisition id.
+            if '/job/' not in path.lower() or not re.search(r'/\d+/?$',path): continue
+            seen.add(href); discovered+=1
+            loc=''; desc=''; posted='N/A'
+            try:
+                d=SESSION.get(href,timeout=15,allow_redirects=True)
+                if d.ok:
+                    ds=BeautifulSoup(d.text,'html.parser'); txt=clean(ds.get_text(' ',strip=True)); desc=txt
+                    lm=re.search(r'(?:Location|Primary Location)\s*:?\s*([^|]{2,80}?)(?:\s{2,}|Job Level|Department|Date)',txt,re.I)
+                    if lm: loc=clean(lm.group(1))
+                    dm=re.search(r'(?:Date|Posted)\s*:?\s*([A-Z][a-z]{2}\s+\d{1,2},\s+20\d{2})',txt)
+                    if dm: posted=dm.group(1)
+            except Exception: pass
+            add(company,title,loc,href,posted,desc)
+    if discovered: return True
+    raise RuntimeError('Kiewit entry-level job links not discovered')
+
+
+def dpr(url,company):
+    """DPR adapter: parse actual job cards from DPR's official current-positions page.
+    The page itself exposes title, location, description snippet and job-detail links.
+    """
+    r=SESSION.get(url,timeout=25,allow_redirects=True); r.raise_for_status()
+    soup=BeautifulSoup(r.text,'html.parser'); discovered=0; seen=set()
+    for a in soup.find_all('a',href=True):
+        title=clean(a.get_text(' ',strip=True)); href=urljoin(r.url,a['href'])
+        if not title or href in seen: continue
+        # Keep only links that sit in a job-card-like region and reject navigation/marketing links.
+        low=title.lower()
+        if not any(k in low for k in DIRECT_ROLES+CONTEXT_ROLES): continue
+        parent=a
+        for _ in range(5):
+            if parent and parent.parent: parent=parent.parent
+        block=clean(parent.get_text(' ',strip=True) if parent else '')
+        if len(block)<40: continue
+        seen.add(href); discovered+=1
+        # Extract a US-looking location from the nearby card text when available.
+        loc=''
+        m=re.search(r'([A-Za-z .-]+,\s*[A-Z]{2})(?:\s*[•|]|\s{2,}|$)',block)
+        if m: loc=m.group(1)
+        desc=block
+        # Detail page often contains a fuller description; use it when accessible.
+        try:
+            d=SESSION.get(href,timeout=12,allow_redirects=True)
+            if d.ok:
+                detail=clean(BeautifulSoup(d.text,'html.parser').get_text(' ',strip=True))
+                if len(detail)>len(desc): desc=detail
+        except Exception: pass
+        add(company,title,loc,href,'N/A',desc)
+    if discovered: return True
+    raise RuntimeError('DPR job cards not discovered')
 
 def generic(url,company):
     """Safe discovery: ATS first, then structured JobPosting data only.
@@ -208,7 +331,7 @@ def generic(url,company):
     r.raise_for_status()
     plat,ats=ats_from_links(r.url,r.text)
     if plat:
-        return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters}[plat](ats,company)
+        return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors}[plat](ats,company)
     n=crawl_search_page(r.url,company)
     if n: return True
     raise RuntimeError('no supported ATS or structured JobPosting data discovered')
@@ -217,7 +340,7 @@ def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
     before=len(results)
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
         source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(results)-before),'detail':''})
     except Exception as e:

@@ -1,9 +1,7 @@
-# Setup
+# V8 test
 
-1. Upload all files to the repository root.
-2. Keep `.github/workflows/scrape.yml` at that exact path.
-3. For one clean test, it is okay if `seen_links.csv` does not exist.
-4. Run Actions -> Construction Job Scraper -> Run workflow.
-5. After the clean test, keep `seen_links.csv` permanently.
-6. Review `source_health.csv` for exact WORKING/FAILED company counts.
-7. Telegram secrets are optional: `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
+1. Replace the repository files with the V8 files.
+2. Keep your existing `.github/workflows/scrape.yml` if it already runs `python job_scraper.py`.
+3. Do not delete `seen_links.csv` for normal operation. For a deliberate one-time full baseline test only, deleting it will make all current matches appear new.
+4. Run the workflow manually.
+5. Review the SOURCE HEALTH summary and `source_health.csv`.
