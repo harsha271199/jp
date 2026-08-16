@@ -141,9 +141,9 @@ Related Companies,generic,https://careers.related.com/
 "Bechtel, Reston, Va.",successfactors,https://jobs.bechtel.com/
 "STO Building Group, New York, N.Y.†",generic,https://stobuildinggroup.com/careers/
 "Kiewit Corp., Omaha, Neb.",kiewit,https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/
-"The Whiting-Turner Contracting Co., Baltimore, Md.",generic,https://www.whiting-turner.com/careers/
+"The Whiting-Turner Contracting Co., Baltimore, Md.",verified_listing,https://www.whiting-turner.com/careers/
 "MasTec Inc., Coral Gables, Fla.†",generic,https://www.mastec.com/careers
-"DPR Construction, Santa Clara, Calif.",dpr,https://www.dpr.com/company/careers/current-positions?sort=latest
+"DPR Construction, Santa Clara, Calif.",generic,https://www.dpr.com/company/careers/current-positions?sort=latest
 "HITT Contracting, Falls Church, Va.",generic,https://careers.hitt.com/
 "Fluor, Irving, Texas†",phenom,https://careers.fluor.com/careers
 "Mortenson, Minneapolis, Minn.†",generic,https://www.mortenson.com/careers
@@ -153,25 +153,25 @@ Related Companies,generic,https://careers.related.com/
 "PCL Construction Enterprises Inc., Denver, Colo.†",generic,https://careers.pcl.com/
 "Clark Group, McLean, Va.",generic,https://www.clarkconstruction.com/build-your-career/search-apply
 "The Walsh Group, Chicago, Ill.",generic,https://www.walshgroup.com/careers.html
-"Skanska USA, New York, N.Y.†",generic,https://careers.usa.skanska.com/careers-home/jobs
+"Skanska USA, New York, N.Y.†",verified_listing,https://careers.usa.skanska.com/jobs
 "AECOM, Dallas, Texas",generic,https://aecom.jobs/
 "Gilbane Building Co., Providence, R.I.†",generic,https://careers.gilbaneco.com/
 "Clayco, Chicago, Ill.",generic,https://claycorp.com/careers/
 "JE Dunn Construction Co., Kansas City, Mo.",generic,https://jobs.jedunn.com/
-"McCarthy Holdings Inc., St. Louis, Mo.",generic,https://recruiting.mccarthy.com/
-"Suffolk Construction Co. Inc., Boston, Mass.†",generic,https://suffolk.com/careers/job-opportunities/
-"Brasfield & Gorrie, Birmingham, Ala.",generic,https://www.brasfieldgorrie.com/careers/
+"McCarthy Holdings Inc., St. Louis, Mo.",verified_listing,https://recruiting.mccarthy.com/
+"Suffolk Construction Co. Inc., Boston, Mass.†",verified_listing,https://suffolk.com/careers/job-opportunities/
+"Brasfield & Gorrie, Birmingham, Ala.",verified_listing,https://careers.brasfieldgorrie.com/jobs/categories?lang=en-US
 "FlatironDragados, Atlanta, Ga.†",generic,https://careers.flatironcorp.com/
 "Walbridge, Detroit, Mich.",generic,https://www.walbridge.com/careers/
-"Balfour Beatty US, Dallas, Texas†",generic,https://careers.balfourbeattyus.com/
+"Balfour Beatty US, Dallas, Texas†",verified_listing,https://www.balfourbeattyus.com/careers/job-opportunities
 "Tutor Perini Corp., Sylmar, Calif.†",generic,https://careers.tutorperini.com/
 "The Yates Cos. Inc., Philadelphia, Miss.",generic,https://www.wgyates.com/careers/
 "Gray, Lexington, Ky.†",generic,https://www.gray.com/careers
 "Hoffman Construction Co., Lake Oswego, Ore.",generic,https://www.hoffmancorp.com/careers/
 "Swinerton Inc., Concord, Calif.",generic,https://www.swinerton.com/careers
 "Ryan Cos. US Inc., Minneapolis, Minn.",generic,https://www.ryancompanies.com/careers
-"ARCO Construction Cos., St. Louis, Mo.",generic,https://www.arco.com/careers/
-"Burns & McDonnell, Kansas City, Mo.†",generic,https://www.burnsmcd.com/careers
+"ARCO Construction Cos., St. Louis, Mo.",verified_listing,https://arcoconstruction.com/careers/
+"Burns & McDonnell, Kansas City, Mo.†",verified_listing,https://www.burnsmcd.com/careers
 "Consigli Building Group Inc., Milford, Mass.†",generic,https://www.consigli.com/careers/
 "Granite Construction Co., Watsonville, Calif.",generic,https://jobs.graniteconstruction.com/
 "Barton Malow Holdings LLC, Southfield, Mich.†",generic,https://www.bartonmalow.com/careers/

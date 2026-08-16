@@ -1,7 +1,8 @@
-# V8 test
+# V10 test
 
-1. Replace the repository files with the V8 files.
-2. Keep your existing `.github/workflows/scrape.yml` if it already runs `python job_scraper.py`.
-3. Do not delete `seen_links.csv` for normal operation. For a deliberate one-time full baseline test only, deleting it will make all current matches appear new.
-4. Run the workflow manually.
-5. Review the SOURCE HEALTH summary and `source_health.csv`.
+1. Replace `job_scraper.py` and `companies.csv` in the existing repo.
+2. Keep the current workflow YAML.
+3. Keep `seen_links.csv` and the existing Markdown history. Do not delete them.
+4. Run the workflow manually once.
+5. Compare SOURCE HEALTH against the prior baseline (62/240 working).
+6. Inspect any new jobs before sharing the project.

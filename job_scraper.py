@@ -1,4 +1,4 @@
-"""Construction job scraper V8: US entry-level / 0-2 YOE.
+"""Construction job scraper V10: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -321,6 +321,61 @@ def dpr(url,company):
     if discovered: return True
     raise RuntimeError('DPR job cards not discovered')
 
+
+def verified_listing(url,company):
+    """Safe adapter for verified career portals.
+    It never treats marketing/service pages as jobs. A candidate must either expose
+    JobPosting JSON-LD or have a job-like URL plus application/job-description evidence.
+    """
+    r=SESSION.get(url,timeout=25,allow_redirects=True)
+    if r.status_code in (401,403,406,429):
+        raise RuntimeError(f'verified career portal blocked ({r.status_code})')
+    r.raise_for_status()
+    # Prefer a real ATS linked from the official portal.
+    plat,ats=ats_from_links(r.url,r.text)
+    if plat:
+        return {'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors}[plat](ats,company)
+    found=jsonld_jobs(r.url,r.text,company)
+    soup=BeautifulSoup(r.text,'html.parser')
+    candidates=[]
+    for a in soup.find_all('a',href=True):
+        href=urljoin(r.url,a['href']).split('#')[0]
+        label=clean(a.get_text(' ',strip=True))
+        path=urlparse(href).path.lower()
+        # Require a job/requisition-shaped URL. This deliberately rejects /construction/expertise/preconstruction.
+        job_path=(re.search(r'/(?:jobs?|careers)/(?:[^/?#]+/)*[^/?#]+',path) and
+                  (re.search(r'\d{4,}',path) or re.search(r'(?:req|jr|job|requisition)[-_]?\d+',path,re.I)))
+        # Some verified portals use /jobs/<slug> without numeric IDs. Only accept when anchor text itself looks like a target role.
+        slug_job=('/jobs/' in path and label and any(k in (' '+label.lower()+' ') for k in DIRECT_ROLES+CONTEXT_ROLES))
+        if job_path or slug_job:
+            candidates.append((href,label))
+    for href,label in list(dict.fromkeys(candidates))[:350]:
+        try:
+            d=SESSION.get(href,timeout=15,allow_redirects=True)
+            if not d.ok: continue
+            n=jsonld_jobs(d.url,d.text,company)
+            if n:
+                found+=n; continue
+            ds=BeautifulSoup(d.text,'html.parser')
+            text=clean(ds.get_text(' ',strip=True))
+            low=text.lower()
+            # Strong evidence that this is a real vacancy, not a service/marketing page.
+            evidence=sum(x in low for x in ['apply now','apply for this job','job description','job id','requisition','employment type','responsibilities','qualifications'])
+            if evidence < 2: continue
+            h=ds.find('h1') or ds.find('h2')
+            title=clean(h.get_text(' ',strip=True) if h else label)
+            if not title: title=label
+            loc=''
+            lm=re.search(r'(?:location|job location|primary location)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})(?:\b|\s)',text,re.I)
+            if lm: loc=lm.group(1)
+            add(company,title,loc,d.url,'N/A',text)
+            found+=1
+        except Exception:
+            pass
+    if found or candidates:
+        return True
+    raise RuntimeError('no verified job-detail records discovered')
+
 def generic(url,company):
     """Safe discovery: ATS first, then structured JobPosting data only.
     Never converts ordinary service/marketing pages into jobs.
@@ -340,7 +395,7 @@ def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
     before=len(results)
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'verified_listing':verified_listing,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
         source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(results)-before),'detail':''})
     except Exception as e:

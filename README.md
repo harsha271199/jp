@@ -1,9 +1,7 @@
-# Construction Entry-Level Jobs — August 16, 2026
-> US construction/civil roles; rejects explicit required minimum experience above 2 years.
+# Construction Job Scraper V10
 
-## Batch 2026-08-16 01:13 — 1 new jobs
+Stable V7/V9 filtering plus a conservative `verified_listing` adapter for official construction career portals.
 
-| Company | Location | Role | Apply | Posted |
-|---|---|---|---|---|
-| **DPR Construction, Santa Clara, Calif.** | N/A | Preconstruction | [Apply](https://www.dpr.com/construction/expertise/preconstruction) | N/A |
+Key safety rule: ordinary marketing/service pages are never emitted as jobs. A result must come from a supported ATS, JobPosting JSON-LD, or a verified job-detail URL with job-application evidence.
 
+V10 also disables the unsafe DPR HTML-card adapter that previously produced a false `Preconstruction` service-page result.
