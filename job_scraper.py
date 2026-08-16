@@ -1,4 +1,4 @@
-"""Construction job scraper: US entry-level / 0-2 YOE.
+"""Construction job scraper V6: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore',category=MarkupResemblesLocatorWarning)
 
 SESSION=requests.Session()
 SESSION.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36','Accept-Language':'en-US,en;q=0.9'})
-results=[]; old_links=set(); errors=[]
+results=[]; old_links=set(); errors=[]; source_health=[]
 # Strict construction-role classifier. Avoids generic matches such as software "field engineering"
 # and prevents service/marketing pages from becoming fake job postings.
 DIRECT_ROLES=[
@@ -31,6 +31,7 @@ CONTEXT_ROLES=['estimator','scheduler','project scheduler','planning engineer','
 CONSTRUCTION_CONTEXT=['construction','general contractor','contractor','building','jobsite','job site','civil',
                       'infrastructure','concrete','commercial construction','preconstruction','subcontractor',
                       'project controls','bim','vdc','mep','superintendent','estimating','field operations']
+NON_CONSTRUCTION_TITLE_EXCLUDES=['maintenance','facility maintenance','facilities maintenance','maintenance planner','maintenance scheduler','technician','mechanic','operations engineer','operations technician','data center technician','critical facilities technician','service engineer','sales engineer','customer engineer','solutions engineer','software engineer','field service engineer','field application engineer','field applications engineer']
 TITLE_EXCLUDES=['senior',' sr.',' sr ','principal','director','vice president',' vp ','head of','chief','executive',
                 'general superintendent','senior superintendent','project executive','lead ','manager','architect',
                 'engineer iii','engineer iv','estimator iii','superintendent ii','superintendent iii']
@@ -46,6 +47,7 @@ def role_match(title,desc=''):
     d=clean(desc).lower()
     # Assistant Project/Construction Manager are valid early-career roles; other managers are not.
     protected=('assistant project manager' in t or 'assistant construction manager' in t)
+    if any(k in t for k in NON_CONSTRUCTION_TITLE_EXCLUDES): return False
     if not protected and any(k in t for k in TITLE_EXCLUDES): return False
     if any(k in t for k in DIRECT_ROLES):
         # "field engineer" can be non-construction at tech companies; require construction context in description
@@ -213,10 +215,43 @@ def generic(url,company):
 
 def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
+    before=len(results)
     try:
         fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
-    except Exception as e: log(company,e)
+        source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(results)-before),'detail':''})
+    except Exception as e:
+        msg=str(e)[:220]; log(company,msg)
+        source_health.append({'company':company,'platform':platform,'status':'FAILED','matches':0,'detail':msg})
+
+def write_health_report():
+    if not source_health: return
+    h=pd.DataFrame(source_health)
+    # A company can have duplicate source rows. Count it working if at least one source succeeded.
+    rows=[]
+    for company,g in h.groupby('company',sort=True):
+        ok=(g.status=='WORKING').any(); matches=int(g.matches.sum())
+        failed=g[g.status=='FAILED']
+        detail='; '.join(failed.detail.dropna().astype(str).unique()[:3]) if not ok else ''
+        rows.append({'company':company,'status':'WORKING' if ok else 'FAILED','matches':matches,'detail':detail})
+    c=pd.DataFrame(rows)
+    total=len(c); working=int((c.status=='WORKING').sum()); failed=total-working
+    with_matches=int(((c.status=='WORKING') & (c.matches>0)).sum()); zero=working-with_matches
+    rate=(100.0*working/total) if total else 0
+    print('\n========== SOURCE HEALTH ==========')
+    print(f'Total unique companies:            {total}')
+    print(f'Successfully queried:              {working}')
+    print(f'  With matching construction jobs: {with_matches}')
+    print(f'  Working but 0 new matches:       {zero}')
+    print(f'Failed / unsupported:              {failed}')
+    print(f'Source success rate:               {rate:.1f}%')
+    print('===================================')
+    c.to_csv('source_health.csv',index=False)
+    failed_df=c[c.status=='FAILED'][['company','detail']]
+    if len(failed_df):
+        print('\nFAILED COMPANIES (first 40):')
+        for r in failed_df.head(40).itertuples(index=False): print(f'[FAIL] {r.company}: {r.detail}')
+
 
 def filename(): return f"{datetime.now().day}-{datetime.now().strftime('%B')}-Construction-Jobs.md"
 def write_output(jobs):
@@ -245,5 +280,6 @@ if __name__=='__main__':
     jobs=list({j['link']:j for j in results}.values()); print(f'Found {len(jobs)} new matching jobs'); write_output(jobs)
     if jobs: pd.DataFrame({'link':[j['link'] for j in jobs]}).to_csv(p,mode='a',index=False,header=not p.exists())
     telegram(jobs)
+    write_health_report()
     if errors:
         print(f'\n{len(errors)} source warnings (first 30):'); print('\n'.join(errors[:30]))

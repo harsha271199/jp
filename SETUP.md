@@ -1,9 +1,9 @@
-# Upgrade from V2
-1. Replace the repository files with the V3 files.
-2. For the first clean test only, delete `seen_links.csv` if your repo has one.
-3. Commit to `main`.
-4. Actions -> Construction Job Scraper -> Run workflow -> main.
-5. Open `scrape` -> `Run python job_scraper.py`.
-6. Send the complete output if any source warnings remain.
+# Setup
 
-Individual blocked career sites are logged as warnings and do not stop the other companies.
+1. Upload all files to the repository root.
+2. Keep `.github/workflows/scrape.yml` at that exact path.
+3. For one clean test, it is okay if `seen_links.csv` does not exist.
+4. Run Actions -> Construction Job Scraper -> Run workflow.
+5. After the clean test, keep `seen_links.csv` permanently.
+6. Review `source_health.csv` for exact WORKING/FAILED company counts.
+7. Telegram secrets are optional: `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
