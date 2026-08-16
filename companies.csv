@@ -85,7 +85,7 @@ ByteDance,greenhouse,https://boards.greenhouse.io/bytedance
 Uber,generic,https://www.uber.com/us/en/careers/list/
 Airbnb,greenhouse,https://boards.greenhouse.io/airbnb
 Netflix,workday,https://netflix.wd5.myworkdayjobs.com/en-US/Netflix_External_Site
-QTS Data Centers,generic,https://careers.qtsdatacenters.com/us/en/search-results
+QTS Data Centers,workday,https://qtsdatacenters.wd5.myworkdayjobs.com/en-US/QTS
 Vantage Data Centers,generic,https://careers.vantage-dc.com/
 CyrusOne,generic,https://www.cyrusone.com/company/careers
 STACK Infrastructure,generic,https://www.stackinfra.com/about/careers/
@@ -133,12 +133,12 @@ Citi,workday,https://citi.wd5.myworkdayjobs.com/en-US/2
 BlackRock,generic,https://careers.blackrock.com/job-search-results/
 Blackstone,generic,https://www.blackstone.com/careers/careers-at-blackstone/
 CBRE,generic,https://careers.cbre.com/en_US/careers/SearchJobs
-JLL,generic,https://jll.wd1.myworkdayjobs.com/jllcareers
+JLL,workday,https://jll.wd1.myworkdayjobs.com/en-US/jllcareers
 Brookfield,generic,https://www.brookfield.com/careers
 Prologis,generic,https://www.prologis.com/careers
 Related Companies,generic,https://careers.related.com/
-"Turner Construction Co., New York City, N.Y.†",generic,https://www.turnerconstruction.com/careers
-"Bechtel, Reston, Va.",successfactors,https://jobs.bechtel.com/
+"Turner Construction Co., New York City, N.Y.†",csod,https://turnerconstruction.csod.com/ux/ats/careersite/2/home?c=turnerconstruction
+"Bechtel, Reston, Va.",phenom,https://jobs.bechtel.com/us/en
 "STO Building Group, New York, N.Y.†",generic,https://stobuildinggroup.com/careers/
 "Kiewit Corp., Omaha, Neb.",kiewit,https://kiewitcareers.kiewit.com/go/Kiewit_Interns-Entry-Level/8156300/
 "The Whiting-Turner Contracting Co., Baltimore, Md.",verified_listing,https://www.whiting-turner.com/careers/
@@ -153,14 +153,14 @@ Related Companies,generic,https://careers.related.com/
 "PCL Construction Enterprises Inc., Denver, Colo.†",generic,https://careers.pcl.com/
 "Clark Group, McLean, Va.",generic,https://www.clarkconstruction.com/build-your-career/search-apply
 "The Walsh Group, Chicago, Ill.",nlx,https://walshgroup.jobs/
-"Skanska USA, New York, N.Y.†",verified_listing,https://careers.usa.skanska.com/jobs
+"Skanska USA, New York, N.Y.†",jibe,https://careers.usa.skanska.com/jobs
 "AECOM, Dallas, Texas",nlx,https://aecom.jobs/
 "Gilbane Building Co., Providence, R.I.†",generic,https://careers.gilbaneco.com/
 "Clayco, Chicago, Ill.",generic,https://claycorp.com/careers/
-"JE Dunn Construction Co., Kansas City, Mo.",generic,https://jobs.jedunn.com/
+"JE Dunn Construction Co., Kansas City, Mo.",successfactors,https://jobs.jedunn.com/
 "McCarthy Holdings Inc., St. Louis, Mo.",verified_listing,https://recruiting.mccarthy.com/
 "Suffolk Construction Co. Inc., Boston, Mass.†",verified_listing,https://suffolk.com/careers/job-opportunities/
-"Brasfield & Gorrie, Birmingham, Ala.",verified_listing,https://careers.brasfieldgorrie.com/jobs/categories?lang=en-US
+"Brasfield & Gorrie, Birmingham, Ala.",jibe,https://careers.brasfieldgorrie.com/jobs
 "FlatironDragados, Atlanta, Ga.†",generic,https://careers.flatironcorp.com/
 "Walbridge, Detroit, Mich.",generic,https://www.walbridge.com/careers/
 "Balfour Beatty US, Dallas, Texas†",dayforce,https://jobs.dayforcehcm.com/en-US/balfourbeatty/CANDIDATEPORTALBUILDINGCIVILS

@@ -1,8 +1,8 @@
-# Construction Job Scraper V11
+# Construction Job Scraper V12
 
 Consolidated construction job scraper targeting US entry-level / 0-2 YOE roles.
 
-V11 keeps the previously working ATS adapters and adds conservative adapters for verified source families discovered during browser research:
+V12 keeps the previously working ATS adapters and adds conservative adapters for verified source families discovered during browser research:
 
 - Eightfold (Micron, Applied Materials, Lam Research, GlobalFoundries)
 - NLX/jobsyn (AECOM, Fluor, Burns & McDonnell, Walsh)

@@ -1,4 +1,4 @@
-"""Construction job scraper V10: US entry-level / 0-2 YOE.
+"""Construction job scraper V12: US entry-level / 0-2 YOE.
 Supports Greenhouse, Lever, Ashby, Workday, SmartRecruiters, JSON-LD and safe career-search crawling.
 """
 import os,re,html,time,warnings,json
@@ -410,12 +410,22 @@ def eightfold(url,company):
 
 
 def nlx_jobsyn(url,company):
-    """NLX/jobsyn Solr adapter used by AECOM, Fluor, Burns & McDonnell and Walsh."""
+    """NLX/jobsyn adapter. Uses browser-like headers, small pages and retry/backoff.
+    Some NLX tenants block datacenter IPs; those remain FAILED rather than bypassing controls.
+    """
     base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'
-    headers={'Referer':url,'Origin':base,'Accept':'application/json, text/plain, */*'}
+    headers={'Referer':url,'Origin':base,'Accept':'application/json, text/plain, */*','Sec-Fetch-Site':'cross-site'}
     discovered=0
-    for page in range(1,41):
-        r=SESSION.get('https://prod-search-api.jobsyn.org/api/v1/solr/search',params={'page':page,'num_items':100},headers=headers,timeout=25)
+    for page in range(1,81):
+        r=None
+        for attempt in range(3):
+            try:
+                r=SESSION.get('https://prod-search-api.jobsyn.org/api/v1/solr/search',params={'page':page,'num_items':15},headers=headers,timeout=30)
+                if r.status_code in (502,503,504): time.sleep(2*(attempt+1)); continue
+                break
+            except requests.RequestException:
+                time.sleep(2*(attempt+1))
+        if r is None: raise RuntimeError('NLX/jobsyn request failed')
         if r.status_code in (401,403): raise RuntimeError(f'NLX/jobsyn blocked ({r.status_code})')
         r.raise_for_status(); data=r.json()
         posts=data.get('jobs') or data.get('results') or data.get('response',{}).get('docs') or data.get('data') or []
@@ -423,16 +433,16 @@ def nlx_jobsyn(url,company):
         if not posts: break
         for j in posts:
             if not isinstance(j,dict): continue
-            # jobsyn is multi-tenant; only keep records belonging to this career-site host/company.
             link=j.get('url') or j.get('job_url') or j.get('apply_url') or j.get('seo_url') or ''
             cname=clean(j.get('company') or j.get('company_name') or j.get('employer') or '')
-            if link and urlparse(link).netloc and urlparse(link).netloc.lower()!=urlparse(url).netloc.lower():
-                if cname and clean(company).split(',')[0].lower() not in cname.lower(): continue
+            host=urlparse(link).netloc.lower() if link else ''
+            wanted=urlparse(url).netloc.lower()
+            if host and host!=wanted and cname and clean(company).split(',')[0].lower() not in cname.lower(): continue
             title=j.get('title') or j.get('job_title') or j.get('name') or ''
             loc=j.get('location') or j.get('formatted_location') or j.get('city_state') or ''
             desc=j.get('description') or j.get('job_description') or j.get('snippet') or ''
             if link: discovered+=1; add(company,title,loc,link,j.get('date_posted') or j.get('posted') or 'N/A',desc)
-        if len(posts)<100: break
+        if len(posts)<15: break
     if not discovered: raise RuntimeError('NLX/jobsyn returned no verified records for company')
     return True
 
@@ -488,6 +498,73 @@ def dayforce(url,company):
     if not discovered: raise RuntimeError('Dayforce returned no job records')
     return True
 
+def jibe_careers(url,company):
+    """Safe adapter for Jibe-style careers sites (used by several large contractors).
+    Enumerates only links under /jobs/ that resolve to pages with job evidence.
+    """
+    base=f'{urlparse(url).scheme}://{urlparse(url).netloc}'
+    queue=[url.rstrip('/'), base+'/jobs', base+'/jobs/']
+    seen_pages=set(); job_links=[]
+    for page in queue:
+        if page in seen_pages: continue
+        seen_pages.add(page)
+        try:
+            r=SESSION.get(page,timeout=25,allow_redirects=True); r.raise_for_status()
+        except Exception:
+            continue
+        soup=BeautifulSoup(r.text,'html.parser')
+        for a in soup.find_all('a',href=True):
+            u=urljoin(r.url,a['href']).split('#')[0]
+            if urlparse(u).netloc.lower()!=urlparse(base).netloc.lower(): continue
+            path=urlparse(u).path.lower().rstrip('/')
+            # Job detail pages, not categories/locations/marketing pages.
+            if re.search(r'/jobs/(?:[^/]+/)*\d{3,}(?:/[^/]+)?$',path) or re.search(r'/jobs/[^/]+-[a-z0-9_-]*\d{3,}$',path):
+                job_links.append(u)
+    discovered=0
+    for u in list(dict.fromkeys(job_links))[:500]:
+        try:
+            r=SESSION.get(u,timeout=15,allow_redirects=True)
+            if not r.ok: continue
+            n=jsonld_jobs(r.url,r.text,company)
+            if n: discovered+=n; continue
+            soup=BeautifulSoup(r.text,'html.parser'); text=clean(soup.get_text(' ',strip=True))
+            # Require strong job-page evidence before accepting HTML fallback.
+            if not re.search(r'\b(apply(?: now)?|job id|requisition|job category|position type)\b',text,re.I): continue
+            h=soup.find('h1') or soup.find('h2'); title=clean(h.get_text(' ',strip=True) if h else '')
+            loc=''; lm=re.search(r'(?:Location|locations?)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})',text,re.I)
+            if lm: loc=lm.group(1)
+            if title:
+                discovered+=1; add(company,title,loc,r.url,'N/A',text)
+        except Exception: pass
+    if not job_links: raise RuntimeError('no verified Jibe job-detail links discovered')
+    return True
+
+
+def csod(url,company):
+    """Cornerstone/CSOD public career-site adapter.
+    Uses public rendered requisition links; does not attempt to bypass session controls.
+    """
+    r=SESSION.get(url,timeout=25,allow_redirects=True); r.raise_for_status()
+    soup=BeautifulSoup(r.text,'html.parser'); links=[]
+    for a in soup.find_all('a',href=True):
+        u=urljoin(r.url,a['href']).split('#')[0]
+        if re.search(r'/requisition/\d+',u,re.I): links.append(u)
+    discovered=0
+    for u in list(dict.fromkeys(links))[:400]:
+        try:
+            d=SESSION.get(u,timeout=15,allow_redirects=True)
+            if not d.ok: continue
+            n=jsonld_jobs(d.url,d.text,company)
+            if n: discovered+=n; continue
+            ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True))
+            if not re.search(r'\b(apply|requisition|job location|job details)\b',text,re.I): continue
+            h=ds.find('h1') or ds.find('h2'); title=clean(h.get_text(' ',strip=True) if h else '')
+            lm=re.search(r'(?:Location|Job Location)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})',text,re.I); loc=lm.group(1) if lm else ''
+            if title: discovered+=1; add(company,title,loc,d.url,'N/A',text)
+        except Exception: pass
+    if not links: raise RuntimeError('no public CSOD requisition links discovered')
+    return True
+
 def generic(url,company):
     """Safe discovery: ATS first, then structured JobPosting data only.
     Never converts ordinary service/marketing pages into jobs.
@@ -507,7 +584,7 @@ def scrape(row):
     company=str(row.company).strip(); url=str(row.careers_url).strip(); platform=str(row.platform).strip().lower()
     before=len(results)
     try:
-        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'dayforce':dayforce,'generic':generic,'auto':generic}.get(platform,generic)
+        fn={'greenhouse':greenhouse,'lever':lever,'ashby':ashby,'workday':workday,'smartrecruiters':smartrecruiters,'successfactors':successfactors,'phenom':phenom,'kiewit':kiewit,'dpr':dpr,'verified_listing':verified_listing,'eightfold':eightfold,'nlx':nlx_jobsyn,'jobsyn':nlx_jobsyn,'oracle':oracle_hcm,'oracle_hcm':oracle_hcm,'dayforce':dayforce,'jibe':jibe_careers,'icims_jibe':jibe_careers,'csod':csod,'generic':generic,'auto':generic}.get(platform,generic)
         fn(url,company)
         source_health.append({'company':company,'platform':platform,'status':'WORKING','matches':max(0,len(results)-before),'detail':''})
     except Exception as e:
