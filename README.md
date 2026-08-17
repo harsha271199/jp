@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 20:23:05
+
+📊 **2 new construction jobs this batch:**
+- L3Harris Technologies: 1 job
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **L3Harris Technologies** | Melbourne, FL, US | Associate, Network Planning Engineer | [Apply](https://careers.l3harris.com/en/job/melbourne/associate-network-planning-engineer/4832/99360624144) | 2026-8-17 |
+| **Swinerton Inc., Concord, Calif.** | Portland OR | Project Engineer | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Portland-OR/Project-Engineer_J17820) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-17 19:25:40
 
 📊 **1 new construction jobs this batch:**
