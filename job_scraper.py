@@ -1020,18 +1020,54 @@ def write_health_report():
         print('\nFAILED COMPANIES (first 40):')
         for r in failed_df.head(40).itertuples(index=False): print(f'[FAIL] {r.company}: {r.detail}')
 
-def filename(): return f"{datetime.now().day}-{datetime.now().strftime('%B')}-Construction-Jobs.md"
+def filename():
+    now=datetime.now()
+    return f"{now.day}-{now.strftime('%B')}-Construction-Jobs-List.md"
+
 def write_output(jobs):
-    if not jobs: print('No new matching jobs.'); return
-    jobs=sorted(jobs,key=lambda x:(x['company'].lower(),x['title'].lower())); f=filename(); today=datetime.now().strftime('%B %d, %Y'); ts=datetime.now().strftime('%Y-%m-%d %H:%M')
-    table='| Company | Location | Role | Apply | Posted |\n|---|---|---|---|---|\n'+''.join(f"| **{j['company']}** | {j['location']} | {j['title']} | [Apply]({j['link']}) | {j['posted']} |\n" for j in jobs)
-    old=Path(f).read_text(encoding='utf-8') if Path(f).exists() else ''; header=f'# Construction Entry-Level Jobs — {today}\n> US construction/civil roles; rejects explicit required minimum experience above 2 years.\n\n'; block=f'## Batch {ts} — {len(jobs)} new jobs\n\n{table}\n'
-    Path(f).write_text(header+block+'\n'+old,encoding='utf-8'); Path('README.md').write_text(header+block,encoding='utf-8')
+    if not jobs:
+        print('No new jobs found this batch.')
+        return
+    jobs=sorted(jobs,key=lambda x:(x['company'].lower(),x['title'].lower()))
+    f=filename()
+    today=datetime.now().strftime('%B %d, %Y')
+    ts=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    counts={}
+    for j in jobs:
+        counts[j['company']]=counts.get(j['company'],0)+1
+    summary=f"\n📊 **{len(jobs)} new construction jobs this batch:**\n"
+    for company,n in sorted(counts.items()):
+        summary+=f"- {company}: {n} job{'s' if n != 1 else ''}\n"
+
+    table='| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |\n|---|---|---|---|---|\n'
+    table+=''.join(f"| **{j['company']}** | {j['location']} | {j['title']} | [Apply]({j['link']}) | {j['posted']} |\n" for j in jobs)
+    batch=f"\n### 🕐 Batch at {ts}\n{summary}\n{table}\n---\n"
+    header=f"# 🏗️ Construction Entry-Level Jobs — {today}\n> Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.\n"
+
+    path=Path(f)
+    existing=''
+    if path.exists():
+        text=path.read_text(encoding='utf-8')
+        # Keep previous batches but remove the old single document header so it is never duplicated.
+        marker='### 🕐 Batch at '
+        pos=text.find(marker)
+        if pos >= 0:
+            existing=text[pos:]
+        else:
+            # Backward compatibility with older construction files that used ## Batch.
+            marker='## Batch '
+            pos=text.find(marker)
+            existing=text[pos:] if pos >= 0 else text
+    path.write_text(header+batch+'\n'+existing,encoding='utf-8')
+    Path('README.md').write_text(path.read_text(encoding='utf-8'),encoding='utf-8')
+    print(f'✅ {len(jobs)} new jobs written to {f} and README.md')
+
 def telegram(jobs):
     token=os.getenv('TELEGRAM_BOT_TOKEN'); chat=os.getenv('TELEGRAM_CHAT_ID')
     if not token or not chat or not jobs:return
-    msg=f"🏗️ *{len(jobs)} new construction jobs*\n0–2 YOE / entry-level / US\n\n"
-    for j in jobs[:12]: msg+=f"*{j['company']}* — {j['title']}\n📍 {j['location']}\n[Apply]({j['link']})\n\n"
+    msg=f"🏗️ *{len(jobs)} NEW CONSTRUCTION JOBS — {datetime.now().strftime('%b %d %H:%M')}*\n0–2 YOE / entry-level / US\n\n"
+    for j in jobs[:12]: msg+=f"*{j['company']}*\n💼 {j['title']}\n📍 {j['location']}\n🔗 [Apply]({j['link']})\n\n"
     SESSION.post(f'https://api.telegram.org/bot{token}/sendMessage',json={'chat_id':chat,'text':msg[:4000],'parse_mode':'Markdown','disable_web_page_preview':True},timeout=10)
 
 if __name__=='__main__':
