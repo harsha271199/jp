@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 21:23:50
+
+📊 **2 new construction jobs this batch:**
+- QTS Data Centers: 1 job
+- The Weitz Co., Des Moines, Iowa†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **QTS Data Centers** | US TX Turkey 1 DC1, United States of America | Development Project Engineer (DC Construction) | [Apply](https://qtsdatacenters.wd5.myworkdayjobs.com/QTS/job/West-Texas-TX/Development-Project-Engineer--DC-Construction-_R2026-1735/apply) | 2026-08-05 |
+| **The Weitz Co., Des Moines, Iowa†** | Des Moines, Iowa | Quality Control Inspector - Data Center Construction | [Apply](https://careers.weitz.com/job/des-moines/quality-control-inspector-data-center-construction/48937/99361838752) | 2026-8-17 |
+
+---
+
 ### 🕐 Batch at 2026-08-17 20:23:05
 
 📊 **2 new construction jobs this batch:**
