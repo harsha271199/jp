@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 14:24:31
+
+📊 **1 new construction jobs this batch:**
+- MasTec Inc., Coral Gables, Fla.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **MasTec Inc., Coral Gables, Fla.†** | Saiia - Birmingham, AL | Junior Estimator | [Apply](https://scccareers-mastec.icims.com/jobs/67743/login) | 2026-08-17T14:18:00+0000 |
+
+---
+
 ### 🕐 Batch at 2026-08-17 13:38:32
 
 📊 **1 new construction jobs this batch:**
