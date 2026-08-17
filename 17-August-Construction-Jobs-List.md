@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 19:25:40
+
+📊 **1 new construction jobs this batch:**
+- T5 Construction, Atlanta, Ga.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **T5 Construction, Atlanta, Ga.** | Lufkin, TX | Assistant Superintendent | [Apply](https://jobs.lever.co/t5datacenters/36b05ec2-ed5e-4efe-aeee-cf22cfa13960) | N/A |
+
+---
+
 ### 🕐 Batch at 2026-08-17 18:33:09
 
 📊 **1 new construction jobs this batch:**
