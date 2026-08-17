@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 17:25:14
+
+📊 **1 new construction jobs this batch:**
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Sundt Construction Inc., Tempe, Ariz.** | Tampa, FL, United States | Project Engineer - Water/Wastewater | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10924/?utm_medium=jobshare) | 2026-08-17 |
+
+---
+
 ### 🕐 Batch at 2026-08-17 14:24:31
 
 📊 **1 new construction jobs this batch:**
