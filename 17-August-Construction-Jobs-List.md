@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 13:38:32
+
+📊 **1 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Myrtle Beach, SC | Project Controls Analyst | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Myrtle-Beach-SC/Project-Controls-Analyst_R5024485-1) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-17 07:50:31
 
 📊 **2 new construction jobs this batch:**
