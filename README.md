@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-17 18:33:09
+
+📊 **1 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | McLean, VA | Cost Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Cost-Engineer_R5024492) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-17 17:25:14
 
 📊 **1 new construction jobs this batch:**
