@@ -1,6 +1,20 @@
 # 🏗️ Construction Entry-Level Jobs — August 18, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-18 17:24:25
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 4 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Los Angeles, CA | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Los-Angeles-CA/Project-Engineer_R5023445) | Posted Today |
+| **Clark Group, McLean, Va.** | San Bernardino, CA; Costa Mesa, CA | Project Scheduler | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Costa-Mesa-CA/Project-Scheduler_R5023448) | Posted Today |
+| **Clark Group, McLean, Va.** | Boardman, OR | Project Scheduler | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Boardman-OR/Project-Scheduler_R5023136) | Posted Today |
+| **Clark Group, McLean, Va.** | Greenville, SC | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Greenville-SC/Safety-Engineer_R5024510) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-18 16:27:00
 
 📊 **3 new construction jobs this batch:**
