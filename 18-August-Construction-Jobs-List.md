@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 18, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-18 18:31:56
+
+📊 **1 new construction jobs this batch:**
+- SpaceX: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **SpaceX** | Memphis, TN | Data Center Safety Engineer (Electrical) | [Apply](https://boards.greenhouse.io/spacex/jobs/8727446002?gh_jid=8727446002) | 2026-08-18T14:21:16-04:00 |
+
+---
+
 ### 🕐 Batch at 2026-08-18 17:24:25
 
 📊 **4 new construction jobs this batch:**
