@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — August 18, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-18 16:27:00
+
+📊 **3 new construction jobs this batch:**
+- Clune Construction, Chicago, Ill.: 1 job
+- HITT Contracting, Falls Church, Va.: 1 job
+- SpaceX: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clune Construction, Chicago, Ill.** | Atlanta, GA | Assistant Project Manager | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Atlanta-GA/Assistant-Project-Manager_JR101127) | Posted 30+ Days Ago |
+| **HITT Contracting, Falls Church, Va.** | Atlanta, GA | Commercial Construction Assistant Superintendent | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Atlanta-GA/Commercial-Construction-Assistant-Superintendent_JR102703) | Posted Today |
+| **SpaceX** | McGregor, TX | Field Engineer (Site Development) | [Apply](https://boards.greenhouse.io/spacex/jobs/8726249002?gh_jid=8726249002) | 2026-08-18T12:16:17-04:00 |
+
+---
+
 ### 🕐 Batch at 2026-08-18 13:40:46
 
 📊 **1 new construction jobs this batch:**
