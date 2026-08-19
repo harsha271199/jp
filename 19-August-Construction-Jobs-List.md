@@ -1,6 +1,20 @@
 # 🏗️ Construction Entry-Level Jobs — August 19, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-19 16:27:27
+
+📊 **3 new construction jobs this batch:**
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Johnson Controls: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Estimating Engineer 2 - Self Perform Concrete | [Apply](https://jobs.jedunn.com/job/Raleigh-Estimating-Engineer-2-Self-Perform-Concrete-NC-27607/1421087100/) | N/A |
+| **Johnson Controls** | Lubbock-Texas-United States of America | Quality Engineer | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Lubbock-Texas-United-States-of-America/Quality-Engineer_WD30276373) | Posted Today |
+| **Johnson Controls** | Lubbock-Texas-United States of America | Supplier Quality Engineer | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Lubbock-Texas-United-States-of-America/Supplier-Quality-Engineer_WD30276374) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-19 15:27:55
 
 📊 **1 new construction jobs this batch:**
