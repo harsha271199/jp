@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-20 14:33:06
+
+📊 **1 new construction jobs this batch:**
+- Johnson & Johnson: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Johnson & Johnson** | Raynham, Massachusetts, United States of America | Staff NPD Quality Engineer | [Apply](https://jj.wd5.myworkdayjobs.com/en-US/JJ/job/Raynham-Massachusetts-United-States-of-America/Staff-NPD-Quality-Engineer_R-091585-1) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-20 13:44:06
 
 📊 **1 new construction jobs this batch:**
