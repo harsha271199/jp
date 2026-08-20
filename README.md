@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-20 17:26:45
+
+📊 **1 new construction jobs this batch:**
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Swinerton Inc., Concord, Calif.** | Colorado Springs CO | Project Engineer | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Colorado-Springs-CO/Project-Engineer_J17851) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-20 16:30:48
 
 📊 **3 new construction jobs this batch:**
