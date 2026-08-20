@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — August 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-20 21:25:13
+
+📊 **3 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Northrop Grumman: 1 job
+- The Weitz Co., Des Moines, Iowa†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Washington, DC | Field Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Washington-DC/Field-Engineer_R5023296) | Posted Today |
+| **Northrop Grumman** | United States-Utah-Roy | Staff Software Quality Engineer - 17934 | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/Staff-Software-Quality-Engineer---17934_R10246898-1) | Posted Today |
+| **The Weitz Co., Des Moines, Iowa†** | Boydton, Virginia | Quality Control (QC) Helper | [Apply](https://careers.weitz.com/job/boydton/quality-control-qc-helper/48937/99505573472) | 2026-8-20 |
+
+---
+
 ### 🕐 Batch at 2026-08-20 20:24:44
 
 📊 **2 new construction jobs this batch:**
