@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-20 20:24:44
+
+📊 **2 new construction jobs this batch:**
+- Swinerton Inc., Concord, Calif.: 1 job
+- The Christman Co., Lansing, Mich.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Swinerton Inc., Concord, Calif.** | Atlanta GA | Project Engineer | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Atlanta-GA/Project-Engineer_J17855) | Posted Today |
+| **The Christman Co., Lansing, Mich.** | Greensboro, NC | Assistant Superintendent | [Apply](https://christmanco.wd108.myworkdayjobs.com/en-US/careers/job/Greensboro-NC/Assistant-Superintendent_R-100578) | Posted 30+ Days Ago |
+
+---
+
 ### 🕐 Batch at 2026-08-20 19:29:21
 
 📊 **2 new construction jobs this batch:**
