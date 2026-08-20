@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — August 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-20 16:30:48
+
+📊 **3 new construction jobs this batch:**
+- MasTec Inc., Coral Gables, Fla.†: 1 job
+- Skanska USA, New York, N.Y.†: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **MasTec Inc., Coral Gables, Fla.†** | ATP Texas | DOD SkillBridge - Field Engineer I, II & III - Solar & BESS | [Apply](https://wzkcareers-mastec.icims.com/jobs/63913/login) | 2026-05-26T17:27:00+0000 |
+| **Skanska USA, New York, N.Y.†** | MD - Hyattsville | New Grad Estimator | [Apply](https://careers-skanska.icims.com/jobs/9191/login) | 2026-08-20T15:42:00+0000 |
+| **Sundt Construction Inc., Tempe, Ariz.** | San Antonio, TX, United States | Estimator II - Building Group | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10966/?utm_medium=jobshare) | 2026-08-20 |
+
+---
+
 ### 🕐 Batch at 2026-08-20 15:30:58
 
 📊 **1 new construction jobs this batch:**
