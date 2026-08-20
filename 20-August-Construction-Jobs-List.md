@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-20 15:30:58
+
+📊 **1 new construction jobs this batch:**
+- MasTec Inc., Coral Gables, Fla.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **MasTec Inc., Coral Gables, Fla.†** | WCC - Scottsdale, AZ | Estimator - Transportation | [Apply](https://wclcareers-mastec.icims.com/jobs/66247/login) | 2026-07-29T20:51:00+0000 |
+
+---
+
 ### 🕐 Batch at 2026-08-20 14:33:06
 
 📊 **1 new construction jobs this batch:**
