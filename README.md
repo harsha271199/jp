@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 14:31:38
+
+📊 **2 new construction jobs this batch:**
+- FedEx: 1 job
+- Holder Construction Group, Atlanta, Ga.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **FedEx** | Moon Township, PA, US | MD Network Planning Engineering & Design | [Apply](https://careers.fedex.com/md-network-planning-engineering-design/job/P25-361943-1) | 2026-08-21T14:03:00.483767+00:00 |
+| **Holder Construction Group, Atlanta, Ga.** | Richmond, VA | Assistant Field Engineer (Hourly) | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4182632009) | 2026-08-21T10:18:46-04:00 |
+
+---
+
 ### 🕐 Batch at 2026-08-21 12:37:56
 
 📊 **1 new construction jobs this batch:**
