@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 17:25:52
+
+📊 **2 new construction jobs this batch:**
+- Holder Construction Group, Atlanta, Ga.: 1 job
+- The Christman Co., Lansing, Mich.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Holder Construction Group, Atlanta, Ga.** | Dallas, TX | Preconstruction Engineer | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4182920009) | 2026-08-21T13:08:31-04:00 |
+| **The Christman Co., Lansing, Mich.** | Mesquite, TX | Electrical Estimator | [Apply](https://christmanco.wd108.myworkdayjobs.com/en-US/careers/job/Mesquite-TX/Electrical-Estimator_R-100461) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-21 16:28:32
 
 📊 **1 new construction jobs this batch:**
