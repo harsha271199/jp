@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 22:20:39
+
+📊 **1 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Charlotte, NC | Assistant Superintendent | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Charlotte-NC/Assistant-Superintendent_R5023220) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-21 19:24:45
 
 📊 **2 new construction jobs this batch:**
