@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 18:31:04
+
+📊 **3 new construction jobs this batch:**
+- Johnson Controls: 1 job
+- Northrop Grumman: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Johnson Controls** | Marinette-Wisconsin-United States of America | Quality Engineer | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Marinette-Wisconsin-United-States-of-America/Quality-Engineer_WD30277095-1) | Posted Today |
+| **Northrop Grumman** | United States-Arizona-Chandler | Systems Safety Engineer – Level 2 or Level 3 (AHT) | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Arizona-Chandler/Systems-Safety-Engineer---Level-2-or-Level-3--AHT-_R10247077) | Posted Today |
+| **Sundt Construction Inc., Tempe, Ariz.** | Tucson, AZ, United States | Project Controls Engineer II | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/10991/?utm_medium=jobshare) | 2026-08-21 |
+
+---
+
 ### 🕐 Batch at 2026-08-21 17:25:52
 
 📊 **2 new construction jobs this batch:**
