@@ -1,6 +1,18 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 19:24:45
+
+📊 **2 new construction jobs this batch:**
+- HITT Contracting, Falls Church, Va.: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **HITT Contracting, Falls Church, Va.** | Columbus, OH | Commercial Construction Assistant Superintendent - GovCloud | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Columbus-OH/Commercial-Construction-Assistant-Superintendent---GovCloud_JR102736) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Falls Church, VA | Commercial Construction Assistant Superintendent - GovDirect | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Falls-Church-VA/Commercial-Construction-Assistant-Superintendent---GovDirect_JR102738) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-21 18:31:04
 
 📊 **3 new construction jobs this batch:**
