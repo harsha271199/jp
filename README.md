@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 16:28:32
+
+📊 **1 new construction jobs this batch:**
+- Samsung Electronics: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Samsung Electronics** | Austin, TX | Experienced Project Engineer | [Apply](https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/12100-Samsung-Blvd-Austin-TX-USA/Experienced-Project-Engineer_R119778-1?locations=e2e963279736101307c7218e23e80000&locations=189767dd6c92012d02b6bc83a529e178&locations=9679a39fc7361030509d856e0bf70000&locations=189767dd6c9201c7ec227985a529067b) | 2026-08-22 00:26:27.221273 |
+
+---
+
 ### 🕐 Batch at 2026-08-21 15:30:13
 
 📊 **2 new construction jobs this batch:**
