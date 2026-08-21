@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-21 15:30:13
+
+📊 **2 new construction jobs this batch:**
+- Holder Construction Group, Atlanta, Ga.: 1 job
+- SpaceX: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Holder Construction Group, Atlanta, Ga.** | Culpepper, VA | Assistant Field Engineer (Hourly) | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4378195009) | 2026-08-21T10:46:34-04:00 |
+| **SpaceX** | Cape Canaveral, FL | Structural Engineer, Launch Infrastructure (Starship) | [Apply](https://boards.greenhouse.io/spacex/jobs/8737416002?gh_jid=8737416002) | 2026-08-21T10:34:11-04:00 |
+
+---
+
 ### 🕐 Batch at 2026-08-21 14:31:38
 
 📊 **2 new construction jobs this batch:**
