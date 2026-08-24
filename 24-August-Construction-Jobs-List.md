@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — August 24, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-24 19:27:16
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 3 jobs
+- Johnson Controls: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | McLean, VA | Civil Estimator | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Civil-Estimator_R5012427) | Posted Today |
+| **Clark Group, McLean, Va.** | San Francisco, CA | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/San-Francisco-CA/Project-Engineer_R5022206) | Posted Today |
+| **Clark Group, McLean, Va.** | Los Angeles, CA | Project Scheduler | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Los-Angeles-CA/Project-Scheduler_R5023469) | Posted Today |
+| **Johnson Controls** | Ashburn-Virginia-United States of America | Field Project Coordinator | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Ashburn-Virginia-United-States-of-America/Field-Project-Coordinator_WD30277359) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-24 18:34:10
 
 📊 **1 new construction jobs this batch:**
