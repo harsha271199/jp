@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — August 24, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-24 21:25:44
+
+📊 **5 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- Holder Construction Group, Atlanta, Ga.: 2 jobs
+- MasTec Inc., Coral Gables, Fla.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Reno, NV | Project Scheduler | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Reno-NV/Project-Scheduler_R5020883) | Posted Today |
+| **Clark Group, McLean, Va.** | San Francisco, CA | VDC Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/San-Francisco-CA/VDC-Engineer_R5023743) | Posted Today |
+| **Holder Construction Group, Atlanta, Ga.** | Denver, CO | Preconstruction - Engineer | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4182922009) | 2026-08-24T16:32:25-04:00 |
+| **Holder Construction Group, Atlanta, Ga.** | Phoenix, AZ | Preconstruction - Engineer | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4182926009) | 2026-08-24T16:31:11-04:00 |
+| **MasTec Inc., Coral Gables, Fla.†** | 039_SAIIA Construction Co | Project Engineer | [Apply](https://careers-mastec.icims.com/jobs/66245/login) | 2026-07-29T18:49:00+0000 |
+
+---
+
 ### 🕐 Batch at 2026-08-24 20:25:52
 
 📊 **3 new construction jobs this batch:**
