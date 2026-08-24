@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 24, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-24 18:34:10
+
+📊 **1 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Boardman, OR | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Boardman-OR/Project-Engineer_R5018328) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-24 17:28:46
 
 📊 **1 new construction jobs this batch:**
