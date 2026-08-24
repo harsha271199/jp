@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — August 24, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-24 20:25:52
+
+📊 **3 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Holder Construction Group, Atlanta, Ga.: 1 job
+- SOLV Energy, San Diego, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Lorton, VA | Assistant Superintendent (Water/Wastewater) | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Lorton-VA/Assistant-Superintendent--Water-Wastewater-_R5021649) | Posted Today |
+| **Holder Construction Group, Atlanta, Ga.** | Herndon, VA | Preconstruction - Engineer | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4380997009) | 2026-08-24T16:18:42-04:00 |
+| **SOLV Energy, San Diego, Calif.** | Princeville, IL | Assistant Superintendent (Cornwell, IL) | [Apply](https://solvenergy.wd1.myworkdayjobs.com/en-US/SOLV_External_Career/job/Princeville-IL/Assistant-Superintendent--San-Antonio--TX-_J13485) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-24 19:27:16
 
 📊 **4 new construction jobs this batch:**
