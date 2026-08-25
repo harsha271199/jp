@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 25, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-25 16:33:08
+
+📊 **1 new construction jobs this batch:**
+- FedEx: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **FedEx** | Memphis, TN, US | Associate Engineer - Project Engineer | [Apply](https://careers.fedex.com/associate-engineer-project-engineer/job/P25-332813-2) | 2026-08-25T16:05:34.249923+00:00 |
+
+---
+
 ### 🕐 Batch at 2026-08-25 13:47:09
 
 📊 **2 new construction jobs this batch:**
