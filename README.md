@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — August 25, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-25 21:24:55
+
+📊 **2 new construction jobs this batch:**
+- Gilbane Building Co., Providence, R.I.†: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Construction Project Engineer | [Apply](https://careers-gilbaneco.icims.com/jobs/13223/construction-project-engineer/job?in_iframe=1) | N/A |
+| **Sundt Construction Inc., Tempe, Ariz.** | Yellow Pine, ID, United States | Project Engineer - Electrical | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11024/?utm_medium=jobshare) | 2026-08-25 |
+
+---
+
 ### 🕐 Batch at 2026-08-25 16:33:08
 
 📊 **1 new construction jobs this batch:**
