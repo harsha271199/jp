@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 25, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-25 23:23:01
+
+📊 **1 new construction jobs this batch:**
+- Gilbane Building Co., Providence, R.I.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Construction Engineer | [Apply](https://careers-gilbaneco.icims.com/jobs/13228/construction-engineer/job?in_iframe=1) | N/A |
+
+---
+
 ### 🕐 Batch at 2026-08-25 22:23:08
 
 📊 **1 new construction jobs this batch:**
