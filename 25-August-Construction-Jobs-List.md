@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 25, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-25 22:23:08
+
+📊 **1 new construction jobs this batch:**
+- Adolfson & Peterson Construction, Minneapolis, Minn.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Adolfson & Peterson Construction, Minneapolis, Minn.†** | Aurora, CO | Project Coordinator | [Apply](https://ap.wd12.myworkdayjobs.com/en-US/AP_Careers/job/Aurora-CO/Project-Coordinator_JR100718) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-25 21:24:55
 
 📊 **2 new construction jobs this batch:**
