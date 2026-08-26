@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — August 26, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-26 14:41:16
+
+📊 **1 new construction jobs this batch:**
+- Clune Construction, Chicago, Ill.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clune Construction, Chicago, Ill.** | Dallas, TX | Assistant Project Manager - Tenant Improvement | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Dallas-TX/Assistant-Project-Manager---Tenant-Improvement_JR101319) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-26 07:43:28
 
 📊 **1 new construction jobs this batch:**
