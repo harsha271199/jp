@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — August 26, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-26 21:37:01
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- General Motors: 1 job
+- HITT Contracting, Falls Church, Va.: 1 job
+- Kokosing Group of Cos., Westerville, Ohio†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Lakewood, WA; Seattle, WA | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Lakewood-WA/Safety-Engineer_R5023065) | Posted Today |
+| **General Motors** | Pontiac, Michigan, United States of America | Flexible Machine Shop Scheduler | [Apply](https://generalmotors.wd5.myworkdayjobs.com/en-US/Careers_GM/job/Pontiac-Michigan-United-States-of-America/Flexible-Machine-Shop-Scheduler_JR-202618210) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Seattle, WA | MEP Assistant Superintendent | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Seattle-WA/MEP-Assistant-Superintendent_JR102758) | Posted Today |
+| **Kokosing Group of Cos., Westerville, Ohio†** | St. Louis, MO | Project Engineer/Field Engineer | [Apply](https://kokosing.wd5.myworkdayjobs.com/en-US/Kokosing_External_Career_Site/job/St-Louis-MO/Project-Engineer-Field-Engineer_R-102239) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-26 18:57:37
 
 📊 **2 new construction jobs this batch:**
