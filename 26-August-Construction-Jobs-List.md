@@ -1,6 +1,22 @@
 # 🏗️ Construction Entry-Level Jobs — August 26, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-26 16:16:34
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- Clune Construction, Chicago, Ill.: 1 job
+- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | McLean, VA | Project Controls Analyst | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Project-Controls-Analyst_R5024599) | Posted Today |
+| **Clark Group, McLean, Va.** | McLean, VA | VDC Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/VDC-Project-Engineer_R5024600) | Posted Today |
+| **Clune Construction, Chicago, Ill.** | Houston, TX | Assistant Project Manager - Tenant Improvement | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Houston-TX/Assistant-Project-Manager---Tenant-Improvement_JR101320-1) | Posted Today |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | Camden, Oh | Project Engineer | [Apply](https://careers.pcl.com/job/Camden-Project-Engineer-OH/1423482600/) | N/A |
+
+---
+
 ### 🕐 Batch at 2026-08-26 14:41:16
 
 📊 **1 new construction jobs this batch:**
