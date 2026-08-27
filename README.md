@@ -1,6 +1,24 @@
 # 🏗️ Construction Entry-Level Jobs — August 27, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-08-27 23:30:54
+
+📊 **5 new construction jobs this batch:**
+- Anthropic: 1 job
+- Gilbane Building Co., Providence, R.I.†: 2 jobs
+- HITT Contracting, Falls Church, Va.: 1 job
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Anthropic** | San Francisco, CA | New York City, NY | Manufacturing Quality Engineer, Data Center Power & Cooling | [Apply](https://job-boards.greenhouse.io/anthropic/jobs/5397596008) | 2026-08-27T15:15:04-04:00 |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Field Engineer II | [Apply](https://careers-gilbaneco.icims.com/jobs/13262/field-engineer-ii/job?in_iframe=1) | N/A |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | VDC Engineer II | [Apply](https://careers-gilbaneco.icims.com/jobs/13268/vdc-engineer-ii/job?in_iframe=1) | N/A |
+| **HITT Contracting, Falls Church, Va.** | Atlanta, GA | Commercial Construction Assistant Project Manager | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Atlanta-GA/Commercial-Construction-Assistant-Project-Manager_JR102761) | Posted Today |
+| **Swinerton Inc., Concord, Calif.** | Dallas TX | Project Engineer | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Dallas-TX/Project-Engineer_J17897) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-08-27 13:38:55
 
 📊 **4 new construction jobs this batch:**
