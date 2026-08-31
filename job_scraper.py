@@ -94,6 +94,53 @@ def is_us(loc):
     states='al ak az ar ca co ct de fl ga hi id il in ia ks ky la me md ma mi mn ms mo mt ne nv nh nj nm ny nc nd oh ok or pa ri sc sd tn tx ut vt va wa wv wi wy dc'.split()
     names='alabama alaska arizona arkansas california colorado connecticut delaware florida georgia hawaii idaho illinois indiana iowa kansas kentucky louisiana maine maryland massachusetts michigan minnesota mississippi missouri montana nebraska nevada ohio oklahoma oregon pennsylvania tennessee texas utah vermont virginia washington wisconsin wyoming'.split()
     return any(n in s for n in names) or any(re.search(r'[, ]'+a+r'(?:[, ]|$)',s) for a in states) or bool(re.search(r'\b(new york|new jersey|new mexico|new hampshire|north carolina|south carolina|north dakota|south dakota|rhode island|west virginia)\b',s))
+def normalize_posted(posted):
+    """Normalize source-specific posting timestamps without inventing dates."""
+    if posted is None: return 'Unknown'
+    if isinstance(posted,(int,float)):
+        try:
+            # Lever and some ATS APIs use epoch milliseconds.
+            value=float(posted)
+            if value > 10_000_000_000: value /= 1000.0
+            return datetime.fromtimestamp(value).strftime('%Y-%m-%d')
+        except Exception: return 'Unknown'
+    s=clean(str(posted))
+    if not s or s.lower() in ('n/a','na','none','null','unknown'): return 'Unknown'
+    # Preserve Workday relative labels because they are truthful source data.
+    if re.match(r'^Posted\s+(Today|Yesterday|\d+\+?\s+Days?\s+Ago)$',s,re.I): return s
+    # ISO / YYYY-MM-DD timestamps.
+    m=re.search(r'\b(20\d{2})-(\d{2})-(\d{2})\b',s)
+    if m: return f'{m.group(1)}-{m.group(2)}-{m.group(3)}'
+    # Common US textual dates.
+    for fmt in ('%b %d, %Y','%B %d, %Y','%m/%d/%Y','%m/%d/%y'):
+        try: return datetime.strptime(s,fmt).strftime('%Y-%m-%d')
+        except Exception: pass
+    return s
+
+def posted_from_html(text):
+    """Best-effort extraction from a real job-detail page; Unknown if absent."""
+    if not text: return 'Unknown'
+    soup=BeautifulSoup(text,'html.parser')
+    # JSON-LD JobPosting datePosted is the most reliable HTML source.
+    for tag in soup.find_all('script',type='application/ld+json'):
+        try:
+            obj=json.loads(tag.string or tag.get_text() or '{}')
+            objs=obj if isinstance(obj,list) else [obj]
+            for x in objs:
+                if isinstance(x,dict) and x.get('@type')=='JobPosting' and x.get('datePosted'):
+                    return normalize_posted(x.get('datePosted'))
+        except Exception: pass
+    txt=clean(soup.get_text(' ',strip=True))
+    patterns=[
+        r'(?:Date\s+Posted|Posted\s+Date|Posting\s+Date|Posted\s+On|Date)\s*:?\s*([A-Z][a-z]+\s+\d{1,2},\s+20\d{2})',
+        r'(?:Date\s+Posted|Posted\s+Date|Posting\s+Date|Posted\s+On)\s*:?\s*(20\d{2}-\d{2}-\d{2})',
+        r'(?:Date\s+Posted|Posted\s+Date|Posting\s+Date|Posted\s+On)\s*:?\s*(\d{1,2}/\d{1,2}/20\d{2})',
+    ]
+    for pat in patterns:
+        m=re.search(pat,txt,re.I)
+        if m: return normalize_posted(m.group(1))
+    return 'Unknown'
+
 def add(company,title,location,link,posted='N/A',desc=''):
     # Track CURRENT matching jobs independently from seen_links.csv. This makes
     # source health meaningful on incremental runs while only notifying on new jobs.
@@ -101,7 +148,7 @@ def add(company,title,location,link,posted='N/A',desc=''):
     if not (role_match(title,desc) and experience_ok(title,desc) and is_us(location) and company_context_ok(company,title,desc)):
         return False
     current_match_links.add(link)
-    record={'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':posted}
+    record={'company':company,'title':clean(title),'location':clean(location) or 'N/A','link':link,'posted':normalize_posted(posted)}
     current_jobs_by_link[link]=record
     if link not in old_links:
         results.append(record)
@@ -118,7 +165,7 @@ def lever(url,company):
     m=re.search(r'jobs\.lever\.co/([^/?#]+)',url); 
     if not m: return False
     org=m.group(1); r=SESSION.get(f'https://api.lever.co/v0/postings/{org}?mode=json',timeout=20); r.raise_for_status()
-    for j in r.json(): add(company,j.get('text'),j.get('categories',{}).get('location'),j.get('hostedUrl'),'N/A',(j.get('descriptionPlain') or '')+' '+(j.get('additionalPlain') or ''))
+    for j in r.json(): add(company,j.get('text'),j.get('categories',{}).get('location'),j.get('hostedUrl'),j.get('createdAt') or j.get('updatedAt') or 'Unknown',(j.get('descriptionPlain') or '')+' '+(j.get('additionalPlain') or ''))
     return True
 def ashby(url,company):
     m=re.search(r'jobs\.ashbyhq\.com/([^/?#]+)',url); 
@@ -256,7 +303,7 @@ def successfactors(url,company):
             loc=''
             lm=re.search(r'(?:Location|Primary Location)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2}(?:,\s*US)?)',text,re.I)
             if lm: loc=lm.group(1)
-            if title: add(company,title,loc,d.url,'N/A',text)
+            if title: add(company,title,loc,d.url,posted_from_html(d.text),text)
         except Exception: pass
     if found or links: return True
     raise RuntimeError('no SuccessFactors job-detail links discovered')
@@ -857,7 +904,7 @@ def html_job_board(url,company,kind='generic'):
             d=SESSION.get(u,headers={'User-Agent':'Mozilla/5.0'},timeout=15); ds=BeautifulSoup(d.text,'html.parser'); text=clean(ds.get_text(' ',strip=True));
             h=ds.find('h1') or ds.find('h2'); title=clean(h.get_text(' ',strip=True) if h else label)
             lm=re.search(r'(?:Location|locations?|Job Location)\s*:?\s*([A-Za-z .-]+,\s*[A-Z]{2})',text,re.I)
-            if add(company,title,lm.group(1) if lm else '',d.url,'N/A',text): found+=1
+            if add(company,title,lm.group(1) if lm else '',d.url,posted_from_html(d.text),text): found+=1
         except Exception: pass
     if links: return True
     raise RuntimeError(f'{kind} job board returned no job-detail links')
