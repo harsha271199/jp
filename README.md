@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — September 01, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-01 22:58:44
+
+📊 **3 new construction jobs this batch:**
+- Johnson Controls: 1 job
+- Northrop Grumman: 1 job
+- The Weitz Co., Des Moines, Iowa†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Johnson Controls** | Largo-Florida-United States of America | Quality Engineer I | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Largo-Florida-United-States-of-America/Quality-Engineer-I_WD30278664) | Posted Today |
+| **Northrop Grumman** | United States-Utah-Roy | Sentinel Structural Engineer - *16675 | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/Sentinel-Structural-Engineer----16675_R10216695) | Posted Today |
+| **The Weitz Co., Des Moines, Iowa†** | Houston, Texas | Project Engineer II - Industrial (Traveling) | [Apply](https://careers.weitz.com/job/houston/project-engineer-ii-industrial-traveling/48937/100004641008) | 2026-9-1 |
+
+---
+
 ### 🕐 Batch at 2026-09-01 20:26:39
 
 📊 **4 new construction jobs this batch:**
