@@ -1,6 +1,28 @@
 # 🏗️ Construction Entry-Level Jobs — September 01, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-01 17:14:28
+
+📊 **8 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 4 jobs
+- HITT Contracting, Falls Church, Va.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Kokosing Group of Cos., Westerville, Ohio†: 1 job
+- The Christman Co., Lansing, Mich.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | McLean, VA | Project Controls Analyst (Winter 2026/Spring 2027 Graduates) | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Project-Controls-Analyst--Winter-2026-Spring-2027-Graduates-_R5024638-1) | Posted Today |
+| **Clark Group, McLean, Va.** | Reno, NV | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Reno-NV/Project-Engineer_R5023711) | Posted Today |
+| **Clark Group, McLean, Va.** | Louisa, VA; Richmond, VA | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Richmond-VA/Project-Engineer_R5023096) | Posted Today |
+| **Clark Group, McLean, Va.** | McLean, VA | Summer Associate - Project Controls (Summer 2027) | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Summer-Associate---Project-Controls--Summer-2027-_R5024640-1) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Houston, TX | Quality Control Associate | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Houston-TX/Quality-Control-Associate_JR102780) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 1 | [Apply](https://jobs.jedunn.com/job/Charlotte-Project-Engineer-1-NC-28217/1425439600/) | Unknown |
+| **Kokosing Group of Cos., Westerville, Ohio†** | Baltimore, MD | Project Engineer | [Apply](https://kokosing.wd5.myworkdayjobs.com/en-US/Kokosing_External_Career_Site/job/Baltimore-MD/Project-Engineer_R-102256-1) | Posted Today |
+| **The Christman Co., Lansing, Mich.** | Lansing, MI | Field Engineer | [Apply](https://christmanco.wd108.myworkdayjobs.com/en-US/careers/job/Lansing-MI/Field-Engineer_R-100672) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-09-01 13:01:15
 
 📊 **2 new construction jobs this batch:**
