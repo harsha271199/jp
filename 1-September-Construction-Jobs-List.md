@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — September 01, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-01 13:01:15
+
+📊 **2 new construction jobs this batch:**
+- HITT Contracting, Falls Church, Va.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **HITT Contracting, Falls Church, Va.** | Atlanta, GA | MEP Assistant Superintendent | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Atlanta-GA/MEP-Assistant-Superintendent_JR102777) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 2, Mission Critical | [Apply](https://jobs.jedunn.com/job/El-Paso-Project-Engineer-2%2C-Mission-Critical-TX-79901/1381140700/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-09-01 07:08:36
 
 📊 **1 new construction jobs this batch:**
