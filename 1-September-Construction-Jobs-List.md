@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — September 01, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-01 20:26:39
+
+📊 **4 new construction jobs this batch:**
+- Clune Construction, Chicago, Ill.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Regeneron: 1 job
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clune Construction, Chicago, Ill.** | Los Angeles, CA | Assistant Project Manager | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Los-Angeles-CA/Assistant-Project-Manager_JR101262) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Coordinator | [Apply](https://jobs.jedunn.com/formoffsite/job/Kansas-City-Project-Coordinator-MO-64106/1425530900/) | Unknown |
+| **Regeneron** | Rensselaer, New York, United States of America | Quality Control Analyst (Microbiology) | [Apply](https://careers.regeneron.com/en/jobs/r50200/quality-control-analyst-microbiology/) | 2026-09-01 |
+| **Swinerton Inc., Concord, Calif.** | Los Angeles CA | Project Engineer - K-14 (DSA) | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Los-Angeles-CA/Project-Engineer---K-14--DSA-_J17918) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-09-01 17:14:28
 
 📊 **8 new construction jobs this batch:**
