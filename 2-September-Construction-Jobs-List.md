@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — September 02, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-02 23:49:47
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Gilbane Building Co., Providence, R.I.†: 1 job
+- SpaceX: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Dallas, TX; Haskell, TX | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Haskell-TX/Project-Engineer_R5024683) | Posted Today |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Project Coordinator | [Apply](https://careers-gilbaneco.icims.com/jobs/13311/project-coordinator/job?in_iframe=1) | 2024-09-02T23:48:16.052Z |
+| **SpaceX** | Starbase, TX | Environmental Health & Safety Engineer (Construction Safety) | [Apply](https://boards.greenhouse.io/spacex/jobs/8779722002?gh_jid=8779722002) | 2026-09-02T17:40:40-04:00 |
+| **Sundt Construction Inc., Tempe, Ariz.** | Phoenix, AZ, United States | Project Engineer II - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11112/?utm_medium=jobshare) | 2026-09-02 |
+
+---
+
 ### 🕐 Batch at 2026-09-02 21:33:12
 
 📊 **5 new construction jobs this batch:**
