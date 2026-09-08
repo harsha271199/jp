@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — September 08, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-08 19:50:54
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 3 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Bethesda, MD | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Bethesda-MD/Project-Engineer_R5024739) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 2, Heavy Equipment Solutions | [Apply](https://jobs.jedunn.com/job/Kansas-City-Project-Engineer-2%2C-Heavy-Equipment-Solutions-MO-64106/1427694200/) | Unknown |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Scheduler 1 | [Apply](https://jobs.jedunn.com/job/Beaverton-Scheduler-1-OR-97008/1427625900/) | Unknown |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Scheduler 1, MC | [Apply](https://jobs.jedunn.com/job/Tempe-Scheduler-1%2C-MC-AZ-85281/1427621700/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-09-08 17:03:01
 
 📊 **5 new construction jobs this batch:**
