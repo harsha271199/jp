@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — September 08, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-08 22:20:02
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Samsung Electronics: 1 job
+- The Weitz Co., Des Moines, Iowa†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Chicago, IL | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Chicago-IL/Project-Engineer_R5021152) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Field Engineer 1 (Union) | [Apply](https://jobs.jedunn.com/job/El-Paso-Field-Engineer-1-%28Union%29-TX-79901/1427711500/) | Unknown |
+| **Samsung Electronics** | Austin, TX | Instrumentation and Controls Construction Engineer | [Apply](https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/12100-Samsung-Blvd-Austin-TX-USA/Experienced-Construction-Management-Engineer_R119767?locations=e2e963279736101307c7218e23e80000&locations=189767dd6c92012d02b6bc83a529e178&locations=9679a39fc7361030509d856e0bf70000&locations=189767dd6c9201c7ec227985a529067b) | 2026-09-09 |
+| **The Weitz Co., Des Moines, Iowa†** | Council Hill, Oklahoma | Construction Project Safety Engineer (Traveling) | [Apply](https://careers.weitz.com/job/council-hill/construction-project-safety-engineer-traveling/48937/100358986432) | 2026-9-8 |
+
+---
+
 ### 🕐 Batch at 2026-09-08 19:50:54
 
 📊 **4 new construction jobs this batch:**
