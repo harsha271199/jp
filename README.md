@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — September 09, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-09 18:26:06
+
+📊 **3 new construction jobs this batch:**
+- Holder Construction Group, Atlanta, Ga.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Northrop Grumman: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Holder Construction Group, Atlanta, Ga.** | Manasses, VA | Assistant Field Engineer (Hourly) | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4399637009) | 2026-09-09T12:00:48-04:00 |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Field Engineer 1 (Union) | [Apply](https://jobs.jedunn.com/job/Kansas-City-Field-Engineer-1-%28Union%29-MO-64106/1428134100/) | Unknown |
+| **Northrop Grumman** | United States-Utah-Roy | Sentinel Staff Construction Engineer - 19935 | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/Sentinel-Staff-Construction-Engineer---19935_R10249995) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-09-09 15:02:15
 
 📊 **3 new construction jobs this batch:**
