@@ -1,6 +1,25 @@
 # 🏗️ Construction Entry-Level Jobs — September 10, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-10 22:14:50
+
+📊 **6 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Clayco, Chicago, Ill.: 3 jobs
+- Northrop Grumman: 1 job
+- The Weitz Co., Des Moines, Iowa†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | McLean, VA | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Project-Engineer_R5024266) | Posted Today |
+| **Clayco, Chicago, Ill.** | St. Louis, MO, United States | VDC Engineer | [Apply](https://jobs.crelate.com/portal/clayco/job/5j9r7q7jfpurg5g9zarbwp1gow) | 2026-09-10T20:31:51Z |
+| **Clayco, Chicago, Ill.** | Cheyenne, WY, United States | VDC Engineer | [Apply](https://jobs.crelate.com/portal/clayco/job/t45g9udj6bbe5e8kc4rbn3oy9r) | 2026-09-10T20:09:50Z |
+| **Clayco, Chicago, Ill.** | Los Angeles, CA, United States | VDC Engineer | [Apply](https://jobs.crelate.com/portal/clayco/job/6898dxmquy8zsg36z1agy8179h) | 2026-09-10T20:04:04Z |
+| **Northrop Grumman** | United States-Colorado-Colorado Springs | Construction Engineer 2 | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Colorado-Springs/Construction-Engineer-2_R10250393) | Posted Today |
+| **The Weitz Co., Des Moines, Iowa†** | Port Washington, Wisconsin | Assistant Project Manager - Data Center Construction | [Apply](https://careers.weitz.com/job/port-washington/assistant-project-manager-data-center-construction/48937/100450756752) | 2026-9-10 |
+
+---
+
 ### 🕐 Batch at 2026-09-10 19:28:49
 
 📊 **7 new construction jobs this batch:**
