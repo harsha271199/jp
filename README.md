@@ -1,6 +1,26 @@
 # 🏗️ Construction Entry-Level Jobs — September 10, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-10 19:28:49
+
+📊 **7 new construction jobs this batch:**
+- HITT Contracting, Falls Church, Va.: 4 jobs
+- L3Harris Technologies: 1 job
+- Northrop Grumman: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **HITT Contracting, Falls Church, Va.** | Culpeper, VA | Commercial Construction Assistant Project Manager - GovCloud | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Culpeper-VA/Commercial-Construction-Assistant-Project-Manager---GovCloud_JR102841) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Culpeper, VA | Commercial Construction Assistant Superintendent - GovCloud | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Culpeper-VA/Commercial-Construction-Assistant-Superintendent---GovCloud_JR102838) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Falls Church, VA | Commercial Construction Assistant Superintendent - Mission Critical | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Falls-Church-VA/Commercial-Construction-Assistant-Superintendent---Mission-Critical_JR102843-1) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Columbus, OH | Commercial Construction Assistant Superintendent - Mission Critical | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Columbus-OH/Commercial-Construction-Assistant-Superintendent---Mission-Critical_JR102842) | Posted Today |
+| **L3Harris Technologies** | Greenville, TX, US | Lead, Project Engineer | [Apply](https://careers.l3harris.com/en/job/greenville/lead-project-engineer/4832/100443672320) | 2026-9-10 |
+| **Northrop Grumman** | United States-Colorado-Boulder | Mission and Quality Assurance Engineer (Quality Engineer) | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/Mission-and-Quality-Assurance-Engineer--Quality-Engineer-_R10250349) | Posted Today |
+| **Sundt Construction Inc., Tempe, Ariz.** | Morrilton, AR, United States | Project Controls Coordinator | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11176/?utm_medium=jobshare) | 2026-09-10 |
+
+---
+
 ### 🕐 Batch at 2026-09-10 16:53:58
 
 📊 **4 new construction jobs this batch:**
