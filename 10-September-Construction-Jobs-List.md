@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — September 10, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-10 16:53:58
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Northrop Grumman: 1 job
+- Skanska USA, New York, N.Y.†: 1 job
+- The Whiting-Turner Contracting Co., Baltimore, Md.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Arlington, VA; McLean, VA | Assistant Superintendent | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/Assistant-Superintendent_R5024265) | Posted Today |
+| **Northrop Grumman** | United States-California-Woodland Hills | Thermal Structural Engineer Level 4 (AHT) | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Woodland-Hills/Thermal-Structural-Engineer-Level-4--AHT-_R10241565) | Posted Today |
+| **Skanska USA, New York, N.Y.†** | Seattle, WA | Field Engineer I (Heavy Civil Construction) | [Apply](https://careers-skanska.icims.com/jobs/8873/login) | 2026-09-10T14:33:00+0000 |
+| **The Whiting-Turner Contracting Co., Baltimore, Md.** | s will result in a longer vetting process. The Whiting-Turner Contracting Company is an Equal Opportunity Employer, in | Assistant Superintendent | [Apply](https://jobs.silkroad.com/WhitingTurner/Careers/jobs/4319?embedded=true) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-09-10 12:40:22
 
 📊 **1 new construction jobs this batch:**
