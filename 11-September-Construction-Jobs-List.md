@@ -1,6 +1,20 @@
 # 🏗️ Construction Entry-Level Jobs — September 11, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-11 23:50:47
+
+📊 **3 new construction jobs this batch:**
+- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | Bellevue, Wa | Field Engineer - New Grad 2027 | [Apply](https://careers.pcl.com/job/Bellevue-Field-Engineer-New-Grad-2027-WA-98004/1429266000/) | Unknown |
+| **Sundt Construction Inc., Tempe, Ariz.** | Boise, ID, United States | Project Controls Engineer - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11195/?utm_medium=jobshare) | 2026-09-11 |
+| **Sundt Construction Inc., Tempe, Ariz.** | Burlington, TX, United States | Project Controls Engineer - Advanced Facilities Group | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11194/?utm_medium=jobshare) | 2026-09-11 |
+
+---
+
 ### 🕐 Batch at 2026-09-11 21:34:16
 
 📊 **3 new construction jobs this batch:**
