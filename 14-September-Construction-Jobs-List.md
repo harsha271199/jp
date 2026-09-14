@@ -1,6 +1,26 @@
 # 🏗️ Construction Entry-Level Jobs — September 14, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-14 21:21:05
+
+📊 **7 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- Gilbane Building Co., Providence, R.I.†: 2 jobs
+- Northrop Grumman: 1 job
+- PCL Construction Enterprises Inc., Denver, Colo.†: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Reno, NV | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Reno-NV/Safety-Engineer_R5024809) | Posted Today |
+| **Clark Group, McLean, Va.** | Reno, NV | VDC Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Reno-NV/VDC-Project-Engineer_R5024808) | Posted Today |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Project Coordinator | [Apply](https://careers-gilbaneco.icims.com/jobs/13404/project-coordinator/job?in_iframe=1) | 2024-09-14T21:19:54.719Z |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Project Coordinator | [Apply](https://careers-gilbaneco.icims.com/jobs/13400/project-coordinator/job?in_iframe=1) | 2024-09-14T21:19:55.068Z |
+| **Northrop Grumman** | United States-Maryland-Baltimore | Quality Engineer | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Maryland-Baltimore/Quality-Engineer_R10250735) | Posted Today |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | Texas, Ut | Field Engineer | [Apply](https://careers.pcl.com/job/Field-Engineer-TX/1429855700/) | Unknown |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | Texas, Ut | Project Engineer | [Apply](https://careers.pcl.com/job/Project-Engineer-TX/1429855500/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-09-14 17:28:57
 
 📊 **8 new construction jobs this batch:**
