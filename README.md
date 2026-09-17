@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — September 17, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-17 20:53:53
+
+📊 **2 new construction jobs this batch:**
+- Northrop Grumman: 1 job
+- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Northrop Grumman** | United States-Alabama-Huntsville | 2027 Associate Systems Safety Engineer - Huntsville AL | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Alabama-Huntsville/XMLNAME-2027-Associate-Systems-Safety-Engineer---Huntsville-AL_R10251430) | Posted Today |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | Camden, Oh | Field Engineer | [Apply](https://careers.pcl.com/job/Camden-Field-Engineer-OH/1431220600/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-09-17 17:32:20
 
 📊 **2 new construction jobs this batch:**
