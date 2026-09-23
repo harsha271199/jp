@@ -1,6 +1,28 @@
 # 🏗️ Construction Entry-Level Jobs — September 23, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-23 22:00:20
+
+📊 **7 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Gilbane Building Co., Providence, R.I.†: 1 job
+- HITT Contracting, Falls Church, Va.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 2 jobs
+- SOLV Energy, San Diego, Calif.: 1 job
+- Samsung Electronics: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Charleston, SC | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Charleston-SC/Safety-Engineer_R5021194) | Posted Today |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Field Engineer II | [Apply](https://careers-gilbaneco.icims.com/jobs/13468/field-engineer-ii/job?in_iframe=1) | 2024-09-23T21:59:10.346Z |
+| **HITT Contracting, Falls Church, Va.** | Houston, TX | Commercial Construction Assistant Project Manager | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Houston-TX/Commercial-Construction-Assistant-Project-Manager_JR102877) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Estimating Engineer, AFG | [Apply](https://jobs.jedunn.com/job/Kansas-City-Estimating-Engineer%2C-AFG-MO-64106/1433106500/) | Unknown |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 2, Mission Critical | [Apply](https://jobs.jedunn.com/job/Bowling-Green-Project-Engineer-2%2C-Mission-Critical-OH/1433164100/) | Unknown |
+| **Samsung Electronics** | Austin, TX | Project Engineer,  Infra Electrical | [Apply](https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/12100-Samsung-Blvd-Austin-TX-USA/Project-Engineer---Infra-Electrical_R119360?locations=e2e963279736101307c7218e23e80000&locations=189767dd6c92012d02b6bc83a529e178&locations=9679a39fc7361030509d856e0bf70000&locations=189767dd6c9201c7ec227985a529067b) | 2026-09-24 |
+| **SOLV Energy, San Diego, Calif.** | Flagstaff, AZ | EPC Assistant Superintendent (Flagstaff, AZ) | [Apply](https://solvenergy.wd1.myworkdayjobs.com/en-US/SOLV_External_Career/job/Flagstaff-AZ/EPC-Assistant-Superintendent--Flagstaff--AZ-_J13939) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-09-23 18:12:37
 
 📊 **4 new construction jobs this batch:**
