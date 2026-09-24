@@ -1,6 +1,20 @@
 # 🏗️ Construction Entry-Level Jobs — September 24, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-24 22:58:46
+
+📊 **3 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Oak Ridge, TN | Assistant Superintendent | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Oak-Ridge-TN/Assistant-Superintendent_R5020774) | Posted Today |
+| **Clark Group, McLean, Va.** | Greenville, SC | Assistant Superintendent (Advanced Manufacturing) | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Greenville-SC/Assistant-Superintendent_R5022622) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 1 | [Apply](https://jobs.jedunn.com/job/Cheyenne-Project-Engineer-1-WY-82001/1433582200/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-09-24 19:46:03
 
 📊 **5 new construction jobs this batch:**
