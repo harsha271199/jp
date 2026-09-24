@@ -1,6 +1,24 @@
 # 🏗️ Construction Entry-Level Jobs — September 24, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-24 19:46:03
+
+📊 **5 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Clune Construction, Chicago, Ill.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Charleston, SC | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Charleston-SC/Project-Engineer_R5024971) | Posted Today |
+| **Clune Construction, Chicago, Ill.** | Dallas, TX | Assistant Project Manager - Tenant Improvement | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Dallas-TX/Assistant-Project-Manager---Tenant-Improvement_JR101378) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Field Engineer 1 (Union), Mission Critical | [Apply](https://jobs.jedunn.com/job/El-Paso-Field-Engineer-1-%28Union%29%2C-Mission-Critical-TX-79901/1433512500/) | Unknown |
+| **Sundt Construction Inc., Tempe, Ariz.** | Ogden, UT, United States | Project Engineer - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11348/?utm_medium=jobshare) | 2026-09-24 |
+| **Sundt Construction Inc., Tempe, Ariz.** | Phoenix, AZ, United States | Project Engineer - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11351/?utm_medium=jobshare) | 2026-09-24 |
+
+---
+
 ### 🕐 Batch at 2026-09-24 15:44:32
 
 📊 **2 new construction jobs this batch:**
