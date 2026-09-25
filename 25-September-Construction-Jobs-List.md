@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — September 25, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-09-25 17:46:27
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 3 jobs
+- Johnson Controls: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Arlington, VA | Assistant Superintendent | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Arlington-VA/Assistant-Superintendent_R5022269) | Posted Today |
+| **Clark Group, McLean, Va.** | Richmond, VA | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Richmond-VA/Project-Engineer_R5024988) | Posted Today |
+| **Clark Group, McLean, Va.** | New Haven, CT | Quality Control Inspector | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/New-Haven-CT/Quality-Control-Inspector_R5024994) | Posted Today |
+| **Johnson Controls** | Seattle-Washington-United States of America | Project Coordinator | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Seattle-Washington-United-States-of-America/Project-Coordinator_WD30280865-1) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-09-25 12:43:08
 
 📊 **3 new construction jobs this batch:**
