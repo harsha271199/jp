@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — October 02, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-02 18:56:59
+
+📊 **2 new construction jobs this batch:**
+- Adolfson & Peterson Construction, Minneapolis, Minn.†: 1 job
+- Gilbane Building Co., Providence, R.I.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Adolfson & Peterson Construction, Minneapolis, Minn.†** | Alexandria, LA | MEP Project Field Engineer | [Apply](https://ap.wd12.myworkdayjobs.com/en-US/AP_Careers/job/Alexandria-LA/MEP-Project-Field-Engineer_JR100761) | Posted Today |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Project Coordinator | [Apply](https://careers-gilbaneco.icims.com/jobs/13513/project-coordinator/job?in_iframe=1) | 2024-10-02T18:55:06.309Z |
+
+---
+
 ### 🕐 Batch at 2026-10-02 13:30:48
 
 📊 **2 new construction jobs this batch:**
