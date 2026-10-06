@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — October 06, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-06 22:12:29
+
+📊 **3 new construction jobs this batch:**
+- AstraZeneca: 1 job
+- Clayco, Chicago, Ill.: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **AstraZeneca** | Frederick, Maryland, United States of America | Specialist Quality Control | [Apply](https://careers.astrazeneca.com/job/frederick/specialist-quality-control/7684/101628138544) | 2026-10-6 |
+| **Clayco, Chicago, Ill.** | St. Louis, MO, United States | Cost Analyst | [Apply](https://jobs.crelate.com/portal/clayco/job/i41hind6zz64kg6ytruamb6dry) | 2026-10-06T19:42:36Z |
+| **Sundt Construction Inc., Tempe, Ariz.** | Charlotte, NC, United States | Project Controls Specialist I | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11464/?utm_medium=jobshare) | 2026-10-06 |
+
+---
+
 ### 🕐 Batch at 2026-10-06 17:48:46
 
 📊 **5 new construction jobs this batch:**
