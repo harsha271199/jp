@@ -1,6 +1,25 @@
 # 🏗️ Construction Entry-Level Jobs — October 07, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-07 21:13:33
+
+📊 **5 new construction jobs this batch:**
+- Clune Construction, Chicago, Ill.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Johnson & Johnson: 1 job
+- Johnson Controls: 1 job
+- Northrop Grumman: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clune Construction, Chicago, Ill.** | San Francisco, CA | Assistant Superintendent - Mission Critical | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/San-Francisco-CA/Assistant-Superintendent---Mission-Critical_JR101405) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Coordinator, Advanced Industries | [Apply](https://jobs.jedunn.com/job/Hillsboro-Project-Coordinator%2C-Advanced-Industries-OR-97124/1437862800/) | Unknown |
+| **Johnson & Johnson** | Malvern, Pennsylvania, United States of America | Quality Control Analyst | [Apply](https://jj.wd5.myworkdayjobs.com/en-US/JJ/job/Malvern-Pennsylvania-United-States-of-America/Quality-Control-Analyst_R-102607-2) | Posted Today |
+| **Johnson Controls** | Largo-Florida-United States of America | VAVE Project Engineer | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Largo-Florida-United-States-of-America/VAVE-Project-Engineer_WD30281421) | Posted Today |
+| **Northrop Grumman** | United States-California-San Diego | Environmental Health & Safety Engineer - Level 4 | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/Environmental-Health---Safety-Engineer---Level-4_R10255090-1) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-07 16:04:13
 
 📊 **3 new construction jobs this batch:**
