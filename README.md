@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — October 09, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-09 20:30:51
+
+📊 **1 new construction jobs this batch:**
+- Clune Construction, Chicago, Ill.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clune Construction, Chicago, Ill.** | San Francisco, CA | Project Scheduler | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/San-Francisco-CA/Project-Scheduler_JR101443) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-09 15:47:44
 
 📊 **6 new construction jobs this batch:**
