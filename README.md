@@ -1,6 +1,25 @@
 # 🏗️ Construction Entry-Level Jobs — October 09, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-09 15:47:44
+
+📊 **6 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- Gilbane Building Co., Providence, R.I.†: 1 job
+- Johnson Controls: 1 job
+- MasTec Inc., Coral Gables, Fla.†: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | McLean, VA | BIM Coordinator | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/McLean-VA/BIM-Coordinator_R5025191-1) | Posted Today |
+| **Clark Group, McLean, Va.** | Charlotte, NC | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Charlotte-NC/Safety-Engineer_R5025192) | Posted Today |
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Field Engineer II - Federal | [Apply](https://careers-gilbaneco.icims.com/jobs/13536/field-engineer-ii---federal/job?in_iframe=1) | 2024-10-09T15:46:35.102Z |
+| **Johnson Controls** | Hoover-Alabama-United States of America | HVAC Field Engineer GCOE | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Hoover-Alabama-United-States-of-America/HVAC-Field-Engineer-GCOE_WD30281628-1) | Posted Today |
+| **MasTec Inc., Coral Gables, Fla.†** | WCC - Rockford, IL | Field Engineer | [Apply](https://careers-mastec.icims.com/jobs/70046/login) | 2026-09-30T21:20:00+0000 |
+| **MasTec Inc., Coral Gables, Fla.†** | WCC - Rockford, IL | Project Engineer | [Apply](https://careers-mastec.icims.com/jobs/70045/login) | 2026-09-30T21:15:00+0000 |
+
+---
+
 ### 🕐 Batch at 2026-10-09 08:22:18
 
 📊 **1 new construction jobs this batch:**
