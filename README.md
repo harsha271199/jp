@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — October 15, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-15 15:30:48
+
+📊 **1 new construction jobs this batch:**
+- McGough, Roseville, Minn.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **McGough, Roseville, Minn.** | TX Dallas | Project Engineer | [Apply](https://mcgough.wd504.myworkdayjobs.com/en-US/McGoughGlobalCareers/job/TX-Dallas/Project-Engineer_R-978662) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-15 05:31:07
 
 📊 **2 new construction jobs this batch:**
