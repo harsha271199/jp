@@ -1,6 +1,20 @@
 # 🏗️ Construction Entry-Level Jobs — October 15, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-15 22:53:27
+
+📊 **3 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- JLL: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | San Diego, CA | Project Scheduler | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/San-Diego-CA/Project-Scheduler_R5025266) | Posted Today |
+| **Clark Group, McLean, Va.** | Dallas, TX; Oklahoma City, OK | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Dallas-TX/Safety-Engineer_R5024693) | Posted Today |
+| **JLL** | Hopkinton, MA | Assistant Project Manager | [Apply](https://jll.wd1.myworkdayjobs.com/en-US/jllcareers/job/Hopkinton-MA/Assistant-Project-Manager_REQ521867) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-15 19:41:06
 
 📊 **3 new construction jobs this batch:**
