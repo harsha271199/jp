@@ -1,14 +1,14 @@
-# 🏗️ Construction Entry-Level Jobs — October 17, 2026
+# 🏗️ Construction Entry-Level Jobs — October 19, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
-### 🕐 Batch at 2026-10-17 05:25:31
+### 🕐 Batch at 2026-10-19 00:45:04
 
 📊 **1 new construction jobs this batch:**
-- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+- Clark Group, McLean, Va.: 1 job
 
 | 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
 |---|---|---|---|---|
-| **PCL Construction Enterprises Inc., Denver, Colo.†** | West Palm Beach, Fl | Project Engineer Civil Waste/Waterwaste | [Apply](https://careers.pcl.com/job/West-Palm-Beach-Project-Engineer-Civil-WasteWaterwaste-FL-33401/1441096700/) | Unknown |
+| **Clark Group, McLean, Va.** | Dallas, TX; Haskell, TX | Cost Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Haskell-TX/Cost-Engineer_R5025289) | Posted Today |
 
 ---
 
