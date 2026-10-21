@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — October 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-21 15:58:08
+
+📊 **2 new construction jobs this batch:**
+- Adolfson & Peterson Construction, Minneapolis, Minn.†: 1 job
+- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Adolfson & Peterson Construction, Minneapolis, Minn.†** | Dallas, TX | Project/Field Engineer | [Apply](https://ap.wd12.myworkdayjobs.com/en-US/AP_Careers/job/Dallas-TX/Project-Field-Engineer_JR100789-1) | Posted Today |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | N/A | Project Engineer (JAX) | [Apply](https://careers.pcl.com/job/Jacksonville-Project-Engineer-%28JAX%29-FL-32099/1442270300/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-10-21 11:03:24
 
 📊 **2 new construction jobs this batch:**
