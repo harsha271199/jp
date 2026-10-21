@@ -1,6 +1,33 @@
 # 🏗️ Construction Entry-Level Jobs — October 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-21 19:55:52
+
+📊 **10 new construction jobs this batch:**
+- Adolfson & Peterson Construction, Minneapolis, Minn.†: 1 job
+- Clark Group, McLean, Va.: 2 jobs
+- Holder Construction Group, Atlanta, Ga.: 2 jobs
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- JLL: 1 job
+- McGough, Roseville, Minn.: 1 job
+- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Adolfson & Peterson Construction, Minneapolis, Minn.†** | Tempe, AZ | Project/Field Engineer | [Apply](https://ap.wd12.myworkdayjobs.com/en-US/AP_Careers/job/Tempe-AZ/Project-Field-Engineer_JR100790) | Posted Today |
+| **Clark Group, McLean, Va.** | Los Angeles, CA | Assistant Superintendent | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Los-Angeles-CA/Assistant-Superintendent_R5025349) | Posted Today |
+| **Clark Group, McLean, Va.** | Richmond, VA | Project Engineer (Advanced Manufacturing) | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Richmond-VA/Project-Engineer--Advanced-Manufacturing-_R5025353) | Posted Today |
+| **Holder Construction Group, Atlanta, Ga.** | Culpeper, VA | Assistant Field Coordinator (Hourly) | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4462798009) | 2026-10-21T13:41:48-04:00 |
+| **Holder Construction Group, Atlanta, Ga.** | Manassas, VA | Assistant Field Coordinator (Hourly) | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4462786009) | 2026-10-21T13:38:19-04:00 |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Field Engineer 1 (Union) | [Apply](https://jobs.jedunn.com/job/Omaha-Field-Engineer-1-%28Union%29-NE-68118/1442441400/) | Unknown |
+| **JLL** | New York, NY | Assistant Project Manager | [Apply](https://jll.wd1.myworkdayjobs.com/en-US/jllcareers/job/New-York-NY/Assistant-Project-Manager_REQ544020) | Posted Today |
+| **McGough, Roseville, Minn.** | MT Helena | Assistant Project Manager | [Apply](https://mcgough.wd504.myworkdayjobs.com/en-US/McGoughGlobalCareers/job/MT-Helena/Assistant-Project-Manager_R-1002534) | Posted Today |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | N/A | Project Engineer | [Apply](https://careers.pcl.com/job/Jacksonville-Project-Engineer-FL-32099/1442270300/) | Unknown |
+| **Swinerton Inc., Concord, Calif.** | Arvada CO | Drywall Assistant Superintendent | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Arvada-CO/Drywall-Assistant-Superintendent_J18167) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-21 15:58:08
 
 📊 **2 new construction jobs this batch:**
