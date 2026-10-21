@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — October 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-21 11:03:24
+
+📊 **2 new construction jobs this batch:**
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- PCL Construction Enterprises Inc., Denver, Colo.†: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer, AFG | [Apply](https://jobs.jedunn.com/job/Kansas-City-Project-Engineer%2C-AFG-MO-64106/1432749500/) | Unknown |
+| **PCL Construction Enterprises Inc., Denver, Colo.†** | Orlando, Fl | Project Engineer | [Apply](https://careers.pcl.com/job/Orlando-Project-Engineer-FL-32801/1432614600/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-10-21 05:42:02
 
 📊 **1 new construction jobs this batch:**
