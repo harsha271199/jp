@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — October 21, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-21 23:01:31
+
+📊 **1 new construction jobs this batch:**
+- Johnson Controls: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Johnson Controls** | Dublin-Ohio-United States of America | Project Coordinator | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Dublin-Ohio-United-States-of-America/Project-Coordinator_WD30282881) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-21 19:55:52
 
 📊 **10 new construction jobs this batch:**
