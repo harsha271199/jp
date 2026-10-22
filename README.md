@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — October 22, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-22 21:09:35
+
+📊 **2 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Clark Kansas City Office | Project Scheduler | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Clark-Kansas-City-Office/Project-Scheduler_R5025379) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Traveling Project Engineer, Advanced Industries (Semiconductor) | [Apply](https://jobs.jedunn.com/job/Essex-Junction-Traveling-Project-Engineer%2C-Advanced-Industries-%28Semiconductor%29-VT-05451/1442791000/) | Unknown |
+
+---
+
 ### 🕐 Batch at 2026-10-22 17:52:30
 
 📊 **2 new construction jobs this batch:**
