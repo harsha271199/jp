@@ -1,6 +1,21 @@
 # 🏗️ Construction Entry-Level Jobs — October 23, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-23 15:39:19
+
+📊 **3 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- MasTec Inc., Coral Gables, Fla.†: 1 job
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Richmond, VA | Safety Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Richmond-VA/Safety-Engineer_R5025387) | Posted Today |
+| **MasTec Inc., Coral Gables, Fla.†** | 3PL - Brewerton, NY | Assistant Project Manager | [Apply](https://careers-mastec.icims.com/jobs/67863/login) | 2026-08-14T19:31:00+0000 |
+| **Swinerton Inc., Concord, Calif.** | Atlanta GA | Drywall Estimator | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Atlanta-GA/Drywall-Estimator_J18149) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-23 10:55:07
 
 📊 **1 new construction jobs this batch:**
