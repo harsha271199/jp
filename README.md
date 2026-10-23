@@ -1,6 +1,22 @@
 # 🏗️ Construction Entry-Level Jobs — October 23, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-23 19:46:59
+
+📊 **5 new construction jobs this batch:**
+- HITT Contracting, Falls Church, Va.: 3 jobs
+- The Weitz Co., Des Moines, Iowa†: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **HITT Contracting, Falls Church, Va.** | Falls Church, VA | Commercial Construction Assistant Project Manager - Government | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Falls-Church-VA/Commercial-Construction-Assistant-Project-Manager---Government_JR102994) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | New York, NY | Commercial Construction Assistant Project Manager - Healthcare | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/New-York-NY/Commercial-Construction-Assistant-Project-Manager---Healthcare_JR102996) | Posted Today |
+| **HITT Contracting, Falls Church, Va.** | Richmond, VA | Quality Control Associate | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Richmond-VA/Quality-Control-Associate_JR102997) | Posted Today |
+| **The Weitz Co., Des Moines, Iowa†** | Phoenix, AZ, US | Project Engineer I | [Apply](https://careers.weitz.com/job/phoenix/project-engineer-i/48937/102340198672) | 2026-10-23 |
+| **The Weitz Co., Des Moines, Iowa†** | Milwaukee, WI, US | Project Safety Engineer | [Apply](https://careers.weitz.com/job/milwaukee/project-safety-engineer/48937/102336118112) | 2026-10-23 |
+
+---
+
 ### 🕐 Batch at 2026-10-23 15:39:19
 
 📊 **3 new construction jobs this batch:**
