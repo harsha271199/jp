@@ -1,6 +1,20 @@
 # 🏗️ Construction Entry-Level Jobs — October 23, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-23 22:53:17
+
+📊 **3 new construction jobs this batch:**
+- Skanska USA, New York, N.Y.†: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 2 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Skanska USA, New York, N.Y.†** | Fort Myers, FL | Project Engineer | [Apply](https://careers-skanska.icims.com/jobs/9667/login) | 2026-10-23T19:52:00+0000 |
+| **Sundt Construction Inc., Tempe, Ariz.** | Ogden, UT, United States | Virtual Construction Engineer I - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11648/?utm_medium=jobshare) | 2026-10-23 |
+| **Sundt Construction Inc., Tempe, Ariz.** | Ogden, UT, United States | Virtual Construction Engineer II - Advanced Facilities | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11649/?utm_medium=jobshare) | 2026-10-23 |
+
+---
+
 ### 🕐 Batch at 2026-10-23 19:46:59
 
 📊 **5 new construction jobs this batch:**
