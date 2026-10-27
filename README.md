@@ -1,6 +1,24 @@
 # 🏗️ Construction Entry-Level Jobs — October 27, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-27 21:45:52
+
+📊 **5 new construction jobs this batch:**
+- Amgen: 1 job
+- Clark Group, McLean, Va.: 2 jobs
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Amgen** | US - California - Thousand Oaks | Project Coordinator | [Apply](https://amgen.wd1.myworkdayjobs.com/en-US/careers/job/US---California---Thousand-Oaks/Project-Coordinator_R-259186) | Posted Today |
+| **Clark Group, McLean, Va.** | San Francisco, CA | Assistant Superintendent | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/San-Francisco-CA/Assistant-Superintendent_R5025426) | Posted Today |
+| **Clark Group, McLean, Va.** | Louisa, VA | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Louisa-VA/Project-Engineer_R5025425) | Posted Today |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Estimating Engineer - Self-Perform | [Apply](https://jobs.jedunn.com/job/Omaha-Estimating-Engineer-Self-Perform-NE-68118/1444178400/) | Unknown |
+| **Swinerton Inc., Concord, Calif.** | Charlotte NC | Assistant Superintendent | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Charlotte-NC/Assistant-Superintendent_J18184) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-27 17:17:21
 
 📊 **2 new construction jobs this batch:**
