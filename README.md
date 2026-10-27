@@ -1,6 +1,19 @@
 # 🏗️ Construction Entry-Level Jobs — October 27, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-27 17:17:21
+
+📊 **2 new construction jobs this batch:**
+- HITT Contracting, Falls Church, Va.: 1 job
+- Northrop Grumman: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **HITT Contracting, Falls Church, Va.** | Falls Church, VA | Safety Project Engineer | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Falls-Church-VA/Safety-Project-Engineer_JR102985) | Posted Today |
+| **Northrop Grumman** | United States-Alabama-Huntsville | 2027 Associate Systems Safety Engineer - Huntsville AL | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Alabama-Huntsville/XMLNAME-2027-Associate-Systems-Safety-Engineer---Huntsville-AL_R10257791) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-27 00:13:44
 
 📊 **3 new construction jobs this batch:**
