@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — October 28, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-28 23:50:50
+
+📊 **1 new construction jobs this batch:**
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Sundt Construction Inc., Tempe, Ariz.** | Salt Lake City, UT, United States | Project Engineer - Heavy Industrial/Mining | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11705/?utm_medium=jobshare) | 2026-10-28 |
+
+---
+
 ### 🕐 Batch at 2026-10-28 19:18:17
 
 📊 **4 new construction jobs this batch:**
