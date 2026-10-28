@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — October 28, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-28 13:47:15
+
+📊 **1 new construction jobs this batch:**
+- Swinerton Inc., Concord, Calif.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Swinerton Inc., Concord, Calif.** | Atlanta GA | Safety Engineer | [Apply](https://swinerton.wd1.myworkdayjobs.com/en-US/Swinerton_External_Career/job/Atlanta-GA/Safety-Engineer_J18188) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-10-28 06:34:48
 
 📊 **1 new construction jobs this batch:**
