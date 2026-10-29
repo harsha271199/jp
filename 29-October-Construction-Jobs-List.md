@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — October 29, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-10-29 22:22:05
+
+📊 **4 new construction jobs this batch:**
+- Gilbane Building Co., Providence, R.I.†: 1 job
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- Johnson Controls: 1 job
+- Sundt Construction Inc., Tempe, Ariz.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Gilbane Building Co., Providence, R.I.†** | N/A | Field Engineer II | [Apply](https://careers-gilbaneco.icims.com/jobs/13706/field-engineer-ii/job?in_iframe=1) | 2024-10-29T22:20:59.237Z |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 1 | [Apply](https://jobs.jedunn.com/job/El-Paso-Project-Engineer-1-TX-79901/1445172200/) | Unknown |
+| **Johnson Controls** | Milwaukee-Wisconsin-United States of America | Project Coordinator 2 | [Apply](https://jci.wd5.myworkdayjobs.com/en-US/JCI/job/Milwaukee-Wisconsin-United-States-of-America/Project-Coordinator-2_WD30283674) | Posted Today |
+| **Sundt Construction Inc., Tempe, Ariz.** | San Diego, CA, United States | Project Engineer - Building | [Apply](https://eewl.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/11717/?utm_medium=jobshare) | 2026-10-29 |
+
+---
+
 ### 🕐 Batch at 2026-10-29 17:19:01
 
 📊 **6 new construction jobs this batch:**
