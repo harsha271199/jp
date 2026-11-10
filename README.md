@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — November 10, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-11-10 22:46:48
+
+📊 **1 new construction jobs this batch:**
+- Northrop Grumman: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Northrop Grumman** | United States-California-Sunnyvale | Industrial Engineer - Proposal Estimator | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Sunnyvale/Industrial-Engineer---Proposal-Estimator_R10259058) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-11-10 17:29:13
 
 📊 **4 new construction jobs this batch:**
