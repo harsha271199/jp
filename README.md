@@ -1,6 +1,23 @@
 # 🏗️ Construction Entry-Level Jobs — November 10, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-11-10 17:29:13
+
+📊 **4 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 1 job
+- Clayco, Chicago, Ill.: 1 job
+- HITT Contracting, Falls Church, Va.: 1 job
+- The Christman Co., Lansing, Mich.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | Landover, MD | Project Engineer (Civil) | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Landover-MD/Project-Engineer--Civil-_R5025635) | Posted Today |
+| **Clayco, Chicago, Ill.** | Chicago, IL, United States | Project Engineer | [Apply](https://jobs.crelate.com/portal/clayco/job/asr4nskqiwd5fx8o85y8xf1g9a) | 2026-11-10T15:56:41Z |
+| **HITT Contracting, Falls Church, Va.** | Culpeper, VA | Commercial Construction Assistant Project Manager - Government Mission Critical | [Apply](https://hitt.wd503.myworkdayjobs.com/en-US/HITT/job/Culpeper-VA/Commercial-Construction-Assistant-Project-Manager---Government-Mission-Critical_JR103032) | Posted Today |
+| **The Christman Co., Lansing, Mich.** | Grand Rapids, MI | Project Engineer | [Apply](https://christmanco.wd108.myworkdayjobs.com/en-US/careers/job/Grand-Rapids-MI/Project-Engineer_R-100748) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-11-10 09:07:33
 
 📊 **1 new construction jobs this batch:**
