@@ -1,6 +1,27 @@
 # 🏗️ Construction Entry-Level Jobs — November 11, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-11-11 18:20:43
+
+📊 **8 new construction jobs this batch:**
+- Clark Group, McLean, Va.: 2 jobs
+- Holder Construction Group, Atlanta, Ga.: 1 job
+- Northrop Grumman: 1 job
+- SpaceX: 4 jobs
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clark Group, McLean, Va.** | San Antonio, TX | Project Engineer | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/San-Antonio-TX/Project-Engineer_R5025662) | Posted Today |
+| **Clark Group, McLean, Va.** | Haskell, TX | Quality Control Inspector | [Apply](https://clark.wd503.myworkdayjobs.com/en-US/ClarkExternal/job/Haskell-TX/Quality-Control-Inspector_R5025663) | Posted Today |
+| **Holder Construction Group, Atlanta, Ga.** | Franklin Furnace, OH | Assistant Field Engineer (Hourly) | [Apply](https://job-boards.greenhouse.io/holderconstruction/jobs/4503368009) | 2026-11-11T11:10:03-05:00 |
+| **Northrop Grumman** | United States-Mississippi-Ocean Springs | 2027 Associate Structural Engineer - Ocean Springs MS | [Apply](https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Mississippi-Ocean-Springs/XMLNAME-2027-Associate-Structural-Engineer---Ocean-Springs-MS_R10260175) | Posted Today |
+| **SpaceX** | Starbase, TX | Civil Engineer, Site Development | [Apply](https://boards.greenhouse.io/spacex/jobs/8938131002?gh_jid=8938131002) | 2026-11-11T13:16:17-05:00 |
+| **SpaceX** | College Station, TX | Civil Engineer, Site Development | [Apply](https://boards.greenhouse.io/spacex/jobs/8938191002?gh_jid=8938191002) | 2026-11-11T13:16:22-05:00 |
+| **SpaceX** | Bastrop, TX | Civil Engineer, Site Development | [Apply](https://boards.greenhouse.io/spacex/jobs/8938174002?gh_jid=8938174002) | 2026-11-11T13:16:19-05:00 |
+| **SpaceX** | Cape Canaveral, FL | Civil Engineer, Site Development | [Apply](https://boards.greenhouse.io/spacex/jobs/8938178002?gh_jid=8938178002) | 2026-11-11T13:16:20-05:00 |
+
+---
+
 ### 🕐 Batch at 2026-11-11 10:13:14
 
 📊 **2 new construction jobs this batch:**
