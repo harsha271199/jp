@@ -1,6 +1,22 @@
 # 🏗️ Construction Entry-Level Jobs — November 18, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-11-18 09:58:19
+
+📊 **4 new construction jobs this batch:**
+- Clune Construction, Chicago, Ill.: 2 jobs
+- JE Dunn Construction Co., Kansas City, Mo.: 1 job
+- McGough, Roseville, Minn.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **Clune Construction, Chicago, Ill.** | Vienna, VA | Assistant MEP Coordinator | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Vienna-VA/Assistant-MEP-Coordinator_JR101526) | Posted 5 Days Ago |
+| **Clune Construction, Chicago, Ill.** | Chicago, IL | QA/QC Engineer | [Apply](https://clunegc.wd12.myworkdayjobs.com/en-US/CluneGC/job/Chicago-IL/QA-QC-Engineer_JR100973) | Posted Yesterday |
+| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 2, Self Perform Concrete, Advanced Facilities Group | [Apply](https://jobs.jedunn.com/job/Atlanta-Project-Engineer-2%2C-Self-Perform-Concrete%2C-Advanced-Facilities-Group-GA-30339/1432250400/) | Unknown |
+| **McGough, Roseville, Minn.** | NC Raleigh | Project Coordinator Regional | [Apply](https://mcgough.wd504.myworkdayjobs.com/en-US/McGoughGlobalCareers/job/NC-Raleigh/Project-Coordinator-Regional_JR68) | Posted 13 Days Ago |
+
+---
+
 ### 🕐 Batch at 2026-11-18 02:01:42
 
 📊 **2 new construction jobs this batch:**
