@@ -1,6 +1,17 @@
 # 🏗️ Construction Entry-Level Jobs — November 20, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
+### 🕐 Batch at 2026-11-20 22:57:18
+
+📊 **1 new construction jobs this batch:**
+- McGough, Roseville, Minn.: 1 job
+
+| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
+|---|---|---|---|---|
+| **McGough, Roseville, Minn.** | MN Roseville | Estimator II | [Apply](https://mcgough.wd504.myworkdayjobs.com/en-US/McGoughGlobalCareers/job/MN-Roseville/Estimator-II_JR117) | Posted Today |
+
+---
+
 ### 🕐 Batch at 2026-11-20 16:48:32
 
 📊 **5 new construction jobs this batch:**
