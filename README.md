@@ -1,25 +1,16 @@
-# 🏗️ Construction Entry-Level Jobs — November 26, 2026
+# 🏗️ Construction Entry-Level Jobs — November 27, 2026
 > Updated every hour. Newest detected batch first. US construction/civil roles; explicit required minimum experience above 2 years is rejected.
 
-### 🕐 Batch at 2026-11-26 22:46:59
+### 🕐 Batch at 2026-11-27 04:44:29
 
-📊 **1 new construction jobs this batch:**
-- JE Dunn Construction Co., Kansas City, Mo.: 1 job
-
-| 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
-|---|---|---|---|---|
-| **JE Dunn Construction Co., Kansas City, Mo.** | N/A | Project Engineer 2, Self Perform Concrete, Advanced Facilities Group | [Apply](https://jobs.jedunn.com/job/Brownsville-Project-Engineer-2%2C-Self-Perform-Concrete%2C-Advanced-Facilities-Group-TX-78520/1434973300/) | Unknown |
-
----
-
-### 🕐 Batch at 2026-11-26 03:55:51
-
-📊 **1 new construction jobs this batch:**
-- SpaceX: 1 job
+📊 **2 new construction jobs this batch:**
+- Adolfson & Peterson Construction, Minneapolis, Minn.†: 1 job
+- SOLV Energy, San Diego, Calif.: 1 job
 
 | 🏢 Company | 📍 Location | 💼 Role | 🔗 Link | 📅 Posted |
 |---|---|---|---|---|
-| **SpaceX** | Bastrop, TX | Environmental Health & Safety Engineer | [Apply](https://boards.greenhouse.io/spacex/jobs/8940382002?gh_jid=8940382002) | 2026-11-25T17:55:59-05:00 |
+| **Adolfson & Peterson Construction, Minneapolis, Minn.†** | Aurora, CO | MEP Engineer | [Apply](https://ap.wd12.myworkdayjobs.com/en-US/AP_Careers/job/Aurora-CO/MEP-Engineer_JR100818-1) | Posted Yesterday |
+| **SOLV Energy, San Diego, Calif.** | San Antonio, TX | EPC Assistant Project Manager, Utility Scale Solar (San Antonio, TX) | [Apply](https://solvenergy.wd1.myworkdayjobs.com/en-US/SOLV_External_Career/job/San-Antonio-TX/EPC-Assistant-Project-Manager--Utility-Scale-Solar--San-Antonio--TX-_J14354) | Posted 3 Days Ago |
 
 ---
 
